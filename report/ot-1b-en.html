@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2026 World Cup · OT 1B — Results Overview (Shareholder Draft)</title>
+<style>
+:root{
+  --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
+  --gold:#B8862E; --gold-soft:#F7EED9;
+  --analyst:#1868A6; --analyst-soft:#E4F1FB;
+  --mkt:#C2621F; --mkt-soft:#FCEEDD;
+  --po:#6C3FA6; --po-soft:#F1E8FB;
+  --pos:#1E8E5A; --pos-soft:#E3F5EA;
+  --neg:#C4383B; --neg-soft:#FBE6E6;
+  --font-serif: Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',serif;
+  --font-body: Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',serif;
+  --font-head: 'Avenir Next','Segoe UI',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono: ui-monospace,'SF Mono',Menlo,Consolas,'Cascadia Code',monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#0E1116; --ink:#EDEFF4; --muted:#96A0B0; --card:#171B22; --line:rgba(237,239,244,.10);
+    --gold:#D9AE5C; --gold-soft:#332711;
+    --analyst:#5FA8E4; --analyst-soft:#152534;
+    --mkt:#E29552; --mkt-soft:#33220F;
+    --po:#B78EE0; --po-soft:#241A34;
+    --pos:#4FBE86; --pos-soft:#132A1F;
+    --neg:#E2807F; --neg-soft:#33191A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1116; --ink:#EDEFF4; --muted:#96A0B0; --card:#171B22; --line:rgba(237,239,244,.10);
+  --gold:#D9AE5C; --gold-soft:#332711;
+  --analyst:#5FA8E4; --analyst-soft:#152534;
+  --mkt:#E29552; --mkt-soft:#33220F;
+  --po:#B78EE0; --po-soft:#241A34;
+  --pos:#4FBE86; --pos-soft:#132A1F;
+  --neg:#E2807F; --neg-soft:#33191A;
+}
+:root[data-theme="light"]{
+  --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
+  --gold:#B8862E; --gold-soft:#F7EED9;
+  --analyst:#1868A6; --analyst-soft:#E4F1FB;
+  --mkt:#C2621F; --mkt-soft:#FCEEDD;
+  --po:#6C3FA6; --po-soft:#F1E8FB;
+  --pos:#1E8E5A; --pos-soft:#E3F5EA;
+  --neg:#C4383B; --neg-soft:#FBE6E6;
+}
+*{box-sizing:border-box}
+body{background:var(--paper); color:var(--ink); font-family:var(--font-body); line-height:1.65; font-size:16px; margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:44px 24px 100px}
+.eyebrow{font-family:var(--font-head); font-weight:600; font-size:12.5px; letter-spacing:.12em; color:var(--muted); text-transform:uppercase; margin:0 0 8px}
+h1{font-family:var(--font-head); font-weight:800; font-size:clamp(30px,5vw,46px); line-height:1.1; margin:0 0 10px; text-wrap:balance; letter-spacing:-.01em;
+  background:linear-gradient(100deg,var(--ink),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent}
+h2{font-family:var(--font-head); font-weight:800; font-size:21px; margin:0 0 14px; text-wrap:balance; display:flex; align-items:center; gap:10px; letter-spacing:-.01em}
+h2 .dot{width:11px;height:11px;border-radius:3px;flex:none}
+h3{font-family:var(--font-head);font-weight:700;font-size:15.5px;margin:0 0 10px; letter-spacing:.01em}
+.sub{color:var(--muted); font-size:16px; margin:0 0 6px; font-family:var(--font-head); font-weight:600}
+.draftbadge{display:inline-flex; align-items:center; gap:6px; font-family:var(--font-head); font-weight:600; font-size:12px; letter-spacing:.04em; color:var(--neg); border:1px solid var(--neg); background:var(--neg-soft); padding:4px 11px; border-radius:20px; margin-top:16px}
+header.top{padding-bottom:8px; margin-bottom:38px}
+.meta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+.meta-chip{font-family:var(--font-head); font-size:12px; color:var(--ink); background:var(--card); border:1px solid var(--line); padding:5px 12px; border-radius:20px; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.meta-chip b{font-weight:700}
+
+.lens-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:0 0 8px}
+@media (max-width:920px){.lens-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.lens-grid{grid-template-columns:1fr}}
+.lens-card{background:var(--card); border:1px solid var(--line); border-top:5px solid var(--gold); border-radius:12px; padding:18px 18px 20px; box-shadow:0 2px 8px rgba(20,20,10,.05)}
+.lens-label{font-family:var(--font-head); font-weight:600; font-size:12px; color:var(--muted); margin-bottom:8px; text-transform:uppercase; letter-spacing:.03em}
+.lens-num{font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-size:20px; font-weight:700; color:var(--gold); letter-spacing:-.02em}
+.lens-pct{font-family:var(--font-mono); font-size:13px; color:var(--ink); margin-top:3px; font-weight:600}
+.bar-track{height:7px; background:var(--gold-soft); border-radius:4px; margin-top:11px; overflow:hidden}
+.bar-fill{height:100%; background:var(--gold); border-radius:4px}
+
+.section-card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:32px 32px 8px; margin-top:38px; box-shadow:0 2px 10px rgba(20,20,10,.04)}
+.section-card.analyst{border-top:6px solid var(--analyst)}
+.section-card.mkt{border-top:6px solid var(--mkt)}
+.section-card.po{border-top:6px solid var(--po)}
+h2.analyst-h,.dot.analyst{color:var(--analyst)} .dot.analyst{background:var(--analyst)}
+h2.mkt-h,.dot.mkt{color:var(--mkt)} .dot.mkt{background:var(--mkt)}
+h2.po-h,.dot.po{color:var(--po)} .dot.po{background:var(--po)}
+
+p{margin:0 0 14px; max-width:70ch}
+ul,ol{margin:0 0 16px; padding-left:22px; max-width:68ch}
+li{margin-bottom:7px}
+strong,b{font-weight:700}
+
+.kpi-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:14px 0 26px}
+@media (max-width:820px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+.kpi-card{background:var(--k-soft); border:1px solid var(--line); border-radius:10px; padding:13px 15px}
+.kpi-card .lbl{font-family:var(--font-head); font-size:11.5px; color:var(--muted); margin-bottom:4px; text-transform:uppercase; letter-spacing:.03em}
+.kpi-card .val{font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-size:19px; font-weight:700; color:var(--k)}
+.kpi-card .note{font-family:var(--font-head); font-size:11.5px; color:var(--muted); margin-top:3px}
+
+.callout{border-left:4px solid var(--analyst); background:var(--analyst-soft); padding:15px 19px; border-radius:0 10px 10px 0; margin:18px 0; max-width:74ch}
+.callout.neg{border-left-color:var(--neg); background:var(--neg-soft)}
+.callout.warn{border-left-color:var(--mkt); background:var(--mkt-soft)}
+.callout.po{border-left-color:var(--po); background:var(--po-soft)}
+.callout .cnum{font-family:var(--font-mono); font-weight:700; font-variant-numeric:tabular-nums}
+
+table{border-collapse:collapse; width:100%; margin:12px 0 20px; font-size:14.5px}
+.twrap{overflow-x:auto; margin:12px 0 22px; border-radius:10px}
+th,td{padding:9px 13px; text-align:left; border-bottom:1px solid var(--line)}
+th{font-family:var(--font-head); font-weight:700; font-size:11.5px; color:#fff; text-transform:uppercase; letter-spacing:.04em; background:var(--t-head, var(--ink))}
+th:first-child{border-top-left-radius:8px} th:last-child{border-top-right-radius:8px}
+td.num, th.num{font-family:var(--font-mono); font-variant-numeric:tabular-nums; text-align:right}
+tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+:root[data-theme="dark"] tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+@media (prefers-color-scheme:dark){tr:nth-child(even) td{background:rgba(255,255,255,.025)}}
+.pos{color:var(--pos); font-weight:700}
+.neg{color:var(--neg); font-weight:700}
+.mini{font-size:12.5px; color:var(--muted)}
+
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+
+footer{margin-top:44px; padding:26px 32px 30px; background:var(--card); border-radius:16px; border:1px solid var(--line); font-size:13.5px; color:var(--muted)}
+footer h3{color:var(--ink); font-size:14px; font-family:var(--font-head)}
+footer ul{padding-left:18px}
+.tag-inline{font-family:var(--font-mono); font-size:12.5px; background:var(--paper); border:1px solid var(--line); padding:1px 7px; border-radius:5px}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Shareholder Briefing — Draft v0.2</p>
+  <h1>2026 World Cup · OT 1B — Results Overview</h1>
+  <p class="sub">Findings &amp; Next-Time Playbook</p>
+  <div class="meta-row">
+    <span class="meta-chip"><b>Data window</b>: Jun 12 – Jul 16, 2026 (GMT+8, 35 days)</span>
+    <span class="meta-chip"><b>Scope</b>: OT (12bet) platform; WC fixtures reported separately</span>
+    <span class="meta-chip"><b>Tournament progress</b>: 102 / 104 matches (Final Jul 19)</span>
+  </div>
+</header>
+
+<!-- 1B LENS -->
+<section>
+  <h2><span class="dot" style="background:var(--gold)"></span>Four Lenses on the Billion-Dollar Target</h2>
+  <div class="lens-grid">
+    <div class="lens-card">
+      <div class="lens-label">① WC Fixtures Turnover</div>
+      <div class="lens-num">$41,569,761</div>
+      <div class="lens-pct">4.16% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:4.16%"></div></div>
+      <p class="mini" style="margin-top:8px">OT WC Excel, 102/104 matches, six Sportsbook providers (fixture betting turnover)</p>
+    </div>
+    <div class="lens-card">
+      <div class="lens-label">② Sportsbook Turnover (Sports+VS+ES)</div>
+      <div class="lens-num">$174,724,213</div>
+      <div class="lens-pct">17.47% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:17.47%"></div></div>
+      <p class="mini" style="margin-top:8px">Looker Valid TO (void/cancelled bets excluded)</p>
+    </div>
+    <div class="lens-card">
+      <div class="lens-label">③ Non-Sports Turnover</div>
+      <div class="lens-num">$147,329,337</div>
+      <div class="lens-pct">14.73% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:14.73%"></div></div>
+      <p class="mini" style="margin-top:8px">Looker Valid TO (Total − Sportsbook); ②+③=④</p>
+    </div>
+    <div class="lens-card">
+      <div class="lens-label">④ Total Platform Turnover</div>
+      <div class="lens-num">$322,053,550</div>
+      <div class="lens-pct">32.21% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:32.21%"></div></div>
+      <p class="mini" style="margin-top:8px">Looker Valid TO; before excluding void bets, $339,755,841 (33.98%)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYST -->
+<div class="section-card analyst">
+<section>
+  <h2 class="analyst-h"><span class="dot analyst"></span>What Actually Happened on the Platform</h2>
+  <p>The figures below were cross-checked across three independent aggregation paths — by currency, by product line, and by traffic source — all converging on the same $322,053,550 total, which gives reasonable confidence in the underlying numbers. This section is built for cross-functional use: Sales reads scale, Finance reads margin, Risk reads anomalies.</p>
+
+  <h3>Core Metrics (35-day cumulative)</h3>
+  <div class="kpi-grid">
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Bet User</div><div class="val">25,650</div><div class="note pos">▲4.1%</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Total Betcount</div><div class="val">45,611,926</div><div class="note pos">▲7.7%</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Turnover (gross)</div><div class="val">$339,755,841</div><div class="note">incl. void/cancelled bets</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Valid Turnover (net of void)</div><div class="val">$322,053,550</div><div class="note">void removed −$17,702,291 (5.21%); denominator below</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">GGR</div><div class="val">$10,840,689</div><div class="note">gross revenue after player win/loss</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">Company Margin</div><div class="val">3.19%</div><div class="note">3.37% on Valid TO</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">CVR Bet of Reg</div><div class="val">21.41%</div><div class="note pos">▲15.8%</div></div>
+  </div>
+
+  <h3>Product Mix (share of Valid TO)</h3>
+  <div class="twrap" style="--t-head:var(--analyst)">
+  <table>
+    <tr><th>Product line</th><th class="num">Valid TO</th><th class="num">Share</th></tr>
+    <tr><td>Sports</td><td class="num">$170,241,230</td><td class="num">52.86%</td></tr>
+    <tr><td>Live Casino</td><td class="num">$87,207,901</td><td class="num">27.08%</td></tr>
+    <tr><td>Lottery</td><td class="num">$35,709,610</td><td class="num">11.09%</td></tr>
+    <tr><td>Casino</td><td class="num">$19,043,750</td><td class="num">5.91%</td></tr>
+    <tr><td>Games</td><td class="num">$4,858,191</td><td class="num">1.51%</td></tr>
+    <tr><td>Virtual Sports</td><td class="num">$3,719,055</td><td class="num">1.15%</td></tr>
+    <tr><td>ESports</td><td class="num">$763,927</td><td class="num">0.24%</td></tr>
+    <tr><td>Other (P2P / Fishing / Cockfighting / EBingo)</td><td class="num">$509,886</td><td class="num">0.16%</td></tr>
+  </table>
+  </div>
+  <p class="mini">Sportsbook combined (Sports + Virtual Sports + ESports) = $174,724,213 (54.25%) — the product-line total aligned with Lens ②.</p>
+
+  <div class="grid2">
+    <div>
+      <h3>Currency Mix (share of Valid TO)</h3>
+      <div class="twrap" style="--t-head:var(--analyst)">
+      <table>
+        <tr><th>Currency</th><th class="num">Share</th><th class="num">Margin</th></tr>
+        <tr><td>VND</td><td class="num">35.40%</td><td class="num">3.47%</td></tr>
+        <tr><td>THB</td><td class="num">23.51%</td><td class="num">3.39%</td></tr>
+        <tr><td>CNY</td><td class="num">16.01%</td><td class="num">2.77%</td></tr>
+        <tr><td>INR</td><td class="num">15.79%</td><td class="num">3.11%</td></tr>
+        <tr><td>MYR</td><td class="num">7.31%</td><td class="num">4.13%</td></tr>
+        <tr><td>IDR</td><td class="num">1.52%</td><td class="num">5.40%</td></tr>
+        <tr><td>KRW</td><td class="num">0.37%</td><td class="num">4.94%</td></tr>
+        <tr><td>BDT</td><td class="num">0.09%</td><td class="num">2.74%</td></tr>
+      </table>
+      </div>
+    </div>
+    <div>
+      <h3>Traffic Structure</h3>
+      <div class="twrap" style="--t-head:var(--analyst)">
+      <table>
+        <tr><th>Device</th><th class="num">Share</th></tr>
+        <tr><td>Mobile</td><td class="num">77.95%</td></tr>
+        <tr><td>Desktop</td><td class="num">21.43%</td></tr>
+        <tr><td>Unknown</td><td class="num">0.62%</td></tr>
+      </table>
+      <table>
+        <tr><th>Source</th><th class="num">Share</th></tr>
+        <tr><td>Organic</td><td class="num">59.23%</td></tr>
+        <tr><td>Affiliate</td><td class="num">40.60%</td></tr>
+        <tr><td>OneHub</td><td class="num">0.17%</td></tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <h3>OT / N8X World Cup Fixture Performance</h3>
+  <div class="twrap" style="--t-head:var(--analyst)">
+  <table>
+    <tr><th>Platform</th><th class="num">Played</th><th class="num">Turnover</th><th class="num">GGR</th><th class="num">Margin</th><th>Leading provider</th></tr>
+    <tr><td>OT (12bet)</td><td class="num">102/104</td><td class="num">$41,569,761</td><td class="num">$1,244,589</td><td class="num">2.99%</td><td>SABA — 80.8% of TO / 90.5% of GGR</td></tr>
+    <tr><td>N8X (Nova88/Goal123/Bwing)</td><td class="num">102/104</td><td class="num">$15,095,926</td><td class="num">$830,873</td><td class="num">5.50%</td><td>SABA — 85.8% of TO / 92.0% of GGR</td></tr>
+  </table>
+  </div>
+  <p class="mini">Both platforms remain heavily concentrated in a single provider (SABA) — a pre-existing structural feature, not new this period.</p>
+
+  <div class="callout neg">
+    <b>Worth flagging</b>: at the individual-provider level within Sportsbook, <span class="cnum">Pronet (PG Sports)</span> posted a <span class="cnum neg">−14.66%</span> margin this period (a loss of roughly $88.8K), and <span class="cnum">TCG SEA Lottery</span> posted <span class="cnum neg">−12.03%</span> (roughly $45.1K). The dollar amounts are still modest, but worth a Risk spot-check for a single large bettor or an anomalous betting pattern.<br><span class="mini">→ Ops already caught the Pronet (PG Sports) case and notified on Jul 11 that it had been escalated to UM, with the third party also notified to adjust.</span>
+  </div>
+
+  <div class="callout warn">
+    <b>The most important finding in this section</b>: across two independent tracking dimensions — "Event" and "Source" — turnover explicitly tagged as World-Cup-related comes in below <b>0.05%</b> of the total. On the Event dimension (MYR/VND/THB World Cup tags + "Trip to WC"), the total is <span class="cnum">$131,763</span> (0.041%); on the Source dimension (traffic tagged "WC" + "WC activities"), the total is <span class="cnum">$98,676</span> (0.031%). By contrast, "Old Event" — the platform's pre-existing, non-WC-specific mechanism — carried <span class="cnum">99.81%</span> of turnover. This finding feeds directly into the MKT review below.
+  </div>
+</section>
+</div>
+
+<!-- MKT -->
+<div class="section-card mkt">
+<section>
+  <h2 class="mkt-h"><span class="dot mkt"></span>What the Evidence Points To</h2>
+
+  <p><b>Evidence 1 — World Cup–specific activity left almost no measurable trace.</b> Whether we look at the "Event" tag (promotion/bonus attribution) or the "Source" tag (traffic origin), turnover attributable to "World Cup" sits between 0.03%–0.05% of the total, while the platform's actual volume over these 35 days ran almost entirely through the pre-existing "Old Event" mechanism. Three explanations could be true at once, and each needs verification before we draw conclusions:</p>
+  <ol>
+    <li><b>Reach was insufficient</b> — WC-specific campaigns may never have surfaced in most players' actual betting path (e.g. confined to a promo page rather than the homepage or bet-slip flow).</li>
+    <li><b>Attribution is broken (undercounting)</b> — players may have arrived because of the World Cup and bet accordingly, but the system's Event/Source tags never captured it, meaning MKT's true contribution is understated. This sits alongside the 99.81% share parked in "Old Event," and should be the first thing we rule out.</li>
+    <li><b>The incentive design didn't move behavior</b> — even where exposure did happen, players kept using existing mechanics instead of the WC-specific offer, suggesting the offer itself wasn't compelling enough to shift behavior.</li>
+  </ol>
+
+  <p><b>Evidence 2 — paid marketing's attributable contribution is under 2.1%.</b> Summing traffic attribution across SEO, Paid Ads, Social Media, KOL, and the currency-specific CM teams comes to roughly <span class="tag-inline">$6.55M</span>, or <b>2.04%</b> of platform Valid TO — against Organic (59.2%) and Affiliate (38.7% plus a separate 0.02% Affiliate line) at a combined <b>97.9%+</b>. Over a 35-day World Cup window, our owned paid channels didn't show leverage proportionate to the size of the event — or they did spend, but face the same attribution gap.</p>
+
+  <p><b>Evidence 3 — daily Margin swung widely rather than trending up with the tournament.</b> Company Margin oscillated between 1.3% and 5.7% across the window (a high of 5.67% on Jun 29, a low of 1.32% on Jun 23, and 1.53% on the most recent day, Jul 16), with no structural lift visible as the knockout stage began. This reads more like ordinary baseline volatility with a thin layer of World Cup traffic on top, rather than the World Cup reshaping betting behavior.</p>
+
+  <div class="callout warn">
+    <b>What we'd do differently next time</b>
+    <ul style="margin-top:8px">
+      <li><b>Verify before concluding</b>: sample the actual betting records of players known to have engaged with World Cup activity (arrived via a WC banner, or claimed a WC-specific bonus) and check whether their Event/Source tags were classified correctly. If the attribution system itself has a gap, MKT's real contribution may be significantly understated — fix tracking first, rather than concluding the campaign didn't work.</li>
+      <li><b>Launch earlier, with higher visibility</b>: for the next major tournament (Copa América, the Euros), campaigns should go live at least two weeks earlier, with the entry point placed in the primary bet-slip flow or app homepage rather than relying on a promo-page banner alone.</li>
+      <li><b>Reconcile actual spend against attributed results</b>: given the low share credited to paid teams, compare actual finance spend against Looker's attribution to rule out "spend happened but wasn't tracked."</li>
+      <li><b>Switch to an incremental metric</b>: next time, use "World Cup window turnover vs. the same period last year outside a major tournament" as the north star, rather than "total platform turnover during the event window" — this better isolates the campaign's real contribution instead of being diluted by baseline volume.</li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<!-- PO -->
+<div class="section-card po">
+<section>
+  <h2 class="po-h"><span class="dot po"></span>The Target Itself May Never Have Been Aligned</h2>
+
+  <div class="callout po">
+    At this period's 35-day rate of $322M (Valid TO), the annualized run-rate comes out to roughly <span class="cnum">$3.36B / year</span> — meaning the platform's overall scale already sits well above 1B. But 35 days is only 9.6% of the year; compressing a full year's order of magnitude into a single tournament window meant it was arithmetically out of reach from day one. That points to something more important than any single lens's achievement rate: <b>"1B" was likely never clearly defined as either "absolute volume during the event" or "the annual uplift the event drives."</b>
+  </div>
+
+  <p><b>What we'd do next time:</b></p>
+  <ol>
+    <li><b>Align on the target first, before any execution</b> — before the next major tournament kicks off, align with whoever set the "1B" goal on what it actually means: absolute volume during the event, the annual uplift the event drives, or simply a rallying cry. Design a genuinely achievable, attributable KPI from there (e.g. "X% growth over the same period last year" or "Y% of turnover from new customers acquired during the event").</li>
+    <li><b>Zero-budget, high-leverage product moves</b> — increase the visibility of the World Cup entry point on the app/site homepage during the event (fully within Product's control, no incremental budget required), and A/B test the bet-slip flow to reduce drop-off — this ships faster than waiting on additional MKT budget.</li>
+    <li><b>Fix the attribution foundation before judging impact</b> — before the next campaign launches, make sure Event/Source tags fully cover all World Cup–related traffic, including players who arrived via a WC entry point but ultimately bet using a standard bonus. The current tracking gap makes it hard to accurately measure either MKT's real contribution or Product's impact.</li>
+    <li><b>Stay the course on localization-first</b> — VND/THB/INR/CNY remain the largest markets (over 90% of Valid TO combined); language and cultural localization around the tournament carries more leverage than incremental ad spend, especially given paid teams' sub-2.1% attributed contribution — organic reach and product experience are the real growth engine.</li>
+    <li><b>Break the target into staged sub-goals</b> — if we take on a similar-magnitude target again, split it into "pre-tournament baseline," "tournament window," and "post-tournament carry-over (D7/D30 retention)" phases, each with its own achievable sub-goal — this avoids one ambiguous headline target being interpreted differently by every team.</li>
+  </ol>
+</section>
+</div>
+
+<footer>
+  <h3>Data Sources &amp; Methodology</h3>
+  <ul>
+    <li><b>①</b> OT WC Excel (2026-07-16 snapshot, Sportsbook-only, six providers: SABA / BTI / SBO / Pinnacle / 9W / CMD), 102/104 matches played.</li>
+    <li><b>②③④</b> Looker Studio "12bet Operations Overview – Betting Performance," window Jun 12 – Jul 16, 2026 (GMT+8), CSV export provided manually by the user on 2026-07-16 (this environment has no VPN and cannot reach Power BI / Looker directly).</li>
+    <li><b>Methodology note (open item)</b>: Lenses ②③④ now use Looker's "Turnover / Valid Turnover" fields, which have not been individually verified as equivalent to the "Company TO" measure used in the Power BI–based tracking from Jul 7–10 — there may be differences in basis (e.g. resettlement, voided bets, FX conversion timing). For a rigorous shareholder presentation, formally reconcile the two systems' definitions before finalizing the numbers.</li>
+    <li>"Event" and "Source" are two independent Looker dimensions, so WC-related attribution is presented separately rather than summed — a single bet can appear in both dimensions at once, and summing would double-count.</li>
+    <li>The ▲ growth figures in the core metrics (Bet User, Betcount, CVR, etc.) are Looker's own period-over-period calculations; this CSV export does not include the prior-period baseline, so these figures could not be independently recalculated and are quoted directly from the platform.</li>
+    <li>This document has been independently reviewed by a fresh agent per our verification standard: 10 of 11 recalculable figures matched the source CSVs exactly; 1 (the Margin daily-high reference) has been corrected (Jun 26→Jun 29, 5.41%→5.67%), and the Source-dimension WC attribution has been corrected to include the previously missing "WC activities" line ($91,385→$98,676). Final visual polish is still pending before external presentation.</li>
+  </ul>
+</footer>
+
+</div>
+</html>
