@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2026 World Cup · OT 1B — Results Overview (Shareholder Draft)</title>
+<title>2026 World Cup · OT 1B — Results Overview (Shareholder Draft)</title>
 <style>
 :root{
   --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
@@ -146,6 +147,7 @@ footer ul{padding-left:18px}
       <div class="lens-pct">17.47% of 1B</div>
       <div class="bar-track"><div class="bar-fill" style="width:17.47%"></div></div>
       <p class="mini" style="margin-top:8px">Looker Valid TO (void/cancelled bets excluded)</p>
+      <p class="mini">Admin-backend cross-check: $171,607,908 (1.8% gap — see methodology notes below)</p>
     </div>
     <div class="lens-card">
       <div class="lens-label">③ Non-Sports Turnover</div>
@@ -306,7 +308,20 @@ footer ul{padding-left:18px}
   <ul>
     <li><b>①</b> OT WC Excel (2026-07-16 snapshot, Sportsbook-only, six providers: SABA / BTI / SBO / Pinnacle / 9W / CMD), 102/104 matches played.</li>
     <li><b>②③④</b> Looker Studio "12bet Operations Overview – Betting Performance," window Jun 12 – Jul 16, 2026 (GMT+8), CSV export provided manually by the user on 2026-07-16 (this environment has no VPN and cannot reach Power BI / Looker directly).</li>
-    <li><b>Methodology note (open item)</b>: Lenses ②③④ now use Looker's "Turnover / Valid Turnover" fields, which have not been individually verified as equivalent to the "Company TO" measure used in the Power BI–based tracking from Jul 7–10 — there may be differences in basis (e.g. resettlement, voided bets, FX conversion timing). For a rigorous shareholder presentation, formally reconcile the two systems' definitions before finalizing the numbers.</li>
+    <li><b>Methodology note (previously an open item — now cross-checked)</b>: Lenses ②③④ use Looker's "Turnover / Valid Turnover" fields, whose equivalence to the "Company TO" measure used in the Power BI–based tracking from Jul 7–10 had not been individually verified. Rather than a direct line-item comparison against Power BI's "Company TO," we instead recomputed the Sportsbook figure from a third, independent source — the Admin backend's "Win Lost Report" — as a cross-check: convergence with Looker would indirectly raise confidence in the Looker figures, though it does not directly prove that Power BI and Looker's definitions are fully equivalent. Results below:</li>
+    <li class="mini" style="list-style:none;margin-left:-20px">
+      <b>Admin-backend Sportsbook Valid Turnover cross-check</b> (Settled Date, Category=Sports+Virtual Sports+ESports, Base Currency=USD, Member Type=Normal, GMT+8, summed from 5 manual weekly queries):
+      <table style="margin:8px 0;font-size:13px;border-collapse:collapse;width:100%">
+        <tr style="border-bottom:1px solid var(--line)"><th style="text-align:left;padding:3px 8px 3px 0">Window</th><th style="text-align:right;padding:3px 8px">Valid Turnover</th><th style="text-align:right;padding:3px 0">GGR</th></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jun 12–18</td><td style="text-align:right;padding:2px 8px">$34,389,555.23</td><td style="text-align:right;padding:2px 0">$1,299,916.03</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jun 19–25</td><td style="text-align:right;padding:2px 8px">$37,375,612.94</td><td style="text-align:right;padding:2px 0">$1,587,987.63</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jun 26–Jul 2</td><td style="text-align:right;padding:2px 8px">$34,580,447.40</td><td style="text-align:right;padding:2px 0">$1,603,058.32</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jul 3–9</td><td style="text-align:right;padding:2px 8px">$33,325,907.91</td><td style="text-align:right;padding:2px 0">$1,179,142.84</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jul 10–16</td><td style="text-align:right;padding:2px 8px">$31,936,384.55</td><td style="text-align:right;padding:2px 0">$1,444,932.88</td></tr>
+        <tr style="border-top:1px solid var(--line);font-weight:600"><td style="padding:3px 8px 0 0">Total</td><td style="text-align:right;padding:3px 8px 0">$171,607,908.03</td><td style="text-align:right;padding:3px 0 0">$7,115,037.70</td></tr>
+      </table>
+      Versus the Looker-based Lens ② figure of $174,724,213, the Admin-backend total is lower by $3,116,305 (about 1.8%). The two systems converge closely over the 35-day window (gap &lt;2%); the difference may stem from settlement-snapshot timing, differing FX conversion time-bases, or resettlement not yet fully reflected. <b>The exact source of this 1.8% gap has not been further decomposed</b> — for a rigorous shareholder presentation, formally reconcile the two systems' field definitions with Finance/Data before finalizing the numbers.
+    </li>
     <li>"Event" and "Source" are two independent Looker dimensions, so WC-related attribution is presented separately rather than summed — a single bet can appear in both dimensions at once, and summing would double-count.</li>
     <li>The ▲ growth figures in the core metrics (Bet User, Betcount, CVR, etc.) are Looker's own period-over-period calculations; this CSV export does not include the prior-period baseline, so these figures could not be independently recalculated and are quoted directly from the platform.</li>
     <li>This document has been independently reviewed by a fresh agent per our verification standard: 10 of 11 recalculable figures matched the source CSVs exactly; 1 (the Margin daily-high reference) has been corrected (Jun 26→Jun 29, 5.41%→5.67%), and the Source-dimension WC attribution has been corrected to include the previously missing "WC activities" line ($91,385→$98,676). Final visual polish is still pending before external presentation.</li>
@@ -314,4 +329,3 @@ footer ul{padding-left:18px}
 </footer>
 
 </div>
-</html>
