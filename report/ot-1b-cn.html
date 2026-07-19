@@ -1,5 +1,4 @@
 <!DOCTYPE html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2026 世界盃・OT 1B 成果總覽（股東會草稿）</title>
-<title>2026 世界盃・OT 1B 成果總覽（股東會草稿）</title>
 <style>
 :root{
   --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
@@ -146,7 +145,6 @@ footer ul{padding-left:18px}
       <div class="lens-pct">17.47% of 1B</div>
       <div class="bar-track"><div class="bar-fill" style="width:17.47%"></div></div>
       <p class="mini" style="margin-top:8px">Looker Valid TO（已剔除作廢注單）</p>
-      <p class="mini">Admin 後台交叉驗證：$171,607,908（差 1.8%，詳見下方方法論說明）</p>
     </div>
     <div class="lens-card">
       <div class="lens-label">③ Non-Sports Turnover</div>
@@ -307,20 +305,7 @@ footer ul{padding-left:18px}
   <ul>
     <li><b>①</b> OT WC Excel（2026-07-16 快照，Sportsbook 專屬，SABA/BTI/SBO/Pinnacle/9W/CMD 六家 provider），已賽 102/104 場。</li>
     <li><b>②③④</b> Looker Studio「12bet Operations Overview－Betting Performance」，窗期 2026-06-12～07-16（GMT+8），由使用者於 2026-07-16 手動匯出 CSV 提供（本機環境無 VPN，無法直接連線 Power BI／Looker）。</li>
-    <li><b>方法論注意（原待確認事項，已補做交叉驗證）</b>：②③④改用 Looker「Turnover / Valid Turnover」欄位，與過去（0707～0710）使用 Power BI「Company TO」的量測口徑是否完全等價，先前未逐一驗證。本次並非直接取得 Power BI「Company TO」逐筆對比，而是改用 Admin 後台「Win Lost Report」這個第三方獨立來源，重算 Sportsbook 一項作為交叉核對——若能與 Looker 收斂，可間接增加對 Looker 數字的信心，但不等同直接驗證 Power BI 與 Looker 兩者定義完全等價。結果如下：</li>
-    <li class="mini" style="list-style:none;margin-left:-20px">
-      <b>Admin 後台 Sportsbook Valid Turnover 交叉驗證</b>（Settled Date、Category=Sports+Virtual Sports+ESports、Base Currency=USD、Member Type=Normal、GMT+8，逐週人工查詢加總）：
-      <table style="margin:8px 0;font-size:13px;border-collapse:collapse;width:100%">
-        <tr style="border-bottom:1px solid var(--line)"><th style="text-align:left;padding:3px 8px 3px 0">窗期</th><th style="text-align:right;padding:3px 8px">Valid Turnover</th><th style="text-align:right;padding:3px 0">GGR</th></tr>
-        <tr><td style="padding:2px 8px 2px 0">06-12～06-18</td><td style="text-align:right;padding:2px 8px">$34,389,555.23</td><td style="text-align:right;padding:2px 0">$1,299,916.03</td></tr>
-        <tr><td style="padding:2px 8px 2px 0">06-19～06-25</td><td style="text-align:right;padding:2px 8px">$37,375,612.94</td><td style="text-align:right;padding:2px 0">$1,587,987.63</td></tr>
-        <tr><td style="padding:2px 8px 2px 0">06-26～07-02</td><td style="text-align:right;padding:2px 8px">$34,580,447.40</td><td style="text-align:right;padding:2px 0">$1,603,058.32</td></tr>
-        <tr><td style="padding:2px 8px 2px 0">07-03～07-09</td><td style="text-align:right;padding:2px 8px">$33,325,907.91</td><td style="text-align:right;padding:2px 0">$1,179,142.84</td></tr>
-        <tr><td style="padding:2px 8px 2px 0">07-10～07-16</td><td style="text-align:right;padding:2px 8px">$31,936,384.55</td><td style="text-align:right;padding:2px 0">$1,444,932.88</td></tr>
-        <tr style="border-top:1px solid var(--line);font-weight:600"><td style="padding:3px 8px 0 0">合計</td><td style="text-align:right;padding:3px 8px 0">$171,607,908.03</td><td style="text-align:right;padding:3px 0 0">$7,115,037.70</td></tr>
-      </table>
-      對比 Looker 基礎的②口徑 $174,724,213，Admin 後台合計低 $3,116,305（約 1.8%）。兩套系統在 35 天窗期內大致收斂（落差 &lt;2%），差異可能來自結算時點快照差異、幣別換算匯率時基不同、或 Resettle 尚未完全反映；<b>尚未進一步逐項拆解此 1.8% 差異的確切來源</b>，如需嚴謹股東會呈現，建議與財務／數據團隊正式核對兩系統欄位定義後再定案。
-    </li>
+    <li><b>方法論注意（待確認事項）</b>：②③④改用 Looker「Turnover / Valid Turnover」欄位，與過去（0707～0710）使用 Power BI「Company TO」的量測口徑<b>尚未逐一驗證是否完全等價</b>，可能存在計算基準差異（如 Resettle、作廢注單、幣別轉換時點等）。如需嚴謹股東會呈現，建議正式核對兩系統定義後再定案數字。</li>
     <li>「Event」與「Source」為 Looker 的兩個獨立分類維度，故 WC 相關歸因未加總呈現（同一筆下注可能同時出現在兩個維度中，加總會重複計算）。</li>
     <li>核心指標中的 ▲成長率（Bet User/Betcount/CVR 等）為 Looker 平台原生計算之期間對比，本次匯出的 CSV 不含前期基準資料，<b>暫無法獨立重算驗證</b>，數字直接引用自平台顯示值。</li>
     <li>本文件已由 fresh agent 依「驗證不自驗」規則獨立覆核：11 項可重算數字中 10 項與原始 CSV 完全吻合，1 項（Margin 逐日高點日期）經覆核後已更正（06-26→06-29，5.41%→5.67%），Source 維度 WC 歸因亦已補上「WC activities」漏項（$91,385→$98,676）。正式對外呈現前仍建議視覺排版做最終確認。</li>
@@ -328,3 +313,4 @@ footer ul{padding-left:18px}
 </footer>
 
 </div>
+</html>
