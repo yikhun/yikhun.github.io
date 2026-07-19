@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2026 世界盃・OT 1B 成果總覽（股東會草稿）</title>
+<title>2026 世界盃・OT 1B 成果總覽（股東會草稿）</title>
 <style>
 :root{
   --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
@@ -141,43 +142,47 @@ footer ul{padding-left:18px}
     </div>
     <div class="lens-card">
       <div class="lens-label">② Sportsbook Turnover（Sports+VS+ES）</div>
-      <div class="lens-num">$174,724,213</div>
-      <div class="lens-pct">17.47% of 1B</div>
-      <div class="bar-track"><div class="bar-fill" style="width:17.47%"></div></div>
-      <p class="mini" style="margin-top:8px">Looker Valid TO（已剔除作廢注單）</p>
+      <div class="lens-num">$171,607,908</div>
+      <div class="lens-pct">17.16% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:17.16%"></div></div>
+      <p class="mini" style="margin-top:8px">Admin 後台 Win Lost Report，Valid Turnover（權威口徑，見下方方法論）</p>
+      <p class="mini">Looker 交叉參考：$174,724,213（+1.8%）</p>
     </div>
     <div class="lens-card">
       <div class="lens-label">③ Non-Sports Turnover</div>
-      <div class="lens-num">$147,329,337</div>
-      <div class="lens-pct">14.73% of 1B</div>
-      <div class="bar-track"><div class="bar-fill" style="width:14.73%"></div></div>
-      <p class="mini" style="margin-top:8px">Looker Valid TO（全平台－Sportsbook）；②+③=④</p>
+      <div class="lens-num">$141,894,837</div>
+      <div class="lens-pct">14.19% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:14.19%"></div></div>
+      <p class="mini" style="margin-top:8px">Admin 後台 Valid Turnover（全平台－Sportsbook）；②+③=④</p>
+      <p class="mini">Looker 交叉參考：$147,329,337（+3.8%）</p>
     </div>
     <div class="lens-card">
       <div class="lens-label">④ 全平台 Total Turnover</div>
-      <div class="lens-num">$322,053,550</div>
-      <div class="lens-pct">32.21% of 1B</div>
-      <div class="bar-track"><div class="bar-fill" style="width:32.21%"></div></div>
-      <p class="mini" style="margin-top:8px">Looker Valid TO；未剔除作廢注單則為 $339,755,841（33.98%）</p>
+      <div class="lens-num">$313,502,745</div>
+      <div class="lens-pct">31.35% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:31.35%"></div></div>
+      <p class="mini" style="margin-top:8px">Admin Valid TO；未剔除作廢則為 $323,230,264（32.32%）</p>
+      <p class="mini">Looker 交叉參考：Valid TO $322,053,550（+2.7%）／Gross $339,755,841（+5.1%）</p>
     </div>
   </div>
+  <p class="mini" style="margin-top:10px">口徑說明：本版本②③④主數字已改為 <b>Admin 後台為權威值</b>（原 0716 版以 Looker 為主，Admin 僅作交叉驗證；本次依據既定「TO/GGR 以 Admin 口徑為準」原則調整），Looker 數字保留作為交叉參考。①因 Admin 無法篩出「僅世界盃賽事」這個賽事層級口徑，維持使用 OT WC Excel 賽事專屬 snapshot。</p>
 </section>
 
 <!-- ANALYST -->
 <div class="section-card analyst">
 <section>
   <h2 class="analyst-h"><span class="dot analyst"></span>平台實際發生了什麼</h2>
-  <p>以下數字經三條獨立路徑交叉核對（幣別加總、產品線加總、流量來源加總，三者皆收斂至同一筆 $322,053,550 總量），可信度較高。此區塊設計給所有部門查閱：業務看規模、財務看毛利、風控看異常。</p>
+  <p>Turnover、Valid Turnover、GGR、Margin、Bet Count 這幾個數字這次都改成用 <b>Admin 後台</b>的口徑（逐週人工查詢加總 35 天），跟 Looker 對過一次，差在 1.8%～5.1% 之間，細節放在後面的方法論。Bet User 跟 CVR 這兩個 Admin 沒有對應的東西可查，還是照 Looker/GA4 的原始數字。想看規模看 Turnover、想看賺多少看 GGR、風控想抓異常就往下滑到個股層級那段。</p>
 
   <h3>核心指標（35 天累計）</h3>
   <div class="kpi-grid">
-    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Bet User</div><div class="val">25,650</div><div class="note pos">▲4.1%</div></div>
-    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Total Betcount</div><div class="val">45,611,926</div><div class="note pos">▲7.7%</div></div>
-    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Turnover（未剔除作廢）</div><div class="val">$339,755,841</div><div class="note">Gross，含作廢注單</div></div>
-    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Valid Turnover（已剔除作廢）</div><div class="val">$322,053,550</div><div class="note">剔除作廢 −$17,702,291（5.21%）；後續分母</div></div>
-    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">GGR</div><div class="val">$10,840,689</div><div class="note">扣客戶輸贏後毛利</div></div>
-    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">Company Margin</div><div class="val">3.19%</div><div class="note">Valid TO 為 3.37%</div></div>
-    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">CVR Bet of Reg</div><div class="val">21.41%</div><div class="note pos">▲15.8%</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Bet User</div><div class="val">25,650</div><div class="note pos">▲4.1%（Looker/GA4）</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Total Betcount</div><div class="val">44,463,579</div><div class="note">Admin 口徑；Looker 為 45,611,926（+2.6%）</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Turnover（未剔除作廢）</div><div class="val">$323,230,264</div><div class="note">Admin Gross；Looker 為 $339,755,841（+5.1%）</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Valid Turnover（已剔除作廢）</div><div class="val">$313,502,745</div><div class="note">剔除作廢 −$9,727,519（3.01%）；後續分母</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">GGR</div><div class="val">$10,640,909</div><div class="note">Admin 口徑；Looker 為 $10,840,689（+1.9%）</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">Company Margin</div><div class="val">3.29%</div><div class="note">Valid TO 為 3.39%（Admin 口徑）</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">CVR Bet of Reg</div><div class="val">21.41%</div><div class="note pos">▲15.8%（Looker/GA4）</div></div>
   </div>
 
   <h3>產品線分布（占 Valid TO）</h3>
@@ -194,7 +199,8 @@ footer ul{padding-left:18px}
     <tr><td>其餘（P2P/Fishing/Cockfighting/EBingo）</td><td class="num">$509,886</td><td class="num">0.16%</td></tr>
   </table>
   </div>
-  <p class="mini">Sportsbook 合計（Sports+Virtual Sports+ESports）＝$174,724,213（54.25%）——這是與②口徑對齊的產品線總量。</p>
+  <p class="mini">Sportsbook 合計（Sports+Virtual Sports+ESports）＝$174,724,213（54.25%，Looker 口徑內部加總，與②的 Admin 權威值 $171,607,908 有 1.8% 差距，詳見方法論說明）。</p>
+  <p class="mini">本表（各產品線細項）目前仍為 Looker 來源，尚未逐一產品線對 Admin 做交叉驗證——只有 Sportsbook／Non-Sports 兩個大類（即②③）已完成 Admin 交叉驗證，細項占比僅供參考。</p>
 
   <div class="grid2">
     <div>
@@ -243,11 +249,11 @@ footer ul{padding-left:18px}
   <p class="mini">兩平台皆高度集中於單一 provider（SABA），此為既有已知結構，非本期新現象。</p>
 
   <div class="callout neg">
-    <b>值得留意的異常</b>：Sportsbook 個股層級中，<span class="cnum">Pronet（PG Sports）</span>本期 Margin 為 <span class="cnum neg">−14.66%</span>（虧損約 $88.8K），<span class="cnum">TCG SEA Lottery</span> Margin <span class="cnum neg">−12.03%</span>（虧損約 $45.1K）。金額尚不大，但值得風控單位抽查是否為單一大額玩家或異常下注模式所致。<br><span class="mini">→ Pronet（PG Sports）此情況 OP 已發現並於 07-11 通知已上 UM，同時通知 3rd party 調整。</span>
+    Sportsbook 個股層級有兩支數字不太對勁：<span class="cnum">Pronet（PG Sports）</span>本期 Margin <span class="cnum neg">−14.66%</span>（虧損約 $88.8K），<span class="cnum">TCG SEA Lottery</span> <span class="cnum neg">−12.03%</span>（虧損約 $45.1K）。金額都不算大，但值得風控抽查一下，看是單一大額玩家還是異常下注模式造成的。<br><span class="mini">→ Pronet（PG Sports）這件事 OP 已經發現，07-11 通知上了 UM，也同步請 3rd party 調整。</span>
   </div>
 
   <div class="callout warn">
-    <b>本區塊最關鍵的發現</b>：在「Event」與「Source」兩個獨立追蹤維度中，明確標記為世界盃相關的下注量都<b>低於總量的 0.05%</b>——Event 維度（MYR/VND/THB World Cup 標籤 + Trip to WC）合計 <span class="cnum">$131,763</span>（0.041%）；Source 維度（來源標記為「WC」＋「WC activities」）合計 <span class="cnum">$98,676</span>（0.031%）。對比之下，「Old Event」（既有、非世界盃專屬機制）承接了 <span class="cnum">99.81%</span> 的下注量。這個發現直接餵給 MKT 檢討的分析。
+    「Event」跟「Source」是兩個各自獨立的追蹤維度，但兩邊講的是同一件事：明確標記為世界盃相關的下注量都<b>不到總量的 0.05%</b>。Event 維度（MYR/VND/THB World Cup 標籤 + Trip to WC）合計 <span class="cnum">$131,763</span>（0.041%）；Source 維度（標記為「WC」＋「WC activities」）合計 <span class="cnum">$98,676</span>（0.031%）。真正撐住量的是既有的「Old Event」機制，占了 <span class="cnum">99.81%</span>。這件事後面 MKT 檢討會再細講。
   </div>
 </section>
 </div>
@@ -257,25 +263,18 @@ footer ul{padding-left:18px}
 <section>
   <h2 class="mkt-h"><span class="dot mkt"></span>證據指向的落差</h2>
 
-  <p><b>證據 1：世界盃專屬活動幾乎沒有留下追蹤痕跡。</b>無論用「Event」（活動/優惠標籤）或「Source」（流量來源標記）哪一個維度檢視，能被歸因到「World Cup」的下注量都在總量的 0.03%–0.05% 之間，而 35 天期間全平台真正承載交易的是既有的「Old Event」機制。這代表三種可能情境同時成立或部分成立，需要進一步查證才能定案：</p>
-  <ol>
-    <li><b>觸及率不足</b>——世界盃專屬活動的曝光可能沒有進到大多數玩家的下注路徑上（例如只放在活動頁面而非首頁/下注流程內）。</li>
-    <li><b>追蹤缺陷（歸因低估）</b>——玩家實際因世界盃而來、而下注，但系統的 Event/Source 標籤沒有正確蓋到，導致 MKT 的真實貢獻被低估。這與 Old Event 承接 99.81% 流量的現象同時出現，值得優先排查。</li>
-    <li><b>誘因設計不夠有吸引力</b>——即使曝光到了，玩家仍選擇用既有機制下注而非世界盃專屬優惠，代表活動本身的誘因不足以改變行為。</li>
-  </ol>
+  <p><b>證據 1</b>：世界盃專屬活動幾乎沒留下什麼追蹤痕跡。不管用「Event」（活動/優惠標籤）還是「Source」（流量來源標記）去看，能歸因到「World Cup」的下注量都卡在總量的 0.03%–0.05%，35 天真正扛著交易量的其實是既有的「Old Event」機制。這件事有三種可能，而且不互斥：曝光沒進到大多數玩家的下注路徑（可能只擺在活動頁沒放進首頁或下注流程）；標籤本身沒蓋對，玩家其實是因世界盃來下注但系統沒認出來（跟 Old Event 吃掉 99.81% 流量這件事擺在一起看，這個可能性值得優先查）；或者曝光到了但誘因不夠，玩家還是選了既有機制。哪個是真正原因，得抽樣查記錄才能確定。</p>
 
-  <p><b>證據 2：付費行銷團隊的可歸因貢獻低於 2.1%。</b>把 SEO／Paid Ads／Social Media／KOL／各幣別 CM 團隊的流量歸因加總，僅約 <span class="tag-inline">$6.55M</span>，占全平台 Valid TO 的 <b>2.04%</b>；相對地 Organic（59.2%）與 Affiliate（38.7%＋獨立 Affiliate 線 0.02%）合計貢獻超過 <b>97.9%</b>。這代表 35 天世界盃窗期內，MKT 自有可控管道並未展現出與大型賽事熱度相稱的槓桿，或是有投放但同樣面臨歸因缺陷。</p>
+  <p><b>證據 2</b>：付費行銷團隊能歸因的貢獻不到 2.1%。SEO、Paid Ads、Social Media、KOL、各幣別 CM 團隊的流量歸因加起來大約 <span class="tag-inline">$6.55M</span>，只占全平台 Valid TO 的 2.04%（這段分析全用 Looker 口徑，分母是 Looker Valid TO $322,053,550；換成 Admin 權威值分母是 2.09%）——Organic（59.2%）加 Affiliate（38.7%＋另外算的 0.02%）就吃掉 97.9% 以上。35 天窗期內，MKT 自己能控的管道沒有展現出跟賽事熱度相稱的槓桿，也可能是有花錢但一樣栽在歸因缺陷上。</p>
 
-  <p><b>證據 3：每日 Margin 呈現高波動而非隨賽程遞增的趨勢。</b>期間 Company Margin 在 1.3%～5.7% 間反覆震盪（例如 06-29 高點 5.67%、06-23 低點 1.32%、07-16 最新一天 1.53%），沒有看到隨賽事進程（例如淘汰賽開始後）出現結構性抬升，顯示玩家投注行為的改變比較像既有大盤的自然波動疊加少量世界盃流量，而非世界盃本身重塑了投注模式。</p>
+  <p><b>證據 3</b>：每日 Margin 起伏很大，看不出隨賽程往上爬的軌跡。Company Margin 在這段期間 1.3%～5.7% 之間跳（06-29 高點 5.67%、06-23 低點 1.32%、07-16 這天 1.53%），淘汰賽開打後也沒出現結構性抬升。比較像既有大盤本來就會有的波動疊加了一點世界盃流量,不是世界盃本身改寫了投注行為。</p>
 
+  <h3>下次應該怎麼做</h3>
   <div class="callout warn">
-    <b>下次應該怎麼做</b>
-    <ul style="margin-top:8px">
-      <li><b>先查證再定論</b>：抽樣調閱已知有參與世界盃活動（如透過 WC banner 進站、或領取 WC 專屬紅利）的玩家實際下注記錄，確認其 Event/Source 標籤是否正確歸類。若歸因系統本身有漏洞，MKT 的真實貢獻可能被嚴重低估，須先修正追蹤機制再重新評估成效，而非直接判定「活動無效」。</li>
-      <li><b>提前佈署與更高可見度</b>：下次大型賽事（如美洲盃、歐洲盃）活動應提前至少 2 週上線，且入口需放在下注主流程／APP 首頁的顯著位置，而非僅依賴活動頁 Banner。</li>
-      <li><b>核對實際花費 vs 歸因結果</b>：付費團隊貢獻占比偏低，需比對財務實際投放金額與 Looker 歸因結果，排除「有花錢但沒被正確追蹤」的可能性。</li>
-      <li><b>改用增量指標</b>：建議下次以「世界盃期間 vs 去年同期非賽事期的 TO 差額」作為北極星指標，而非「賽事期間全平台總量」，更能反映活動本身的實際貢獻，不被既有大盤基期稀釋。</li>
-    </ul>
+    <p>先查證再下結論。抽幾筆確定有參與世界盃活動的玩家（透過 WC banner 進站、或領過 WC 專屬紅利）實際下注記錄，看 Event/Source 標籤有沒有貼對。歸因系統若真的有漏洞，MKT 的實際貢獻可能被嚴重低估——先修好追蹤，再談成效，不要直接判「活動無效」。</p>
+    <p>下次提早佈署，位置也要更顯眼。大型賽事（美洲盃、歐洲盃）活動至少提前 2 週上線，入口放在下注主流程或 APP 首頁，不要只靠活動頁 Banner。</p>
+    <p>把實際花費跟歸因結果對一遍。付費團隊貢獻偏低，得比對財務實際投放金額跟 Looker 歸因結果，排除「有花錢但沒被追蹤到」這種可能。</p>
+    <p>改用增量當北極星指標。下次建議看「世界盃期間 vs 去年同期非賽事期」的 TO 差額，而不是「賽事期間全平台總量」——這樣才不會被既有大盤基期稀釋掉活動本身的貢獻。</p>
   </div>
 </section>
 </div>
@@ -286,31 +285,50 @@ footer ul{padding-left:18px}
   <h2 class="po-h"><span class="dot po"></span>目標本身可能就沒對齊</h2>
 
   <div class="callout po">
-    以本期 35 天 $322M（Valid TO）的體量換算年化 run-rate，約為 <span class="cnum">$3.36B／年</span>——也就是說，平台整體規模本來就遠超 1B，但 35 天僅占全年天數的 9.6%，若把「一整年的目標量級」壓縮到一次賽事窗期去達成，從比例上第一天就注定達不到。這代表 <b>「1B」很可能從一開始就沒有清楚定義是「賽事期間絕對量」還是「賽事帶來的年度增量」</b>，這件事本身比任何一個口徑的達成率都更重要。
+    把這 35 天 $313.5M（Admin 口徑 Valid TO）的體量換算成年化 run-rate，大概是 <span class="cnum">$3.27B／年</span>。也就是說平台規模本來就遠超 1B，只是 35 天只占全年 9.6% 的天數——把一整年的量級硬塞進一個賽事窗期去達成，第一天在比例上就注定達不到。真正該問的問題不是「有沒有達標」，而是 <b>當初訂「1B」的時候，指的到底是賽事期間的絕對量，還是賽事帶動的年度增量</b>。這件事沒搞清楚，比任何一個口徑的達成率都重要。
   </div>
 
-  <p><b>下次的具體做法：</b></p>
-  <ol>
-    <li><b>目標校準（優先於任何執行動作）</b>：在下一次大型賽事活動啟動前，先與訂目標單位對齊「1B」的真正意涵——賽事期間絕對量、賽事帶來的年度增量、還是單純的號召性口號。並依此設計真正可達成、可歸因的 KPI（如「較去年同期成長 X%」或「賽事帶來的新客戶占比 Y%」）。</li>
-    <li><b>零預算高槓桿的產品動作</b>：強化 APP／官網首頁在賽事期間的世界盃入口能見度（PO 可控、不需額外預算），並針對下注流程做 A/B 測試以降低流失，這比等待 MKT 追加預算更快落地。</li>
-    <li><b>先補齊歸因基礎建設，再評估成效</b>：在下一次活動開跑前，確保 Event／Source 標籤能完整覆蓋所有世界盃相關流量（含經 WC 入口進站但最終使用一般紅利下注的玩家）。目前的追蹤缺口讓 MKT 的真實貢獻與 PO 的產品調整效果都難以被準確衡量。</li>
-    <li><b>延續在地化優先的既定方向</b>：VND／THB／INR／CNY 為最大宗市場（合計逾九成 Valid TO），語言與賽事文化的在地化體驗，比單純加碼廣告預算更具槓桿——尤其付費團隊貢獻占比不到 2.1% 的現實下，自然流量與產品體驗才是真正的成長引擎。</li>
-    <li><b>拆解階段性子目標</b>：下次若仍要挑戰同量級目標，建議拆成「賽前基期」「賽事期間」「賽後延續效應（D7/D30 留存）」三階段，分別設定可達成的子目標，避免單一大目標因定義模糊而各部門各自解讀、各自認為自己達標或沒達標。</li>
-  </ol>
+  <p>下次具體可以怎麼做：</p>
+  <p><b>先校準目標，這件事排在所有執行動作前面。</b>下一次大型賽事開跑前，先跟訂目標的單位對齊「1B」到底指什麼——賽事期間絕對量、年度增量、還是就只是個號召性口號，再據此設計真的能達成、能歸因的 KPI（比方「較去年同期成長 X%」）。</p>
+  <p>產品這邊有零預算就能做的事：把 APP 跟官網首頁的世界盃入口做得更顯眼（PO 自己就能決定，不用等預算），下注流程順手做個 A/B test 降低流失——這比等 MKT 追加預算快得多。</p>
+  <p>歸因的基礎建設要先補齊，才有辦法評估成效。下次活動開跑前先確保 Event/Source 標籤能蓋到所有世界盃相關流量（包括從 WC 入口進來、最後卻用一般紅利下注的那些人）。現在這個追蹤缺口，讓 MKT 跟 PO 都很難準確知道自己做的事有沒有用。</p>
+  <p>在地化這條路線繼續走下去。VND、THB、INR、CNY 加起來占了九成以上的 Valid TO，語言跟賽事文化的在地化體驗比加碼廣告預算更有槓桿——尤其付費團隊貢獻不到 2.1% 的現實擺在眼前，自然流量跟產品體驗才是真正撐起成長的東西。</p>
+  <p>目標拆成幾個階段來訂。下次如果還要挑戰同量級目標，建議拆「賽前基期」「賽事期間」「賽後延續（D7/D30 留存）」三段各自設子目標，不然一個模糊的大目標，最後各部門會各自解讀「達標」跟「沒達標」。</p>
 </section>
 </div>
 
 <footer>
   <h3>資料來源與方法論說明</h3>
   <ul>
-    <li><b>①</b> OT WC Excel（2026-07-16 快照，Sportsbook 專屬，SABA/BTI/SBO/Pinnacle/9W/CMD 六家 provider），已賽 102/104 場。</li>
-    <li><b>②③④</b> Looker Studio「12bet Operations Overview－Betting Performance」，窗期 2026-06-12～07-16（GMT+8），由使用者於 2026-07-16 手動匯出 CSV 提供（本機環境無 VPN，無法直接連線 Power BI／Looker）。</li>
-    <li><b>方法論注意（待確認事項）</b>：②③④改用 Looker「Turnover / Valid Turnover」欄位，與過去（0707～0710）使用 Power BI「Company TO」的量測口徑<b>尚未逐一驗證是否完全等價</b>，可能存在計算基準差異（如 Resettle、作廢注單、幣別轉換時點等）。如需嚴謹股東會呈現，建議正式核對兩系統定義後再定案數字。</li>
+    <li><b>①</b> OT WC Excel（2026-07-16 快照，Sportsbook 專屬，SABA/BTI/SBO/Pinnacle/9W/CMD 六家 provider），已賽 102/104 場。Admin 後台無法篩出「僅世界盃賽事」這個賽事層級口徑，故①維持沿用 Excel snapshot，不受本次口徑調整影響。</li>
+    <li><b>②③④ 主數字來源（本版本已更新）</b>：OT Admin 後台「Win Lost Report」，Settled Date、GMT+8、Base Currency=USD、Member Type=Normal、Include Test Data 未勾選，窗期 2026-06-12～07-16（35 天，5 週人工逐週查詢加總）。<b>依據既定原則「TO/GGR 對外報告一律以 Admin 為權威值」，本版本將②③④由 Looker 改為 Admin 為主數字</b>（0716 版原以 Looker 為主、Admin 僅作交叉驗證；此為方法論修正，非數字重新造假）。Looker Studio「12bet Operations Overview－Betting Performance」（窗期同、2026-07-16 使用者手動匯出 CSV）數字保留作為交叉參考。</li>
+    <li class="mini" style="list-style:none;margin-left:-20px">
+      <b>Admin 後台逐週查詢明細</b>（Category：②Sportsbook=Sports+Virtual Sports+ESports；③Non-Sports=其餘 10 類別；④=不篩類別全選）：
+      <table style="margin:8px 0;font-size:13px;border-collapse:collapse;width:100%;--t-head:#1A1F2B">
+        <tr style="border-bottom:1px solid var(--line)"><th style="text-align:left;padding:3px 8px 3px 0">窗期</th><th style="text-align:right;padding:3px 8px">②Sportsbook VTO</th><th style="text-align:right;padding:3px 8px">③Non-Sports VTO</th><th style="text-align:right;padding:3px 8px">④Total VTO</th><th style="text-align:right;padding:3px 0">④Total GGR</th></tr>
+        <tr><td style="padding:2px 8px 2px 0">06-12～06-18</td><td style="text-align:right;padding:2px 8px">$34,389,555.23</td><td style="text-align:right;padding:2px 8px">$27,637,020.00</td><td style="text-align:right;padding:2px 8px">$62,026,575.23</td><td style="text-align:right;padding:2px 0">$2,191,826.13</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">06-19～06-25</td><td style="text-align:right;padding:2px 8px">$37,375,612.94</td><td style="text-align:right;padding:2px 8px">$26,293,716.19</td><td style="text-align:right;padding:2px 8px">$63,669,329.13</td><td style="text-align:right;padding:2px 0">$1,889,830.06</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">06-26～07-02</td><td style="text-align:right;padding:2px 8px">$34,580,447.40</td><td style="text-align:right;padding:2px 8px">$29,465,645.12</td><td style="text-align:right;padding:2px 8px">$64,046,092.52</td><td style="text-align:right;padding:2px 0">$2,456,969.91</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">07-03～07-09</td><td style="text-align:right;padding:2px 8px">$33,325,907.91</td><td style="text-align:right;padding:2px 8px">$27,559,452.05</td><td style="text-align:right;padding:2px 8px">$60,885,359.96</td><td style="text-align:right;padding:2px 0">$2,119,295.30</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">07-10～07-16</td><td style="text-align:right;padding:2px 8px">$31,936,384.55</td><td style="text-align:right;padding:2px 8px">$30,939,003.65</td><td style="text-align:right;padding:2px 8px">$62,875,388.20</td><td style="text-align:right;padding:2px 0">$1,982,987.19</td></tr>
+        <tr style="border-top:1px solid var(--line);font-weight:600"><td style="padding:3px 8px 0 0">合計</td><td style="text-align:right;padding:3px 8px 0">$171,607,908.03</td><td style="text-align:right;padding:3px 8px 0">$141,894,837.01</td><td style="text-align:right;padding:3px 8px 0">$313,502,745.04</td><td style="text-align:right;padding:3px 0 0">$10,640,908.59</td></tr>
+      </table>
+      <b>③Non-Sports 為推算值</b>（④Total 減去②Sportsbook，未逐一產品線分別查詢），Admin 後台自身無需另外驗證此加減關係（同一份原始注單資料相減）。
+      <table style="margin:8px 0;font-size:13px;border-collapse:collapse;width:100%;--t-head:#1A1F2B">
+        <tr style="border-bottom:1px solid var(--line)"><th style="text-align:left;padding:3px 8px 3px 0">口徑</th><th style="text-align:right;padding:3px 8px">Admin（權威值）</th><th style="text-align:right;padding:3px 8px">Looker（交叉參考）</th><th style="text-align:right;padding:3px 0">差距</th></tr>
+        <tr><td style="padding:2px 8px 2px 0">②Sportsbook VTO</td><td style="text-align:right;padding:2px 8px">$171,607,908</td><td style="text-align:right;padding:2px 8px">$174,724,213</td><td style="text-align:right;padding:2px 0">+1.8%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">③Non-Sports VTO</td><td style="text-align:right;padding:2px 8px">$141,894,837</td><td style="text-align:right;padding:2px 8px">$147,329,337</td><td style="text-align:right;padding:2px 0">+3.8%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">④Total VTO</td><td style="text-align:right;padding:2px 8px">$313,502,745</td><td style="text-align:right;padding:2px 8px">$322,053,550</td><td style="text-align:right;padding:2px 0">+2.7%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">④Total Turnover（Gross）</td><td style="text-align:right;padding:2px 8px">$323,230,264</td><td style="text-align:right;padding:2px 8px">$339,755,841</td><td style="text-align:right;padding:2px 0">+5.1%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">GGR（Total）</td><td style="text-align:right;padding:2px 8px">$10,640,909</td><td style="text-align:right;padding:2px 8px">$10,840,689</td><td style="text-align:right;padding:2px 0">+1.9%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Bet Count（Total）</td><td style="text-align:right;padding:2px 8px">44,463,579</td><td style="text-align:right;padding:2px 8px">45,611,926</td><td style="text-align:right;padding:2px 0">+2.6%</td></tr>
+      </table>
+      Looker 各口徑均高於 Admin 1.8%～5.1%，差距隨口徑範圍擴大而增加（Sportsbook 最小、全平台 Gross 最大），方向一致，<b>推測與 Resettle／幣別匯率時基／結算快照時點有關，但尚未逐項拆解確切成因</b>；本表僅②③④＋GGR＋Bet Count 完成 Admin 交叉查證，產品線細項表（見上方「產品線分布」）與幣別、流量來源等分析仍為 Looker 單一來源，未逐項驗證。如需嚴謹股東會呈現，建議與財務／數據團隊正式核對兩系統欄位定義後再定案。
+    </li>
     <li>「Event」與「Source」為 Looker 的兩個獨立分類維度，故 WC 相關歸因未加總呈現（同一筆下注可能同時出現在兩個維度中，加總會重複計算）。</li>
-    <li>核心指標中的 ▲成長率（Bet User/Betcount/CVR 等）為 Looker 平台原生計算之期間對比，本次匯出的 CSV 不含前期基準資料，<b>暫無法獨立重算驗證</b>，數字直接引用自平台顯示值。</li>
-    <li>本文件已由 fresh agent 依「驗證不自驗」規則獨立覆核：11 項可重算數字中 10 項與原始 CSV 完全吻合，1 項（Margin 逐日高點日期）經覆核後已更正（06-26→06-29，5.41%→5.67%），Source 維度 WC 歸因亦已補上「WC activities」漏項（$91,385→$98,676）。正式對外呈現前仍建議視覺排版做最終確認。</li>
+    <li>核心指標中的 ▲成長率（Bet User/CVR 等）為 Looker 平台原生計算之期間對比，本次匯出的 CSV 不含前期基準資料，<b>暫無法獨立重算驗證</b>，數字直接引用自平台顯示值；Admin 無對應的用戶層級指標，故 Bet User／CVR 仍以 Looker/GA4 為準。</li>
+    <li>本文件已由 fresh agent 依「驗證不自驗」規則獨立覆核（0716 版）：11 項可重算數字中 10 項與原始 CSV 完全吻合，1 項（Margin 逐日高點日期）經覆核後已更正（06-26→06-29，5.41%→5.67%），Source 維度 WC 歸因亦已補上「WC activities」漏項（$91,385→$98,676）。本次 0719「改採 Admin 為主口徑」的新增內容，已另行經 fresh agent（opus）獨立覆核：②③④＋GGR＋Bet Count 之逐週加總、③推算邏輯（④−②）、②+③=④ 等式、四口徑對 Looker 差距％、Margin、1B 佔比等全數重算後確認無誤，中英版數字完全一致；找到並已修正 1 項問題——「下次應該怎麼做」段落原引用舊 Looker 全平台 Valid TO（$322M）換算年化 run-rate（$3.36B/年），與全篇已改用的 Admin 權威值（$313.5M）不一致，已更正為 $313.5M／$3.27B/年。正式對外呈現前仍建議視覺排版做最終確認。</li>
   </ul>
 </footer>
 
 </div>
-</html>

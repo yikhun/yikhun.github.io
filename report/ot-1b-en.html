@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2026 World Cup · OT 1B — Results Overview (Shareholder Draft)</title>
+<title>2026 World Cup · OT 1B — Results Overview (Shareholder Draft)</title>
 <style>
 :root{
   --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
@@ -142,43 +143,47 @@ footer ul{padding-left:18px}
     </div>
     <div class="lens-card">
       <div class="lens-label">② Sportsbook Turnover (Sports+VS+ES)</div>
-      <div class="lens-num">$174,724,213</div>
-      <div class="lens-pct">17.47% of 1B</div>
-      <div class="bar-track"><div class="bar-fill" style="width:17.47%"></div></div>
-      <p class="mini" style="margin-top:8px">Looker Valid TO (void/cancelled bets excluded)</p>
+      <div class="lens-num">$171,607,908</div>
+      <div class="lens-pct">17.16% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:17.16%"></div></div>
+      <p class="mini" style="margin-top:8px">Admin backend Win Lost Report, Valid Turnover (authoritative basis — see methodology below)</p>
+      <p class="mini">Looker cross-reference: $174,724,213 (+1.8%)</p>
     </div>
     <div class="lens-card">
       <div class="lens-label">③ Non-Sports Turnover</div>
-      <div class="lens-num">$147,329,337</div>
-      <div class="lens-pct">14.73% of 1B</div>
-      <div class="bar-track"><div class="bar-fill" style="width:14.73%"></div></div>
-      <p class="mini" style="margin-top:8px">Looker Valid TO (Total − Sportsbook); ②+③=④</p>
+      <div class="lens-num">$141,894,837</div>
+      <div class="lens-pct">14.19% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:14.19%"></div></div>
+      <p class="mini" style="margin-top:8px">Admin backend Valid TO (Total − Sportsbook); ②+③=④</p>
+      <p class="mini">Looker cross-reference: $147,329,337 (+3.8%)</p>
     </div>
     <div class="lens-card">
       <div class="lens-label">④ Total Platform Turnover</div>
-      <div class="lens-num">$322,053,550</div>
-      <div class="lens-pct">32.21% of 1B</div>
-      <div class="bar-track"><div class="bar-fill" style="width:32.21%"></div></div>
-      <p class="mini" style="margin-top:8px">Looker Valid TO; before excluding void bets, $339,755,841 (33.98%)</p>
+      <div class="lens-num">$313,502,745</div>
+      <div class="lens-pct">31.35% of 1B</div>
+      <div class="bar-track"><div class="bar-fill" style="width:31.35%"></div></div>
+      <p class="mini" style="margin-top:8px">Admin Valid TO; before excluding void bets, $323,230,264 (32.32%)</p>
+      <p class="mini">Looker cross-reference: Valid TO $322,053,550 (+2.7%) / Gross $339,755,841 (+5.1%)</p>
     </div>
   </div>
+  <p class="mini" style="margin-top:10px">Methodology note: Lenses ②③④ now use <b>the Admin backend as the authoritative source</b> (the Jul 16 version used Looker as primary with Admin only as a cross-check; this update follows our standing rule that TO/GGR for external reporting must use the Admin basis). Looker figures are retained as a cross-reference. Lens ① still uses the OT WC Excel fixture-only snapshot, since the Admin backend cannot isolate "World Cup fixtures only" as a scope.</p>
 </section>
 
 <!-- ANALYST -->
 <div class="section-card analyst">
 <section>
   <h2 class="analyst-h"><span class="dot analyst"></span>What Actually Happened on the Platform</h2>
-  <p>The figures below were cross-checked across three independent aggregation paths — by currency, by product line, and by traffic source — all converging on the same $322,053,550 total, which gives reasonable confidence in the underlying numbers. This section is built for cross-functional use: Sales reads scale, Finance reads margin, Risk reads anomalies.</p>
+  <p>Turnover, Valid Turnover, GGR, Margin, and Bet Count all switched to the Admin backend this round — five manual weekly queries summed across the 35-day window, checked against Looker (the gap runs 1.8%–5.1%; details below in the methodology notes). Bet User and CVR don't have an Admin equivalent, so those still come from Looker/GA4. If you want scale, look at Turnover. If you want margin, skip to GGR. If you're Risk, keep scrolling — the anomalies show up a bit further down.</p>
 
   <h3>Core Metrics (35-day cumulative)</h3>
   <div class="kpi-grid">
-    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Bet User</div><div class="val">25,650</div><div class="note pos">▲4.1%</div></div>
-    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Total Betcount</div><div class="val">45,611,926</div><div class="note pos">▲7.7%</div></div>
-    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Turnover (gross)</div><div class="val">$339,755,841</div><div class="note">incl. void/cancelled bets</div></div>
-    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Valid Turnover (net of void)</div><div class="val">$322,053,550</div><div class="note">void removed −$17,702,291 (5.21%); denominator below</div></div>
-    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">GGR</div><div class="val">$10,840,689</div><div class="note">gross revenue after player win/loss</div></div>
-    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">Company Margin</div><div class="val">3.19%</div><div class="note">3.37% on Valid TO</div></div>
-    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">CVR Bet of Reg</div><div class="val">21.41%</div><div class="note pos">▲15.8%</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Bet User</div><div class="val">25,650</div><div class="note pos">▲4.1% (Looker/GA4)</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Total Betcount</div><div class="val">44,463,579</div><div class="note">Admin basis; Looker shows 45,611,926 (+2.6%)</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Turnover (gross)</div><div class="val">$323,230,264</div><div class="note">Admin gross; Looker shows $339,755,841 (+5.1%)</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Valid Turnover (net of void)</div><div class="val">$313,502,745</div><div class="note">void removed −$9,727,519 (3.01%); denominator below</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">GGR</div><div class="val">$10,640,909</div><div class="note">Admin basis; Looker shows $10,840,689 (+1.9%)</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">Company Margin</div><div class="val">3.29%</div><div class="note">3.39% on Valid TO (Admin basis)</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">CVR Bet of Reg</div><div class="val">21.41%</div><div class="note pos">▲15.8% (Looker/GA4)</div></div>
   </div>
 
   <h3>Product Mix (share of Valid TO)</h3>
@@ -195,7 +200,8 @@ footer ul{padding-left:18px}
     <tr><td>Other (P2P / Fishing / Cockfighting / EBingo)</td><td class="num">$509,886</td><td class="num">0.16%</td></tr>
   </table>
   </div>
-  <p class="mini">Sportsbook combined (Sports + Virtual Sports + ESports) = $174,724,213 (54.25%) — the product-line total aligned with Lens ②.</p>
+  <p class="mini">Sportsbook combined (Sports + Virtual Sports + ESports) = $174,724,213 (54.25%, Looker-internal sum) — vs. Lens ②'s Admin-basis authoritative figure of $171,607,908, a 1.8% gap (see methodology notes).</p>
+  <p class="mini">This product-line breakdown table is still Looker-sourced and has not been individually reconciled against Admin line by line — only the two broad Sportsbook / Non-Sports buckets (i.e. Lenses ② and ③) have been cross-checked against Admin; the individual product-line shares below are for reference only.</p>
 
   <div class="grid2">
     <div>
@@ -244,11 +250,11 @@ footer ul{padding-left:18px}
   <p class="mini">Both platforms remain heavily concentrated in a single provider (SABA) — a pre-existing structural feature, not new this period.</p>
 
   <div class="callout neg">
-    <b>Worth flagging</b>: at the individual-provider level within Sportsbook, <span class="cnum">Pronet (PG Sports)</span> posted a <span class="cnum neg">−14.66%</span> margin this period (a loss of roughly $88.8K), and <span class="cnum">TCG SEA Lottery</span> posted <span class="cnum neg">−12.03%</span> (roughly $45.1K). The dollar amounts are still modest, but worth a Risk spot-check for a single large bettor or an anomalous betting pattern.<br><span class="mini">→ Ops already caught the Pronet (PG Sports) case and notified on Jul 11 that it had been escalated to UM, with the third party also notified to adjust.</span>
+    Two individual providers inside Sportsbook look off: <span class="cnum">Pronet (PG Sports)</span> ran a <span class="cnum neg">−14.66%</span> margin this period (roughly $88.8K lost), and <span class="cnum">TCG SEA Lottery</span> came in at <span class="cnum neg">−12.03%</span> (roughly $45.1K). Neither number is large, but Risk should still take a look — could be one large bettor, could be an unusual betting pattern.<br><span class="mini">→ Ops already caught the Pronet (PG Sports) case and escalated it to UM on Jul 11, with the third party notified to adjust.</span>
   </div>
 
   <div class="callout warn">
-    <b>The most important finding in this section</b>: across two independent tracking dimensions — "Event" and "Source" — turnover explicitly tagged as World-Cup-related comes in below <b>0.05%</b> of the total. On the Event dimension (MYR/VND/THB World Cup tags + "Trip to WC"), the total is <span class="cnum">$131,763</span> (0.041%); on the Source dimension (traffic tagged "WC" + "WC activities"), the total is <span class="cnum">$98,676</span> (0.031%). By contrast, "Old Event" — the platform's pre-existing, non-WC-specific mechanism — carried <span class="cnum">99.81%</span> of turnover. This finding feeds directly into the MKT review below.
+    "Event" and "Source" are two separate tracking dimensions, but they tell the same story: turnover explicitly tagged as World-Cup-related comes in under <b>0.05%</b> of the total either way. Event (MYR/VND/THB World Cup tags + "Trip to WC") totals <span class="cnum">$131,763</span> (0.041%); Source (traffic tagged "WC" + "WC activities") totals <span class="cnum">$98,676</span> (0.031%). What actually carried the volume was "Old Event" — the platform's pre-existing, non-WC mechanism — at <span class="cnum">99.81%</span>. More on what this means in the MKT review below.
   </div>
 </section>
 </div>
@@ -258,25 +264,18 @@ footer ul{padding-left:18px}
 <section>
   <h2 class="mkt-h"><span class="dot mkt"></span>What the Evidence Points To</h2>
 
-  <p><b>Evidence 1 — World Cup–specific activity left almost no measurable trace.</b> Whether we look at the "Event" tag (promotion/bonus attribution) or the "Source" tag (traffic origin), turnover attributable to "World Cup" sits between 0.03%–0.05% of the total, while the platform's actual volume over these 35 days ran almost entirely through the pre-existing "Old Event" mechanism. Three explanations could be true at once, and each needs verification before we draw conclusions:</p>
-  <ol>
-    <li><b>Reach was insufficient</b> — WC-specific campaigns may never have surfaced in most players' actual betting path (e.g. confined to a promo page rather than the homepage or bet-slip flow).</li>
-    <li><b>Attribution is broken (undercounting)</b> — players may have arrived because of the World Cup and bet accordingly, but the system's Event/Source tags never captured it, meaning MKT's true contribution is understated. This sits alongside the 99.81% share parked in "Old Event," and should be the first thing we rule out.</li>
-    <li><b>The incentive design didn't move behavior</b> — even where exposure did happen, players kept using existing mechanics instead of the WC-specific offer, suggesting the offer itself wasn't compelling enough to shift behavior.</li>
-  </ol>
+  <p><b>Evidence 1</b>: World Cup–specific activity barely left a trace. Whether you look at the "Event" tag (promotion/bonus attribution) or the "Source" tag (traffic origin), turnover attributable to "World Cup" sits at 0.03%–0.05% of the total, and almost all of the platform's actual volume over these 35 days ran through the pre-existing "Old Event" mechanism instead. There are three possible explanations, and they're not mutually exclusive. Reach might have been too low — WC campaigns may never have surfaced in most players' actual betting path if they were confined to a promo page instead of the homepage or bet-slip flow. Attribution might be broken — players could have arrived because of the World Cup and bet accordingly, but the system's tags just didn't catch it, which would mean MKT's real contribution is understated (this is the one worth ruling out first, given how much volume "Old Event" is soaking up). Or the incentive itself wasn't compelling enough — players saw the offer and still chose the existing mechanic over it. Figuring out which one it actually is means pulling real betting records, not guessing from the aggregate numbers.</p>
 
-  <p><b>Evidence 2 — paid marketing's attributable contribution is under 2.1%.</b> Summing traffic attribution across SEO, Paid Ads, Social Media, KOL, and the currency-specific CM teams comes to roughly <span class="tag-inline">$6.55M</span>, or <b>2.04%</b> of platform Valid TO — against Organic (59.2%) and Affiliate (38.7% plus a separate 0.02% Affiliate line) at a combined <b>97.9%+</b>. Over a 35-day World Cup window, our owned paid channels didn't show leverage proportionate to the size of the event — or they did spend, but face the same attribution gap.</p>
+  <p><b>Evidence 2</b>: paid marketing's attributable contribution comes in under 2.1%. Add up traffic attribution across SEO, Paid Ads, Social Media, KOL, and the currency-specific CM teams and you get roughly $6.55M — 2.04% of platform Valid TO (this whole analysis runs on Looker's basis; the denominator is Looker's Valid TO of $322,053,550, which becomes 2.09% against the Admin-basis authoritative number). Organic and Affiliate cover the rest — 59.2% and 38.7% respectively, plus another 0.02% booked separately as Affiliate — north of 97.9% combined. Over a 35-day World Cup window, our own paid channels just didn't show leverage that matched the size of the event. Or they did spend and it wasn't tracked properly either.</p>
 
-  <p><b>Evidence 3 — daily Margin swung widely rather than trending up with the tournament.</b> Company Margin oscillated between 1.3% and 5.7% across the window (a high of 5.67% on Jun 29, a low of 1.32% on Jun 23, and 1.53% on the most recent day, Jul 16), with no structural lift visible as the knockout stage began. This reads more like ordinary baseline volatility with a thin layer of World Cup traffic on top, rather than the World Cup reshaping betting behavior.</p>
+  <p><b>Evidence 3</b>: daily Margin swung around rather than climbing with the tournament. Company Margin bounced between 1.3% and 5.7% across the window — 5.67% on Jun 29, down to 1.32% on Jun 23, back to 1.53% on the most recent day, Jul 16 — with nothing resembling a structural lift once the knockout stage started. This looks a lot more like ordinary baseline noise with a thin layer of World Cup traffic on top than the tournament actually reshaping how people bet.</p>
 
+  <h3>What we'd do differently next time</h3>
   <div class="callout warn">
-    <b>What we'd do differently next time</b>
-    <ul style="margin-top:8px">
-      <li><b>Verify before concluding</b>: sample the actual betting records of players known to have engaged with World Cup activity (arrived via a WC banner, or claimed a WC-specific bonus) and check whether their Event/Source tags were classified correctly. If the attribution system itself has a gap, MKT's real contribution may be significantly understated — fix tracking first, rather than concluding the campaign didn't work.</li>
-      <li><b>Launch earlier, with higher visibility</b>: for the next major tournament (Copa América, the Euros), campaigns should go live at least two weeks earlier, with the entry point placed in the primary bet-slip flow or app homepage rather than relying on a promo-page banner alone.</li>
-      <li><b>Reconcile actual spend against attributed results</b>: given the low share credited to paid teams, compare actual finance spend against Looker's attribution to rule out "spend happened but wasn't tracked."</li>
-      <li><b>Switch to an incremental metric</b>: next time, use "World Cup window turnover vs. the same period last year outside a major tournament" as the north star, rather than "total platform turnover during the event window" — this better isolates the campaign's real contribution instead of being diluted by baseline volume.</li>
-    </ul>
+    <p>Verify before concluding anything. Pull the actual betting records of players known to have engaged with World Cup activity — arrived via a WC banner, or claimed a WC-specific bonus — and check whether their Event/Source tags landed correctly. If the attribution system has a real gap, MKT's contribution could be badly understated. Fix the tracking first; don't decide the campaign failed based on numbers that might be broken.</p>
+    <p>Launch earlier next time, and put it somewhere people will actually see it. For the next major tournament (Copa América, the Euros), get campaigns live at least two weeks out, and put the entry point in the main bet-slip flow or the app homepage — not just a banner on a promo page nobody visits.</p>
+    <p>Reconcile actual spend against what got attributed. The paid share came in low, so compare real finance spend against what Looker attributed, and rule out "we spent the money, it just didn't get tracked."</p>
+    <p>Switch to an incremental metric. Next time, measure "World Cup window turnover vs. the same period last year with no major tournament" instead of "total platform turnover during the event window" — that isolates what the campaign actually added instead of drowning it in baseline volume.</p>
   </div>
 </section>
 </div>
@@ -287,31 +286,50 @@ footer ul{padding-left:18px}
   <h2 class="po-h"><span class="dot po"></span>The Target Itself May Never Have Been Aligned</h2>
 
   <div class="callout po">
-    At this period's 35-day rate of $322M (Valid TO), the annualized run-rate comes out to roughly <span class="cnum">$3.36B / year</span> — meaning the platform's overall scale already sits well above 1B. But 35 days is only 9.6% of the year; compressing a full year's order of magnitude into a single tournament window meant it was arithmetically out of reach from day one. That points to something more important than any single lens's achievement rate: <b>"1B" was likely never clearly defined as either "absolute volume during the event" or "the annual uplift the event drives."</b>
+    Take this period's 35-day rate of $313.5M (Admin-basis Valid TO) and annualize it, and you land at roughly <span class="cnum">$3.27B a year</span>. The platform's overall scale is already well above 1B — it's just that 35 days is only 9.6% of the year, so squeezing a full year's order of magnitude into one tournament window was never going to land, arithmetically, from day one. The real question isn't whether we hit the number. It's whether anyone ever agreed on <b>what "1B" was actually supposed to measure</b> — absolute volume during the event, or the annual lift the event drives. That question matters more than any single lens's achievement rate.
   </div>
 
-  <p><b>What we'd do next time:</b></p>
-  <ol>
-    <li><b>Align on the target first, before any execution</b> — before the next major tournament kicks off, align with whoever set the "1B" goal on what it actually means: absolute volume during the event, the annual uplift the event drives, or simply a rallying cry. Design a genuinely achievable, attributable KPI from there (e.g. "X% growth over the same period last year" or "Y% of turnover from new customers acquired during the event").</li>
-    <li><b>Zero-budget, high-leverage product moves</b> — increase the visibility of the World Cup entry point on the app/site homepage during the event (fully within Product's control, no incremental budget required), and A/B test the bet-slip flow to reduce drop-off — this ships faster than waiting on additional MKT budget.</li>
-    <li><b>Fix the attribution foundation before judging impact</b> — before the next campaign launches, make sure Event/Source tags fully cover all World Cup–related traffic, including players who arrived via a WC entry point but ultimately bet using a standard bonus. The current tracking gap makes it hard to accurately measure either MKT's real contribution or Product's impact.</li>
-    <li><b>Stay the course on localization-first</b> — VND/THB/INR/CNY remain the largest markets (over 90% of Valid TO combined); language and cultural localization around the tournament carries more leverage than incremental ad spend, especially given paid teams' sub-2.1% attributed contribution — organic reach and product experience are the real growth engine.</li>
-    <li><b>Break the target into staged sub-goals</b> — if we take on a similar-magnitude target again, split it into "pre-tournament baseline," "tournament window," and "post-tournament carry-over (D7/D30 retention)" phases, each with its own achievable sub-goal — this avoids one ambiguous headline target being interpreted differently by every team.</li>
-  </ol>
+  <p>Here's what we'd do differently next time.</p>
+  <p><b>Align on the target before touching execution.</b> Before the next major tournament, sit down with whoever set the "1B" goal and pin down what it actually means — absolute event-window volume, annual uplift, or just a rallying number. Then build a KPI around that answer that's actually achievable and attributable, something like "X% growth over the same period last year" or "Y% of turnover from new customers acquired during the event."</p>
+  <p>There's a zero-budget move sitting right there for Product. Make the World Cup entry point more visible on the app and site homepage during the event — that's entirely in Product's hands, no extra budget needed — and A/B test the bet-slip flow to cut drop-off. That ships faster than waiting on MKT to get more budget approved.</p>
+  <p>Fix attribution before judging anything by it. Before the next campaign goes live, make sure Event/Source tags actually cover all World Cup–related traffic, including players who came in through a WC entry point but ended up betting with a standard bonus. Right now that tracking gap makes it hard to say with any confidence what MKT actually contributed, or what Product's changes actually did.</p>
+  <p>Keep pushing localization — it's still the right call. VND, THB, INR, and CNY together are over 90% of Valid TO. Language and cultural localization around the tournament carries more weight than incremental ad spend, especially with paid teams sitting under 2.1% attributed contribution. Organic reach and product experience are what's actually driving growth here.</p>
+  <p>Split the target into stages if we take this on again. Break it into a pre-tournament baseline, the tournament window itself, and post-tournament carry-over (D7/D30 retention), each with its own achievable sub-goal. One vague headline number just gets interpreted five different ways by five different teams.</p>
 </section>
 </div>
 
 <footer>
   <h3>Data Sources &amp; Methodology</h3>
   <ul>
-    <li><b>①</b> OT WC Excel (2026-07-16 snapshot, Sportsbook-only, six providers: SABA / BTI / SBO / Pinnacle / 9W / CMD), 102/104 matches played.</li>
-    <li><b>②③④</b> Looker Studio "12bet Operations Overview – Betting Performance," window Jun 12 – Jul 16, 2026 (GMT+8), CSV export provided manually by the user on 2026-07-16 (this environment has no VPN and cannot reach Power BI / Looker directly).</li>
-    <li><b>Methodology note (open item)</b>: Lenses ②③④ now use Looker's "Turnover / Valid Turnover" fields, which have not been individually verified as equivalent to the "Company TO" measure used in the Power BI–based tracking from Jul 7–10 — there may be differences in basis (e.g. resettlement, voided bets, FX conversion timing). For a rigorous shareholder presentation, formally reconcile the two systems' definitions before finalizing the numbers.</li>
+    <li><b>①</b> OT WC Excel (2026-07-16 snapshot, Sportsbook-only, six providers: SABA / BTI / SBO / Pinnacle / 9W / CMD), 102/104 matches played. The Admin backend cannot isolate "World Cup fixtures only" as a scope, so ① still uses the Excel snapshot and is unaffected by this update.</li>
+    <li><b>②③④ primary source (updated in this version)</b>: OT Admin backend "Win Lost Report," Settled Date, GMT+8, Base Currency=USD, Member Type=Normal, Include Test Data unchecked, window Jun 12–Jul 16, 2026 (35 days, summed from 5 manual weekly queries). <b>Per our standing rule "external TO/GGR reporting must use the Admin basis," this version switches ②③④ from Looker to Admin as the primary figures</b> (the Jul 16 version used Looker as primary with Admin only as a cross-check; this is a methodology correction, not a re-fabrication of numbers). Looker Studio "12bet Operations Overview – Betting Performance" (same window, CSV exported manually by the user on 2026-07-16) figures are retained as a cross-reference.</li>
+    <li class="mini" style="list-style:none;margin-left:-20px">
+      <b>Admin-backend weekly query detail</b> (Category: ②Sportsbook = Sports+Virtual Sports+ESports; ③Non-Sports = the other 10 categories; ④ = all categories, unfiltered):
+      <table style="margin:8px 0;font-size:13px;border-collapse:collapse;width:100%;--t-head:#1A1F2B">
+        <tr style="border-bottom:1px solid var(--line)"><th style="text-align:left;padding:3px 8px 3px 0">Window</th><th style="text-align:right;padding:3px 8px">②Sportsbook VTO</th><th style="text-align:right;padding:3px 8px">③Non-Sports VTO</th><th style="text-align:right;padding:3px 8px">④Total VTO</th><th style="text-align:right;padding:3px 0">④Total GGR</th></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jun 12–18</td><td style="text-align:right;padding:2px 8px">$34,389,555.23</td><td style="text-align:right;padding:2px 8px">$27,637,020.00</td><td style="text-align:right;padding:2px 8px">$62,026,575.23</td><td style="text-align:right;padding:2px 0">$2,191,826.13</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jun 19–25</td><td style="text-align:right;padding:2px 8px">$37,375,612.94</td><td style="text-align:right;padding:2px 8px">$26,293,716.19</td><td style="text-align:right;padding:2px 8px">$63,669,329.13</td><td style="text-align:right;padding:2px 0">$1,889,830.06</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jun 26–Jul 2</td><td style="text-align:right;padding:2px 8px">$34,580,447.40</td><td style="text-align:right;padding:2px 8px">$29,465,645.12</td><td style="text-align:right;padding:2px 8px">$64,046,092.52</td><td style="text-align:right;padding:2px 0">$2,456,969.91</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jul 3–9</td><td style="text-align:right;padding:2px 8px">$33,325,907.91</td><td style="text-align:right;padding:2px 8px">$27,559,452.05</td><td style="text-align:right;padding:2px 8px">$60,885,359.96</td><td style="text-align:right;padding:2px 0">$2,119,295.30</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Jul 10–16</td><td style="text-align:right;padding:2px 8px">$31,936,384.55</td><td style="text-align:right;padding:2px 8px">$30,939,003.65</td><td style="text-align:right;padding:2px 8px">$62,875,388.20</td><td style="text-align:right;padding:2px 0">$1,982,987.19</td></tr>
+        <tr style="border-top:1px solid var(--line);font-weight:600"><td style="padding:3px 8px 0 0">Total</td><td style="text-align:right;padding:3px 8px 0">$171,607,908.03</td><td style="text-align:right;padding:3px 8px 0">$141,894,837.01</td><td style="text-align:right;padding:3px 8px 0">$313,502,745.04</td><td style="text-align:right;padding:3px 0 0">$10,640,908.59</td></tr>
+      </table>
+      <b>③Non-Sports is a derived figure</b> (④Total minus ②Sportsbook, not individually queried per product line); this subtraction requires no separate verification since both come from the same underlying bet-level data.
+      <table style="margin:8px 0;font-size:13px;border-collapse:collapse;width:100%;--t-head:#1A1F2B">
+        <tr style="border-bottom:1px solid var(--line)"><th style="text-align:left;padding:3px 8px 3px 0">Metric</th><th style="text-align:right;padding:3px 8px">Admin (authoritative)</th><th style="text-align:right;padding:3px 8px">Looker (cross-ref)</th><th style="text-align:right;padding:3px 0">Gap</th></tr>
+        <tr><td style="padding:2px 8px 2px 0">②Sportsbook VTO</td><td style="text-align:right;padding:2px 8px">$171,607,908</td><td style="text-align:right;padding:2px 8px">$174,724,213</td><td style="text-align:right;padding:2px 0">+1.8%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">③Non-Sports VTO</td><td style="text-align:right;padding:2px 8px">$141,894,837</td><td style="text-align:right;padding:2px 8px">$147,329,337</td><td style="text-align:right;padding:2px 0">+3.8%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">④Total VTO</td><td style="text-align:right;padding:2px 8px">$313,502,745</td><td style="text-align:right;padding:2px 8px">$322,053,550</td><td style="text-align:right;padding:2px 0">+2.7%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">④Total Turnover (Gross)</td><td style="text-align:right;padding:2px 8px">$323,230,264</td><td style="text-align:right;padding:2px 8px">$339,755,841</td><td style="text-align:right;padding:2px 0">+5.1%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">GGR (Total)</td><td style="text-align:right;padding:2px 8px">$10,640,909</td><td style="text-align:right;padding:2px 8px">$10,840,689</td><td style="text-align:right;padding:2px 0">+1.9%</td></tr>
+        <tr><td style="padding:2px 8px 2px 0">Bet Count (Total)</td><td style="text-align:right;padding:2px 8px">44,463,579</td><td style="text-align:right;padding:2px 8px">45,611,926</td><td style="text-align:right;padding:2px 0">+2.6%</td></tr>
+      </table>
+      Looker consistently runs 1.8%–5.1% above Admin, with the gap widening as scope broadens (smallest for Sportsbook, largest for total gross turnover) — a consistent direction, <b>likely related to resettlement timing, FX conversion time-bases, or settlement-snapshot timing, though the exact cause has not been further decomposed</b>. Only ②③④, GGR, and Bet Count have been cross-checked against Admin in this table; the product-line breakdown (above) and the currency/traffic tables remain single-source Looker figures, not individually verified. For a rigorous shareholder presentation, formally reconcile the two systems' field definitions with Finance/Data before finalizing the numbers.
+    </li>
     <li>"Event" and "Source" are two independent Looker dimensions, so WC-related attribution is presented separately rather than summed — a single bet can appear in both dimensions at once, and summing would double-count.</li>
-    <li>The ▲ growth figures in the core metrics (Bet User, Betcount, CVR, etc.) are Looker's own period-over-period calculations; this CSV export does not include the prior-period baseline, so these figures could not be independently recalculated and are quoted directly from the platform.</li>
-    <li>This document has been independently reviewed by a fresh agent per our verification standard: 10 of 11 recalculable figures matched the source CSVs exactly; 1 (the Margin daily-high reference) has been corrected (Jun 26→Jun 29, 5.41%→5.67%), and the Source-dimension WC attribution has been corrected to include the previously missing "WC activities" line ($91,385→$98,676). Final visual polish is still pending before external presentation.</li>
+    <li>The ▲ growth figures in the core metrics (Bet User, CVR, etc.) are Looker's own period-over-period calculations; this CSV export does not include the prior-period baseline, so these figures could not be independently recalculated and are quoted directly from the platform. Admin has no equivalent user-level metrics, so Bet User / CVR still rely on Looker/GA4.</li>
+    <li>This document was independently reviewed by a fresh agent per our verification standard (Jul 16 version): 10 of 11 recalculable figures matched the source CSVs exactly; 1 (the Margin daily-high reference) has been corrected (Jun 26→Jun 29, 5.41%→5.67%), and the Source-dimension WC attribution has been corrected to include the previously missing "WC activities" line ($91,385→$98,676). The new content added in this 0719 "Admin-basis" update has separately been independently reviewed by a fresh agent (Opus): the weekly sums for ②③④, GGR, and Bet Count, the ③ derivation logic (④−②), the ②+③=④ identity, the gap percentages versus Looker, Margin, and the 1B shares were all recomputed and confirmed correct, with CN and EN figures fully consistent. One issue was found and has been fixed — the "What to do differently next time" section originally cited the old Looker-basis platform-wide Valid TO ($322M) for the annualized run-rate calculation ($3.36B/year), inconsistent with the Admin-basis figure ($313.5M) used throughout the rest of the document; this has been corrected to $313.5M / $3.27B per year. Final visual polish is still pending before external presentation.</li>
   </ul>
 </footer>
 
 </div>
-</html>
