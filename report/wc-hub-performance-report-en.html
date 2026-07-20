@@ -1,0 +1,540 @@
+<style>
+  :root{
+    --navy:#0d2438; --gold:#c79a3b; --gold-soft:#e7cd8f;
+    --bg:#eef1f5; --surface:#ffffff; --surface2:#f6f8fb;
+    --ink:#12212f; --muted:#5c6b7a; --line:#d9e0ea;
+    --good:#1f8a5b; --warn:#bd8318; --bad:#c8483d;
+    --ot:#2f7fb5; --nv:#c79a3b;
+    --r1:#2f7fb5; --r2:#8a5fc7; --r3:#1f8a5b; --r4:#c79a3b;
+    --shadow:0 1px 2px rgba(13,36,56,.06),0 6px 20px rgba(13,36,56,.06);
+    --maxw:1080px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#0a1621; --surface:#0f2130; --surface2:#132838;
+      --ink:#e7eef4; --muted:#9db0c0; --line:#22394b; --navy:#0b1e2e;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 26px rgba(0,0,0,.35); }
+  }
+  :root[data-theme="dark"]{ --bg:#0a1621; --surface:#0f2130; --surface2:#132838;
+    --ink:#e7eef4; --muted:#9db0c0; --line:#22394b; --navy:#0b1e2e;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 26px rgba(0,0,0,.35); }
+  :root[data-theme="light"]{ --bg:#eef1f5; --surface:#ffffff; --surface2:#f6f8fb;
+    --ink:#12212f; --muted:#5c6b7a; --line:#d9e0ea; --navy:#0d2438;
+    --shadow:0 1px 2px rgba(13,36,56,.06),0 6px 20px rgba(13,36,56,.06); }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    line-height:1.55;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  h1,h2,h3{text-wrap:balance;margin:0}
+  .tnum{font-variant-numeric:tabular-nums}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+  header.mast{background:linear-gradient(160deg,var(--navy),#12314a);color:#eaf1f7;padding:36px 0 26px;border-bottom:3px solid var(--gold)}
+  .mast .eyebrow{color:var(--gold-soft)}
+  .mast h1{font-size:28px;font-weight:800;letter-spacing:-.01em;margin:6px 0 4px;color:#fff}
+  .mast .sub{color:#a9c1d4;font-size:14px}
+  .mast .verdict{margin-top:16px;padding:12px 16px;background:rgba(255,255,255,.06);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:14.5px;color:#eaf1f7}
+  .mast .verdict p{margin:0 0 10px}
+  .mast .verdict p:last-child{margin-bottom:0}
+  .period-pill{display:inline-block;margin-top:10px;font-size:12px;color:#cfe0ee;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px 12px}
+  .role-legend{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0 0}
+  .role-legend span{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#cfe0ee}
+  .role-legend .sw{width:12px;height:12px;border-radius:4px}
+
+  nav.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.toc .wrap{display:flex;gap:4px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+  nav.toc a{font-size:12.5px;color:var(--muted);text-decoration:none;padding:5px 10px;border-radius:7px;white-space:nowrap}
+  nav.toc a:hover{background:var(--surface2);color:var(--ink)}
+
+  section{padding:34px 0 8px}
+  .sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .sec-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .sec-head .n{font-size:12px;color:var(--gold);font-weight:800;letter-spacing:.1em}
+  .role-tag{font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:3px 10px;border-radius:999px;color:#fff;white-space:nowrap}
+  .lead{color:var(--muted);font-size:14.5px;max-width:72ch;margin:-6px 0 18px}
+
+  .grid{display:grid;gap:14px}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  .cols-2{grid-template-columns:1fr 1fr}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.cols-2,.cols-3{grid-template-columns:1fr}}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+  .kpi .k-lab{font-size:12px;color:var(--muted);font-weight:600}
+  .kpi .k-val{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-top:4px}
+  .kpi .k-sub{font-size:12px;color:var(--muted);margin-top:2px}
+  .kpi .k-sub b{color:var(--ink)}
+
+  .chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px}
+  .c-good{background:color-mix(in srgb,var(--good) 15%,transparent);color:var(--good)}
+  .c-warn{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+  .c-bad{background:color-mix(in srgb,var(--bad) 15%,transparent);color:var(--bad)}
+
+  table{border-collapse:collapse;width:100%;font-size:13.5px}
+  .tscroll{overflow-x:auto;border-radius:10px;border:1px solid var(--line)}
+  th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  thead th{background:var(--surface2);color:var(--muted);font-weight:700;font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;position:sticky;top:0}
+  tbody tr:last-child td{border-bottom:none}
+  tr.sum td{background:var(--surface2);font-weight:800}
+  td.pos{color:var(--good);font-weight:700}
+  td.neg{color:var(--bad);font-weight:700}
+  td.lft{text-align:left}
+
+  .bar-row{display:grid;grid-template-columns:180px 1fr 80px;align-items:center;gap:12px;margin:9px 0}
+  .bar-lab{font-size:13px;color:var(--ink)}
+  .bar-track{background:var(--surface2);border-radius:6px;height:20px;overflow:hidden;border:1px solid var(--line)}
+  .bar-fill{height:100%;border-radius:6px 0 0 6px}
+  .bar-val{font-size:13px;font-weight:700;text-align:right}
+
+  .insight{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:var(--surface)}
+  .insight h3{font-size:16px;margin:0 0 8px}
+  .insight .row{display:flex;gap:10px;padding:6px 0;font-size:13.5px}
+  .insight .row .lbl{flex:none;width:78px;font-weight:700;color:var(--gold);font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;padding-top:2px}
+  .insight .row .val{color:var(--muted)}
+  .insight .row .val b{color:var(--ink)}
+
+  .find{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .find:last-child{border-bottom:none}
+  .find .num{flex:none;width:26px;height:26px;border-radius:7px;color:#fff;font-weight:800;font-size:13px;display:grid;place-items:center}
+  .find h3{font-size:15px;margin-bottom:2px}
+  .find p{margin:0;font-size:13.5px;color:var(--muted)}
+  .find .rec{color:var(--ink);font-size:13px;margin-top:4px}
+  .find .rec b{color:var(--gold)}
+
+  .note{font-size:12px;color:var(--muted);margin-top:10px}
+  footer{padding:30px 0 50px;color:var(--muted);font-size:12px}
+
+  .hl{color:var(--gold)!important;font-weight:700}
+  .insight .row .val p{margin:0 0 8px}
+  .insight .row .val p:last-child{margin-bottom:0}
+  .find .rec p{margin:0 0 6px}
+  .find .rec p:last-child{margin-bottom:0}
+</style>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="eyebrow">Executive Briefing · Shareholder Deck · FINAL</div>
+    <h1>2026 World Cup Hub Performance Review (FINAL)</h1>
+    <div class="sub">The tournament's over, and this is the complete scorecard, finals included</div>
+    <span class="period-pill tnum">UX behavior data: 2026-05-28–07-16 (GA4+Clarity, UI/UX team's post-final deck) | Hot Games financials: 2026-05-26–07-20 (Prod DB, Admin basis, covers finals weekend)</span>
+    <div class="verdict">
+      <p><b>Bottom line:</b> the real story here isn't how much money World Cup Hub made. It's that this is the first time any of our four brands (OT/12bet, Nova88, Goal123, Bwing) has built an actual dedicated zone for a major tournament like the World Cup or Euro Cup. Every previous tournament, <b class="hl">our highest-earning matches never got a dedicated entry point or dedicated content: the traffic and the revenue just sat scattered across whatever pages happened to carry them</b>, and nobody pulled it together into something that could be tracked and improved over time.</p>
+      <p>Hub drove engagement and deposit intent, and the mobile-first design turned out to be the right call. Hot Games barely moved during finals weekend (Jul 18–20), confirming the tournament's momentum had already faded after the group stage. That, along with the stuck Thailand conversion rate and revenue riding on a handful of players, is what needs fixing first in the next version. Hub isn't making much money yet; its value is still in driving traffic and waking up dormant accounts. The next move is connecting that traffic to Sportsbook, which is where the company actually makes money off it.</p>
+    </div>
+    <div class="role-legend">
+      <span><span class="sw" style="background:var(--r1)"></span>01 Data Analyst</span>
+      <span><span class="sw" style="background:var(--r2)"></span>02 UI/UX</span>
+      <span><span class="sw" style="background:var(--r4)"></span>03 Product Owner</span>
+      <span><span class="sw" style="background:var(--r3)"></span>04 Marketing</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#overview">Overview</a><a href="#funnel">Funnel</a><a href="#thailand">Thailand</a><a href="#trend">Weekly Trend</a><a href="#hotgames">Hot Games</a><a href="#brand">Brand Comparison</a><a href="#deposit">Deposit Uplift</a><a href="#ux">UX Reflection</a><a href="#po">PO Next Steps</a><a href="#mkt">MKT Review</a>
+</div></nav>
+
+<main class="wrap">
+
+<!-- ============ ROLE 01: Data Analyst ============ -->
+
+<section id="overview">
+  <div class="sec-head"><span class="n">01</span><span class="role-tag" style="background:var(--r1)">Data Analyst</span><h2>Core Events &amp; Conversion Metrics Overview</h2></div>
+  <p class="lead">Everyone across the company uses these numbers. They're pulled straight from the UI/UX team's "WC26 UX &amp; Behavioral Insights Report" deck (all counts are deduplicated) and unchanged here. Everything in the sections below builds on them.</p>
+
+  <div class="tscroll"><table>
+    <thead><tr><th>Dimension</th><th>Core Event / Conversion Metric</th><th>OT/12BET</th><th>NOVA88</th><th>Definition &amp; Purpose</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">Event Volume<br>(EventCount)</td><td class="lft">RegisterClick (register CTA clicks, total)</td><td class="n tnum">1,549</td><td class="n tnum">720</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks click volume on the homepage's main registration CTA</td></tr>
+      <tr><td class="lft">DepositClick (deposit CTA clicks, total)</td><td class="n tnum">1,656</td><td class="n tnum">2,293</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks the volume of users showing deposit intent (including existing members)</td></tr>
+      <tr><td class="lft">KnockoutSwipe / FloatingSoccerClick</td><td class="n tnum">798</td><td class="n tnum">1,363</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks engagement with match interaction cards and the floating widget</td></tr>
+      <tr><td class="lft">CompleteRegistration (completed registrations, total)</td><td class="n tnum">225</td><td class="n tnum">123</td><td class="lft" style="font-size:12px;color:var(--muted)">Measures the absolute count of successful form submissions</td></tr>
+      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">Core Conversion Efficiency<br>(deduplicated basis)</td><td class="lft"><b>RegisterClick, unique clickers (deduped)</b></td><td class="n tnum"><b>1,109</b></td><td class="n tnum"><b>472</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Unique visitors who genuinely intended to register, after removing repeat clicks</td></tr>
+      <tr><td class="lft"><b>CompleteRegistration, unique completions</b></td><td class="n tnum"><b>225</b></td><td class="n tnum"><b>122</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Unique users who cleared the funnel and became new registered members</td></tr>
+      <tr><td class="lft">Hub visitors (unique, single query, not split by device)</td><td class="n tnum">30,477</td><td class="n tnum">21,561</td><td class="lft" style="font-size:12px;color:var(--muted)">Cross-device deduplicated total visitors across the whole campaign</td></tr>
+      <tr><td class="lft"><b>Hub registration conversion (RegisterClick ÷ Hub visitors)</b></td><td class="n tnum"><b>3.5%</b></td><td class="n tnum"><b>2.1%</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Conversion efficiency of the overall audience toward the primary registration action</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="card" style="margin-top:14px">
+    <div class="eyebrow" style="color:var(--r1)">Data Analyst's take: the two brands are running different shapes, volume vs. quality, not better vs. worse</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">By unique visitors, OT's funnel base (1,109 RegisterClicks) is <b class="hl">2.3x</b> Nova88's (472), yet its completion rate (<b class="hl">20.3%</b>) trails Nova88's (<b class="hl">25.8%</b>) slightly. In plain terms: OT pulls in more people who click register, but fewer of them actually finish the form and open an account. Out of every 100 who click register, roughly 20 make it through on OT versus roughly 26 on Nova88.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Put another way: far fewer people click register on Nova88, but the ones who do rarely seem to be just poking around. Most already meant to open an account. On OT, more clickers look around, hesitate, and drop off before finishing.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The Hub-visitor numbers add another layer. OT's total site visits (30,477) are <b class="hl">1.4x</b> Nova88's (21,561), but its RegisterClick conversion rate (<b class="hl">3.5%</b>) is <b class="hl">1.7x</b> Nova88's (<b class="hl">2.1%</b>). So OT isn't just bigger. It's also better at getting visitors to click register in the first place. Where OT actually gets stuck is the form itself, after the click.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Nova88 runs the opposite pattern: fewer visitors bother clicking register, but the ones who do finish at a higher rate than OT. Combined with the completion-rate numbers above, the two brands' funnels are breaking down at completely different points.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">So neither brand is simply doing better or worse. They have different problems. OT needs to figure out why people click register and then abandon partway through; that's a process bottleneck. Nova88 needs more visitors willing to click register in the first place; that's a top-of-funnel intent problem. Holding both to the same bar, say a <b class="hl">25%</b> completion rate, would bury OT's real process issue and misallocate resources. Each brand needs its own fix, not a shared target.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The ratio of deposit clicks to completed registrations is <b class="hl">5.7x</b> for OT and <b class="hl">10.1x</b> for Nova88. This number matters: on both brands, the bulk of Hub traffic is returning members, not net-new users, and Nova88 skews even harder that way. Right now, Nova88's Hub functions more as a reactivation tool for existing players than an acquisition channel. That shapes how the UX, PO, and Marketing sections below should be read.</p>
+  </div>
+</section>
+
+<section id="funnel">
+  <div class="sec-head"><span class="n">02</span><span class="role-tag" style="background:var(--r1)">Data Analyst</span><h2>Dual-Brand Registration Funnel</h2></div>
+  <p class="lead">The chart below is drawn to actual scale: the wide top represents everyone who clicked register (100%), the narrow bottom represents everyone who actually finished the form, and the width shrinks proportionally so the drop-off is visible at a glance. Deposit clicks are a separate event, not the funnel's next step, so they're shown to the side instead of folded into the shape.</p>
+  <div class="grid cols-2">
+    <div class="card">
+      <div class="eyebrow" style="color:var(--ot)">OT / 12Bet conversion funnel</div>
+      <svg viewBox="0 0 260 210" style="display:block;width:100%;max-width:280px;margin:10px auto 0" role="img" aria-label="OT registration conversion funnel">
+        <defs><linearGradient id="fOTen" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" style="stop-color:var(--ot);stop-opacity:0.28"/>
+          <stop offset="100%" style="stop-color:var(--ot);stop-opacity:0.95"/>
+        </linearGradient></defs>
+        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 1,109 (100%)</text>
+        <polygon points="20,20 240,20 152.3,180 107.7,180" fill="url(#fOTen)" stroke="var(--ot)" stroke-width="1"/>
+        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 225 (20.3%)</text>
+      </svg>
+      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">Deposit clicks (parallel metric, not the funnel's next step): <b style="color:var(--ink)">1,292</b></div>
+    </div>
+    <div class="card">
+      <div class="eyebrow" style="color:var(--nv)">Nova88 conversion funnel</div>
+      <svg viewBox="0 0 260 210" style="display:block;width:100%;max-width:280px;margin:10px auto 0" role="img" aria-label="Nova88 registration conversion funnel">
+        <defs><linearGradient id="fNVen" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" style="stop-color:var(--nv);stop-opacity:0.28"/>
+          <stop offset="100%" style="stop-color:var(--nv);stop-opacity:0.95"/>
+        </linearGradient></defs>
+        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 472 (100%)</text>
+        <polygon points="20,20 240,20 158.4,180 101.6,180" fill="url(#fNVen)" stroke="var(--nv)" stroke-width="1"/>
+        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 122 (25.8%)</text>
+      </svg>
+      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">Deposit clicks (parallel metric, not the funnel's next step): <b style="color:var(--ink)">1,231</b></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="eyebrow">Deposit Clicks vs. Completed Registrations: the scale gap</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">OT: 1,292 deposit clicks ÷ 225 completed registrations = <b class="hl">5.7x</b>. Nova88: 1,231 ÷ 122 = <b class="hl">10.1x</b>. This gap keeps coming up in the sections below, and it's the starting point for the UX, PO, and Marketing calls.</p>
+  </div>
+</section>
+
+<section id="thailand">
+  <div class="sec-head"><span class="n">03</span><span class="role-tag" style="background:var(--r1)">Data Analyst</span><h2>Market Performance: Thailand's "High Traffic, Rock-Bottom Conversion"</h2></div>
+  <div class="tscroll"><table>
+    <thead><tr><th>Primary Market</th><th>Registration CTR</th><th>Form Completion Rate (CR)</th><th>Market Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="lft">Thailand (OT/12Bet)</td><td class="n">2.68% (highest overall)</td><td class="n"><span class="chip c-bad">16.0% (lowest overall)</span></td><td class="lft">A serious gap that needs fixing</td></tr>
+      <tr><td class="lft">Thailand (Nova88)</td><td class="n">Largest share of traffic</td><td class="n"><span class="chip c-bad">21.2% (lowest within brand)</span></td><td class="lft">A structural bottleneck across brands</td></tr>
+      <tr><td class="lft">Malaysia (Nova88)</td><td class="n">Stable, mid-to-large market</td><td class="n">26.4%</td><td class="lft">A healthy core market</td></tr>
+      <tr><td class="lft">Other long-tail markets (Vietnam / India)</td><td class="n">Small sample</td><td class="n">24.0% – 28.5%</td><td class="lft">A useful benchmark for localization</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">(From the deck) Of Thailand's 629 clicks, <b class="hl">65%</b> came from a single channel, elitegame12.com, and that channel converts at only <b class="hl">8.8%</b>. Every other source (direct/tiktok/google) converts above <b class="hl">27%</b>. The takeaway: this isn't a Thai-language form problem or a localization problem. It's that this particular channel brings in people who were never that likely to finish the form, so a Thai-form health check can wait.</p>
+</section>
+
+<section id="trend">
+  <div class="sec-head"><span class="n">04</span><span class="role-tag" style="background:var(--r1)">Data Analyst</span><h2>Weekly Trend: Peak Momentum and the Slide After</h2></div>
+  <p class="lead">"W25" is shorthand for calendar week 25 of 2026, June 15–21. The original deck used "W22–W29" to show the weekly trend but never included an actual line chart or precise numbers. The chart below is our own daily RegisterClick pull from GA4, May 28 to July 16 (the same event as the deck, with a slightly different window; we cross-checked both sets of numbers earlier), so you can see what the real peak looks like.</p>
+
+  <div class="card">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:6px;font-size:12.5px;color:var(--muted)">
+      <span><span style="display:inline-block;width:14px;height:3px;background:var(--ot);border-radius:2px;vertical-align:middle;margin-right:6px"></span>12bet/OT daily RegisterClick</span>
+      <span><span style="display:inline-block;width:14px;height:3px;background:var(--nv);border-radius:2px;vertical-align:middle;margin-right:6px"></span>Nova88 daily RegisterClick</span>
+      <span style="margin-left:auto">Our own GA4 recalculation, not the original deck chart</span>
+    </div>
+    <svg viewBox="0 0 960 280" style="display:block;width:100%;height:auto" role="img" aria-label="Daily RegisterClick trend">
+      <g stroke="var(--line)" stroke-width="1">
+        <line x1="44" y1="16" x2="948" y2="16"/><line x1="44" y1="137" x2="948" y2="137"/><line x1="44" y1="254" x2="948" y2="254"/>
+      </g>
+      <g fill="var(--muted)" font-size="10" text-anchor="end">
+        <text x="40" y="20">70</text><text x="40" y="141">35</text><text x="40" y="258">0</text>
+      </g>
+      <g stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 3" opacity="0.7">
+        <line x1="302.3" y1="10" x2="302.3" y2="254"/><line x1="634.4" y1="10" x2="634.4" y2="254"/>
+      </g>
+      <g fill="var(--gold)" font-size="9.5" font-weight="700" text-anchor="middle">
+        <text x="302.3" y="8">▲ Kickoff 6/11</text><text x="634.4" y="8">▲ Round of 16, 6/29</text>
+      </g>
+      <polyline fill="none" stroke="var(--ot)" stroke-width="2.2" stroke-linejoin="round" points="44.0,196.2 62.4,118.0 80.9,141.8 99.3,220.0 117.8,209.8 136.2,216.6 154.7,169.0 173.1,145.2 191.6,192.8 210.0,121.4 228.5,104.4 246.9,118.0 265.4,80.6 283.8,53.4 302.3,107.8 320.7,131.6 339.2,128.2 357.6,169.0 376.1,158.8 394.5,29.6 413.0,80.6 431.4,80.6 449.9,101.0 468.3,80.6 486.8,90.8 505.2,111.2 523.7,141.8 542.1,131.6 560.6,19.4 579.0,97.6 597.5,124.8 615.9,162.2 634.4,179.2 652.8,189.4 671.3,179.2 689.7,152.0 708.2,175.8 726.6,196.2 745.1,162.2 763.5,179.2 782.0,165.6 800.4,192.8 818.9,203.0 837.3,189.4 855.8,226.8 874.2,203.0 892.7,213.2 911.1,203.0 929.6,206.4 948.0,182.6"/>
+      <polyline fill="none" stroke="var(--nv)" stroke-width="2.2" stroke-linejoin="round" points="44.0,203.0 62.4,233.6 80.9,206.4 99.3,237.0 117.8,220.0 136.2,216.6 154.7,233.6 173.1,186.0 191.6,243.8 210.0,175.8 228.5,220.0 246.9,226.8 265.4,220.0 283.8,226.8 302.3,70.4 320.7,155.4 339.2,223.4 357.6,186.0 376.1,189.4 394.5,175.8 413.0,162.2 431.4,169.0 449.9,196.2 468.3,209.8 486.8,189.4 505.2,206.4 523.7,203.0 542.1,216.6 560.6,189.4 579.0,216.6 597.5,206.4 615.9,182.6 634.4,209.8 652.8,209.8 671.3,196.2 689.7,209.8 708.2,199.6 726.6,213.2 745.1,220.0 763.5,226.8 782.0,216.6 800.4,223.4 818.9,240.4 837.3,220.0 855.8,226.8 874.2,186.0 892.7,233.6 911.1,213.2 929.6,203.0 948.0,206.4"/>
+      <circle cx="560.6" cy="19.4" r="3.5" fill="var(--ot)"/><text x="560.6" y="12" font-size="9.5" fill="var(--ot)" font-weight="700" text-anchor="middle">OT peak 69 (6/25)</text>
+      <circle cx="302.3" cy="70.4" r="3.5" fill="var(--nv)"/><text x="302.3" y="270" font-size="9.5" fill="var(--nv)" font-weight="700" text-anchor="middle">Nova peak 54 (6/11)</text>
+      <g fill="var(--muted)" font-size="10" text-anchor="middle">
+        <text x="44" y="270">05-28</text><text x="302" y="270">06-11</text><text x="561" y="16">6/25</text><text x="689" y="270">07-02</text><text x="948" y="270">07-16</text>
+      </g>
+    </svg>
+    <p class="note">The two brands didn't peak on the same day: OT hit its high on 6/25 (69 clicks), while Nova88 spiked on kickoff day itself, 6/11 (54 clicks). Both follow the same shape though, a surge after kickoff and a slide starting late June.</p>
+  </div>
+
+  <div class="grid cols-2" style="margin-top:14px">
+    <div class="card"><div class="eyebrow">W25 (6/15–6/21): the peak week</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Both brands' RegisterClick and DepositClick hit their campaign highs in W25, the week the group stage was at its most intense.</p></div>
+    <div class="card"><div class="eyebrow">A steady decline after the peak</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Both brands trailed off after W25. Nova88 more so: DepositClick has run 3–5x RegisterClick every week, and acquisition momentum is cooling.</p></div>
+    <div class="card"><div class="eyebrow">Daily RegisterClick decay (final-deck numbers)</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The final deck frames the decay as group-stage vs. semifinal-stage averages: OT went from 43.9/day to 13.5/day, down <b class="hl">69%</b>. Nova88 went from 17.8/day to 13.5/day, down <b class="hl">24%</b>. Match days didn't drive noticeably more traffic than off days, which backs up the call to shift from acquisition to retention and remarketing after the group stage.</p></div>
+    <div class="card"><div class="eyebrow">Referral channel payoff</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">elitegame12.com converts at <b class="hl">5.02%</b> in Thailand and <b class="hl">4.48%</b> in Vietnam; direct traffic in both countries clicks below <b class="hl">1%</b>.</p></div>
+  </div>
+</section>
+
+<section id="hotgames">
+  <div class="sec-head"><span class="n">05</span><span class="role-tag" style="background:var(--r1)">Data Analyst</span><h2>Hot Games Financials (Admin Basis, FINAL)</h2></div>
+  <p class="lead">The backend CMS's "WorldCupHotGames" list covers 30 football-themed titles on 12bet and 10 on Nova88. This section runs through 7/20, covering the entire finals weekend, in USD, converted at daily exchange rates, with games matched exactly against the CMS list.</p>
+  <div class="grid kpis">
+    <div class="card kpi"><div class="k-lab">Turnover (TO)</div><div class="k-val tnum">$151.4K</div><div class="k-sub"><b class="tnum">~365K</b> bets</div></div>
+    <div class="card kpi"><div class="k-lab">Gross Gaming Revenue (GGR)</div><div class="k-val tnum">$15,013</div><div class="k-sub">Margin <b>9.9%</b></div></div>
+    <div class="card kpi"><div class="k-lab">GGR excl. the whale</div><div class="k-val" style="color:var(--bad)">$3,469</div><div class="k-sub">Thin once you look past the headline number</div></div>
+    <div class="card kpi"><div class="k-lab">Games configured</div><div class="k-val tnum">40</div><div class="k-sub">12bet 30 | nova 10</div></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="eyebrow">Finals weekend added almost nothing</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Over the three days of finals weekend (7/18–7/20), OT added just TO <b class="hl">$1,429</b> and GGR <b class="hl">$183</b>; Nova88 added TO <b class="hl">$3,489</b> and GGR <b class="hl">$115</b>. Together, that's barely a rounding error against total GGR.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">That lines up with the Section 04 finding that the acquisition window closed after the group stage. It's not just that new users stopped showing up. Hot Games betting volume never got a lift from the finals either, despite the ratings spike.</p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="eyebrow">Whale concentration risk, and no new whale during finals</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Nearly all of 12bet's "Football" title profit comes from a single INR player who staked roughly <b class="hl">$31.5K</b> over nine minutes on the night of 6/7, contributing <b class="hl">$11,544</b> in GGR, almost the entire margin that game generated all tournament. Include him and combined GGR is <b class="hl">$15,013</b>; take him out and it drops to <b class="hl">$3,469</b>, with 12bet actually running a loss of <b class="hl">$499</b>.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">No similar single big bettor showed up during the finals. Across all games, the three finals-weekend days combined for just <b class="hl">$298</b> in GGR (OT $183 + Nova88 $115). Same old problem: it's not about scale, it's that the revenue quality is fragile.</p>
+  </div>
+
+  <h3 style="font-size:15px;margin:20px 0 6px;color:var(--ot)">12bet (OT): all 30 titles, ranked by TO (zero-bet titles included)</h3>
+  <div class="tscroll"><table>
+    <thead><tr><th>Provider</th><th>Game</th><th>Primary market (TO share)</th><th>TO $</th><th>GGR $</th><th>Margin</th></tr></thead>
+    <tbody>
+<tr><td>ES (Endorphina)</td><td class="g">Football</td><td class="c">INR 100%</td><td class="n">31,530</td><td class="n pos">11,544</td><td class="n">36.6%</td></tr>
+<tr><td>PlayTech</td><td class="g">Football! Cash Collect</td><td class="c">MYR 46%·INR 39%·THB 15%</td><td class="n">27,020</td><td class="n neg">−820</td><td class="n">−3.0%</td></tr>
+<tr><td>Pragmatic Play</td><td class="g">Big Bass Football Bonanza</td><td class="c">MYR 79%·IDR 7%·THB 6%</td><td class="n">5,804</td><td class="n pos">249</td><td class="n">4.3%</td></tr>
+<tr><td>Joker</td><td class="g">Nudge Goal Fever</td><td class="c">THB 97%·INR 1%·MYR 1%</td><td class="n">4,598</td><td class="n neg">−163</td><td class="n">−3.6%</td></tr>
+<tr><td>JILI</td><td class="g">World Cup</td><td class="c">VND 67%·MYR 10%·BDT 9%</td><td class="n">2,514</td><td class="n pos">145</td><td class="n">5.7%</td></tr>
+<tr><td>Spadegaming</td><td class="g">Kong The Striker</td><td class="c">THB 30%·VND 30%·MYR 23%</td><td class="n">2,376</td><td class="n pos">239</td><td class="n">10.1%</td></tr>
+<tr><td>AdvantPlay</td><td class="g">Golden Football</td><td class="c">THB 47%·MYR 37%·INR 8%</td><td class="n">2,194</td><td class="n pos">215</td><td class="n">9.8%</td></tr>
+<tr><td>Skywind</td><td class="g">Soccer Joker</td><td class="c">MYR 88%·INR 6%·VND 4%</td><td class="n">2,001</td><td class="n neg">−224</td><td class="n">−11.2%</td></tr>
+<tr><td>Microgaming</td><td class="g">123 Soccer Link&amp;Merge</td><td class="c">THB 68%·INR 30%·MYR 2%</td><td class="n">1,234</td><td class="n pos">140</td><td class="n">11.4%</td></tr>
+<tr><td>Nextspin</td><td class="g">Soccer King</td><td class="c">THB 94%·INR 3%·MYR 1%</td><td class="n">1,140</td><td class="n pos">48</td><td class="n">4.2%</td></tr>
+<tr><td>Skywind</td><td class="g">Go Goal</td><td class="c">THB 56%·MYR 23%·INR 12%</td><td class="n">631</td><td class="n neg">−81</td><td class="n">−12.9%</td></tr>
+<tr><td>AdvantPlay</td><td class="g">Football Fever</td><td class="c">VND 82%·THB 12%·MYR 5%</td><td class="n">612</td><td class="n pos">32</td><td class="n">5.2%</td></tr>
+<tr><td>Microgaming</td><td class="g">Ultimate Goal Blitz</td><td class="c">THB 54%·MYR 31%·INR 10%</td><td class="n">510</td><td class="n neg">−464</td><td class="n">−91.0%</td></tr>
+<tr><td>PlayTech</td><td class="g">Football Rules</td><td class="c">MYR 78%·THB 21%·INR 1%</td><td class="n">446</td><td class="n pos">61</td><td class="n">13.8%</td></tr>
+<tr><td>JILI</td><td class="g">Plinko Football</td><td class="c">THB 64%·MYR 30%·INR 5%</td><td class="n">440</td><td class="n neg">−2</td><td class="n">−0.4%</td></tr>
+<tr><td>Microgaming</td><td class="g">Football Star Deluxe</td><td class="c">THB 60%·MYR 24%·VND 8%</td><td class="n">245</td><td class="n neg">−11</td><td class="n">−4.6%</td></tr>
+<tr><td>Microgaming</td><td class="g">Football Star</td><td class="c">CNY 62%·INR 27%·MYR 10%</td><td class="n">244</td><td class="n pos">81</td><td class="n">33.2%</td></tr>
+<tr><td>ES (Endorphina)</td><td class="g">Football Superstar</td><td class="c">MYR 70%·INR 18%·IDR 12%</td><td class="n">160</td><td class="n neg">−16</td><td class="n">−10.0%</td></tr>
+<tr><td>ES (Endorphina)</td><td class="g">Football Mayhem</td><td class="c">IDR 78%·VND 14%·INR 7%</td><td class="n">143</td><td class="n pos">26</td><td class="n">18.4%</td></tr>
+<tr><td>Microgaming</td><td class="g">SoccerX</td><td class="c">MYR 90%·VND 5%·INR 4%</td><td class="n">133</td><td class="n pos">4</td><td class="n">3.0%</td></tr>
+<tr><td>Microgaming</td><td class="g">Soccer Striker</td><td class="c">THB 70%·VND 30%</td><td class="n">63</td><td class="n pos">2</td><td class="n">3.0%</td></tr>
+<tr><td>JILI</td><td class="g">Football Golden Cup</td><td class="c">MYR 54%·VND 36%·INR 9%</td><td class="n">60</td><td class="n pos">51</td><td class="n">85.5%</td></tr>
+<tr><td>JILI</td><td class="g">Mines football</td><td class="c">THB 53%·MYR 24%·VND 14%</td><td class="n">52</td><td class="n neg">−31</td><td class="n">−60.3%</td></tr>
+<tr><td>Funky Game</td><td class="g">KenoSoccer</td><td class="c">INR 100%</td><td class="n">30</td><td class="n pos">16</td><td class="n">53.5%</td></tr>
+<tr><td>Funky Game</td><td class="g">Football Strike</td><td class="c">VND 80%·BDT 17%·INR 2%</td><td class="n">29</td><td class="n pos">9</td><td class="n">30.7%</td></tr>
+<tr><td>NetEnt</td><td class="g">Football Champions Cup</td><td class="c">MYR 76%·INR 24%</td><td class="n">28</td><td class="n neg">−4</td><td class="n">−15.9%</td></tr>
+<tr><td>ES (Endorphina)</td><td class="g">Football: 2022</td><td class="c">INR 87%·MYR 10%·VND 3%</td><td class="n">12</td><td class="n pos">0</td><td class="n">2.2%</td></tr>
+<tr><td>Funky Game</td><td class="g">Football Mines</td><td class="c">VND 58%·INR 42%</td><td class="n">1</td><td class="n pos">0</td><td class="n">41.8%</td></tr>
+<tr><td>Game Play</td><td class="g">World Soccer Slot</td><td class="c">—</td><td class="n">0</td><td class="n">0</td><td class="n">—</td></tr>
+<tr><td>Game Play</td><td class="g">World Soccer Slot 2</td><td class="c">—</td><td class="n">0</td><td class="n">0</td><td class="n">—</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="font-size:15px;margin:16px 0 6px;color:var(--nv)">nova88: all 10 titles, ranked by TO (zero-bet titles included)</h3>
+  <div class="tscroll"><table>
+    <thead><tr><th>Provider</th><th>Game</th><th>Primary market (TO share)</th><th>TO $</th><th>GGR $</th><th>Margin</th></tr></thead>
+    <tbody>
+<tr><td>PG Soft</td><td class="g">Ultimate Striker</td><td class="c">VND 57%·THB 34%·IDR 9%</td><td class="n">18,049</td><td class="n pos">406</td><td class="n">2.2%</td></tr>
+<tr><td>Pragmatic Play</td><td class="g">Big Bass Football Bonanza</td><td class="c">MYR 57%·THB 27%·IDR 15%</td><td class="n">11,990</td><td class="n pos">320</td><td class="n">2.7%</td></tr>
+<tr><td>Microgaming</td><td class="g">Ultimate Goal Blitz</td><td class="c">MYR 72%·THB 25%·VND 2%</td><td class="n">11,312</td><td class="n pos">625</td><td class="n">5.5%</td></tr>
+<tr><td>AdvantPlay</td><td class="g">Golden Football</td><td class="c">MYR 77%·THB 14%·VND 8%</td><td class="n">10,140</td><td class="n pos">1,610</td><td class="n">15.9%</td></tr>
+<tr><td>Joker</td><td class="g">Nudge Goal Fever</td><td class="c">THB 65%·MYR 34%·IDR 1%</td><td class="n">6,403</td><td class="n pos">138</td><td class="n">2.2%</td></tr>
+<tr><td>Spadegaming</td><td class="g">Kong The Striker</td><td class="c">MYR 53%·THB 25%·VND 13%</td><td class="n">4,330</td><td class="n pos">47</td><td class="n">1.1%</td></tr>
+<tr><td>Amigo Gaming</td><td class="g">Football Hits</td><td class="c">MYR 86%·VND 8%·THB 3%</td><td class="n">2,786</td><td class="n pos">511</td><td class="n">18.3%</td></tr>
+<tr><td>Nextspin</td><td class="g">Soccer King</td><td class="c">MYR 46%·THB 45%·IDR 6%</td><td class="n">1,104</td><td class="n pos">53</td><td class="n">4.8%</td></tr>
+<tr><td>JILI</td><td class="g">Football Golden Cup</td><td class="c">THB 54%·MYR 34%·VND 12%</td><td class="n">545</td><td class="n pos">106</td><td class="n">19.5%</td></tr>
+<tr><td>Skywind</td><td class="g">Soccer Joker</td><td class="c">MYR 84%·THB 10%·IDR 6%</td><td class="n">507</td><td class="n pos">152</td><td class="n">30.0%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">This detail table uses the same Admin-basis data as the KPI cards above, just broken out by individual game. Provider and game names were verified directly against Siebog.HotGames/TpList. This is our own financial data, not from the deck.</p>
+</section>
+
+<section id="brand">
+  <div class="sec-head"><span class="n">06</span><span class="role-tag" style="background:var(--r1)">Data Analyst</span><h2>Brand Comparison</h2></div>
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Metric</th><th>nova88</th><th>12bet</th><th>Combined</th></tr></thead>
+      <tbody>
+        <tr><td>Hot Games bets (count)</td><td class="tnum">257,095</td><td class="tnum">107,630</td><td class="tnum">364,725</td></tr>
+        <tr><td>Turnover, TO (USD)</td><td class="tnum">$67,166</td><td class="tnum">$84,249</td><td class="tnum">$151,414</td></tr>
+        <tr><td>Gross gaming revenue, GGR (USD)</td><td class="tnum pos">$3,968</td><td class="tnum pos">$11,045</td><td class="tnum pos">$15,013</td></tr>
+        <tr><td>Margin</td><td class="tnum">5.9%</td><td class="tnum">13.1%</td><td class="tnum">9.9%</td></tr>
+        <tr><td>GGR excl. the whale</td><td class="tnum">$3,968</td><td class="tnum neg">−$499</td><td class="tnum">$3,469</td></tr>
+        <tr><td>Primary player currency</td><td>MYR · THB (Southeast Asia)</td><td>INR (India, high-value concentration)</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">nova88 has the most players, <b class="hl">2.4x</b> 12bet's bet count, and it's genuinely broad and small-stakes with no whale distortion, though margin holds steady at just <b class="hl">5.9%</b>. 12bet's margin looks better on paper (<b class="hl">13.1%</b>), but it's almost entirely one whale holding it up, and that's not a stable position. No comparable big bettor showed up even during finals weekend.</p>
+</section>
+
+<section id="deposit">
+  <div class="sec-head"><span class="n">07</span><span class="role-tag" style="background:var(--r1)">Data Analyst</span><h2>Deposit Conversion Uplift: Hub Roster vs. Organic Registrations</h2></div>
+  <p class="lead">This section answers a more fundamental question: are people who registered through WC Hub more likely to go on and deposit than people who registered the normal way over the same period? The method: take the GA4 WC26HubCompleteRegistration roster, match it back to CustId, and compare the deposit rate (depositors ÷ roster size) against organic registrations from the same window, excluding the Hub roster itself. This is our own financial data, not from the deck.</p>
+  <div class="grid cols-2">
+    <div class="card">
+      <div class="eyebrow" style="color:var(--ot)">12bet · Hub roster vs. organic registrations</div>
+      <div style="margin-top:12px">
+        <div class="bar-row"><span class="bar-lab">Hub roster (213 people)</span><div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--ot)"></div></div><span class="bar-val tnum">28.64%</span></div>
+        <div class="bar-row"><span class="bar-lab">Organic (same period)</span><div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--muted)"></div></div><span class="bar-val tnum">20.99%</span></div>
+      </div>
+      <div style="font-size:22px;font-weight:800;color:var(--good);margin-top:10px" class="tnum">+7.65 pp</div>
+      <div style="font-size:12.5px;color:var(--muted)">213 people translates to TO <b class="hl">$213,882</b> and GGR <b class="hl">+$14,860</b> (uplift over the organic baseline)</div>
+    </div>
+    <div class="card">
+      <div class="eyebrow" style="color:var(--nv)">nova88 · Hub roster vs. organic registrations</div>
+      <div style="margin-top:12px">
+        <div class="bar-row"><span class="bar-lab">Hub roster (108 people)</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--nv)"></div></div><span class="bar-val tnum">37.96%</span></div>
+        <div class="bar-row"><span class="bar-lab">Organic (same period)</span><div class="bar-track"><div class="bar-fill" style="width:63%;background:var(--muted)"></div></div><span class="bar-val tnum">24.02%</span></div>
+      </div>
+      <div style="font-size:22px;font-weight:800;color:var(--good);margin-top:10px" class="tnum">+13.94 pp</div>
+      <div style="font-size:12.5px;color:var(--muted)">108 people translates to TO <b class="hl">$12,062</b> and GGR <b class="hl">+$481</b> (uplift over the organic baseline)</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="eyebrow">How to read this</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Both brands show a clearly higher deposit rate for the Hub roster than for organic registrations, and Nova88's uplift (<b class="hl">+13.94pp</b>) is bigger than 12bet's (<b class="hl">+7.65pp</b>). But the rosters are small (213 and 108 people), so the dollar uplift is still a small number.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">World Cup Hub's real contribution to revenue is still the Hot Games betting covered in Section 05. What this section shows is a quality signal: people who come in through the campaign are more likely to actually spend money afterward, not just click and disappear.</p>
+  </div>
+</section>
+
+<!-- ============ ROLE 02: UI/UX ============ -->
+<section id="ux">
+  <div class="sec-head"><span class="n">08</span><span class="role-tag" style="background:var(--r2)">UI/UX</span><h2>Reflections: What to Fix Going Forward</h2></div>
+  <p class="lead">What follows is my own reading and set of ideas as the UX role, working from the data in Sections 01–07, not a restatement of the deck's own narrative. The numbers come from the deck and our own data; the judgment calls and recommendations are mine.</p>
+
+  <div class="insight">
+    <h3 style="color:var(--r2)">1 · Mobile-first was the right call; the next question is finer-grained</h3>
+    <div class="row"><span class="lbl">Reading</span><div class="val">
+      <p>The mobile-specific header CTA design got mobile to a <b class="hl">20.1%/25.4%</b> completion rate. Mobile-first was the right strategic direction.</p>
+      <p>But being right on strategy doesn't mean every detail is dialed in: <b class="hl">75 to 80%</b> of people who click register still never finish the form, and there's real room left there. The question now isn't "should we build for mobile," it's "which field on the mobile form is losing the most people."</p>
+    </div></div>
+    <div class="row"><span class="lbl">Idea</span><span class="val">Next step is a field-level abandonment analysis: find exactly which field in the form is where people bail, and put the effort there.</span></div>
+  </div>
+
+  <div class="insight">
+    <h3 style="color:var(--r2)">2 · Thailand's "high clicks, low completion" problem comes down to one channel's traffic quality, not the form or the landing page</h3>
+    <div class="row"><span class="lbl">Reading</span><div class="val">
+      <p>Breaking down traffic sources shows that <b class="hl">65%</b> of Thailand's 629 clicks came from elitegame12.com, and that channel converts at only <b class="hl">8.8%</b>, versus <b class="hl">27%</b>+ for every other source (direct/tiktok/google).</p>
+      <p>It's not the form, and it's not localization. It's that this particular channel brings in people who were never that likely to finish the form. A Thai-form health check can wait.</p>
+    </div></div>
+    <div class="row"><span class="lbl">Idea</span><div class="val">
+      <p>Next step: figure out what's actually driving elitegame12.com's traffic. Is the audience simply a poor fit for the target customer, or is the creative promising something the landing page doesn't deliver (say, a headline about a limited-time offer with nothing to back it up)?</p>
+      <p>The fix is completely different depending on which one it is: cut spend in the first case, tighten up creative-to-landing-page consistency in the second.</p>
+    </div></div>
+  </div>
+
+  <div class="insight">
+    <h3 style="color:var(--r2)">3 · Deposit and register CTAs may be competing for the same visual weight, and the two user types are getting in each other's way</h3>
+    <div class="row"><span class="lbl">Reading</span><span class="val">Deposit clicks vastly outnumber completed registrations. One likely reason: the deposit CTA is already more prominent and easier to hit than the register CTA, so existing members click it without a second thought, while genuine new users can't find a clear entry point buried among content built for returning members.</span></div>
+    <div class="row"><span class="lbl">Idea</span><div class="val">
+      <p>Show a different above-the-fold layout depending on login state: logged-out visitors should see "register" as the first CTA, logged-in members should see "deposit."</p>
+      <p>Split by login state instead of putting two very different intents in front of the same visual elements.</p>
+    </div></div>
+  </div>
+
+  <div class="insight">
+    <h3 style="color:var(--r2)">4 · Static page content may explain why match days don't drive noticeably more traffic</h3>
+    <div class="row"><span class="lbl">Reading</span><div class="val">
+      <p>Looking at group-stage vs. semifinal-stage averages, OT's daily RegisterClick dropped from 43.9 to 13.5, down <b class="hl">69%</b>; Nova88's dropped from 17.8 to 13.5, down <b class="hl">24%</b>. Match days showed no meaningfully higher traffic than off days, tournament excitement isn't converting into repeat visits.</p>
+      <p>Whether page content updates alongside the schedule, hero images, countdowns, featured-match cards, may be part of why. That's my own read, not something the deck tested.</p>
+    </div></div>
+    <div class="row"><span class="lbl">Idea</span><span class="val">First confirm whether the homepage has a "today's matches" module at all. If not, add one: today's fixtures, live scores, a countdown, something concrete for match-day interest to land on, instead of relying entirely on outside buzz to drive traffic in.</span></div>
+  </div>
+
+  <div class="insight">
+    <h3 style="color:var(--r2)">5 · We still can't tell how much channel quality vs. page experience is driving conversion</h3>
+    <div class="row"><span class="lbl">Reading</span><span class="val">Completion rates vary by more than <b class="hl">3x</b> across channels (elitegame12.com at <b class="hl">8.8%</b>, other sources above <b class="hl">27%</b>), which means blending everything into one all-channel completion rate hides that gap entirely. We can't see how much page experience and traffic quality are each contributing.</span></div>
+    <div class="row"><span class="lbl">Idea</span><div class="val">
+      <p>Future analysis and A/B tests should be broken out by channel, not averaged across all of them.</p>
+      <p>A given page redesign might show no visible lift on a high-completion channel, since those visitors were converting anyway. The real payoff might show up on a low-completion channel instead.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ ROLE 03: PO ============ -->
+<section id="po">
+  <div class="sec-head"><span class="n">09</span><span class="role-tag" style="background:var(--r4)">Product Owner</span><h2>Overview: Making World Cup Hub Work Better Next Time</h2></div>
+  <p class="lead">Focused on where this feature itself should go next, pulling together the findings from the sections above into a prioritized list.</p>
+
+  <div class="grid cols-2">
+    <div class="card"><div class="eyebrow" style="color:var(--r4)">Positioning</div><h3 style="font-size:16px;margin:6px 0 8px">Hub is a traffic/reactivation tool, and its value sits at the top of the funnel and in reactivating the existing base</h3><p style="margin:0 0 8px;color:var(--muted);font-size:13.5px">Hot Games revenue (<b class="hl">$11K</b> on 12bet, <b class="hl">$4K</b> on Nova88, <b class="hl">$15K</b> combined) is still small next to the company's overall platform, and finals weekend barely moved it.</p><p style="margin:0;color:var(--muted);font-size:13.5px">Hub's real value is how much engagement and deposit intent it drives. That's the right way to judge it, not the Hot Games revenue figure on its own.</p></div>
+    <div class="card"><div class="eyebrow" style="color:var(--r4)">Next-round resource priority</div><h3 style="font-size:16px;margin:6px 0 8px">Fix Thailand's conversion before pouring in more acquisition traffic</h3><p style="margin:0;color:var(--muted);font-size:13.5px">Thailand already has the biggest, strongest traffic and intent: it's missing only the last mile, the form experience. Fixing that will beat pouring more traffic into a funnel with a known-low conversion rate.</p></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div class="eyebrow" style="color:var(--r4)">Product to-do list for the next tournament (Asian Cup, Euro, etc.)</div>
+    <div style="margin-top:10px">
+      <div class="find"><div class="num" style="background:var(--r4)">1</div><div><h3>Tracking hygiene: every funnel step needs to tie back to an account</h3><p>KnockoutSwipe, FloatingSoccer, and Promotion clicks are all anonymous right now, so there's no way to prove any lift for existing members. Next time, attach a user_id or UserName parameter across the board so logged-in state is trackable end to end.</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">2</div><div><h3>Tie Hub content more tightly to Sportsbook</h3><p>Hub content (Hot Games, Promotions) is basically its own little playground right now, loosely connected to the company's real business, sportsbook. The next version needs a clear, trackable path from Hub into Sportsbook, which is the key to connecting Hub's traffic-driving power to the company's actual revenue.</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">3</div><div><h3>Launch earlier, extend the warm-up window, and let content shift with the tournament stage</h3><p>This time, launch and peak traffic both landed during the group stage, with not enough warm-up beforehand and no content shift once interest dropped afterward. Next time, launch two to three weeks earlier, with content that automatically shifts by tournament stage.</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">4</div><div><h3>Fully separate the new-user funnel from existing-member reactivation</h3><p>The gap between deposit clicks and completed registrations proves these are two entirely different user intents. Page design, dashboards, and marketing campaigns next time should treat them as two separate tracks instead of blending them together.</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">5</div><div><h3>Re-evaluate Hot Games selection and build a live dashboard</h3><p>Avoid over-selecting high-RTP, low-hold titles that make revenue dependent on a single player. Worth noting: this round's country, device, and channel analysis all happened after the tournament ended. A live dashboard would let a stuck conversion rate in Thailand, or any similar issue, get fixed while the tournament is still running instead of surfacing only after the fact.</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">6</div><div><h3>Add visual weight to the register CTA, paired with tournament-countdown copy</h3><p>Increase the visual prominence of the homepage's floating button and add limited-time countdown copy ("World Cup — last chance for this bonus"). Same direction as the fix in item 2 about the deposit CTA burying the new-user entry point.</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">7</div><div><h3>Daily missions with freebets, plus a Hub-to-Sportsbook betting incentive: turn a one-off spike into repeat visits and cross-category spend</h3>
+        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">Tournament momentum fades fast after the group stage (OT daily RegisterClick down <b class="hl">69%</b>, Nova88 down <b class="hl">24%</b>), and Hub still isn't connected to Sportsbook (see item 2). Two layers of incentive could address both problems at once.</p>
+        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">The first is a daily mission: log into Hub, check today's match cards, place one bet on any Hot Games title, and the completed mission pays out a small freebet, turning a one-off tournament moment into a daily habit instead of relying purely on schedule-driven excitement.</p>
+        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">The second is a Hub-to-Sportsbook incentive: players who enter Sportsbook through Hub and bet on a World Cup match get boosted odds or bet insurance (a partial refund on a loss), which directly converts Hub's traffic into the company's actual high-value betting category.</p>
+        <p style="margin:0;font-size:13.5px;color:var(--muted)">Both mechanics depend on the tracking hygiene from item 1 to attribute entry_source; freebets and bet insurance need hard caps and wagering requirements to prevent abuse. Once live, measure the net lift against existing events like DepositClick and CompleteRegistration as a baseline, so results are visible while the tournament is still running instead of only after it ends.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROLE 04: Marketing ============ -->
+<section id="mkt">
+  <div class="sec-head"><span class="n">10</span><span class="role-tag" style="background:var(--r3)">Marketing</span><h2>Assessing the Shortfall: Scenarios, Assumptions, and Next Steps</h2></div>
+  <p class="lead">World Cup Hub's current promotion is mostly short-form video for general awareness, with no targeted paid advertising for individual features. What follows is my own read as the Marketing role, working from that reality. The focus is on which promotional judgment calls the numbers might be exposing as wrong, not restating the numbers themselves or the deck's own conclusions.</p>
+
+  <div class="card">
+    <div class="find"><div class="num" style="background:var(--r3)">1</div><div><h3>Short-video reach might not be converting into actual new users</h3>
+      <p>If short-video performance is judged by views and likes/shares, the vanity numbers can look great without telling us how many people actually completed registration.</p>
+      <p>Deposit clicks run <b class="hl">5.7</b> to <b class="hl">10.1x</b> completed registrations, which shows Hub itself isn't bringing in that many new users. If short-video content is also mostly reaching the existing audience, the real net-new number is smaller than the reach figures suggest.</p>
+      <div class="rec">
+        <p><b>Assumption:</b> if short-video reporting only tracks views and engagement rate without tying back to downstream actions like RegisterClick or CompleteRegistration, it's probably overstating this push's actual contribution to acquisition.</p>
+        <p><b>Next time:</b> short-video performance needs to be attributed against completed registration or further downstream, not just reach metrics. Even if short-video itself isn't a precision-targeting tool, campaign codes should still track how much of that traffic eventually converts to new users.</p>
+      </div>
+    </div></div>
+
+    <div class="find"><div class="num" style="background:var(--r3)">2</div><div><h3>Thailand's short-video reach looks great; nobody's checking the completion rate</h3>
+      <p>Thailand has the highest CTR in the whole campaign (<b class="hl">2.68%</b>). If short-video performance there is judged by reach, views, and CTR, the market looks like a clear win on paper.</p>
+      <div class="rec">
+        <p><b>Assumption:</b> looking only at reach and CTR while ignoring completion rate rewards a market with the campaign's worst completion rate (<b class="hl">16.0%</b>) with even more short-video budget. Thailand keeps getting treated as a priority market, and results still aren't scaling with it. That's probably part of why.</p>
+        <p><b>Next time:</b> Thailand's short-video performance evaluation needs to pair reach and clicks with completion rate, checked regularly while the campaign is running, not discovered as a gap only after the tournament ends.</p>
+      </div>
+    </div></div>
+
+    <div class="find"><div class="num" style="background:var(--r3)">3</div><div><h3>elitegame12.com drove 65% of Thailand's clicks, and converts worse than any other channel</h3>
+      <p>Breaking down Thailand's traffic sources shows elitegame12.com contributing <b class="hl">65%</b> of clicks at just an <b class="hl">8.8%</b> completion rate, the worst of any channel; every other source (direct/tiktok/google) converts above <b class="hl">27%</b>.</p>
+      <div class="rec">
+        <p><b>Assumption:</b> judging this channel only on clicks or CTR (<b class="hl">5.02%</b>) makes it look solid; completion rate tells the opposite story. If this is paid traffic, budget may have been going into a channel with genuinely poor conversion quality the whole time. If it's an organic referral partnership, it suggests the audience just isn't a good fit for the target customer.</p>
+        <p><b>Next time:</b> whether it's paid or an organic partnership, any renewal or continued relationship needs to be judged on completion rate, not clicks. For a known low-converter like elitegame12.com, figure out first whether it's a traffic-quality issue or a promise-vs-landing-page gap before deciding what to do about it.</p>
+      </div>
+    </div></div>
+
+    <div class="find"><div class="num" style="background:var(--r3)">4</div><div><h3>Short-video pacing looks reactive to the schedule rather than planned ahead of it</h3>
+      <p>Quantified against group-stage vs. semifinal-stage averages: OT's daily RegisterClick down <b class="hl">69%</b>, Nova88 down <b class="hl">24%</b>. W25, peak group-stage intensity, was the high point for both metrics, followed by a steady decline. If short-video publishing and paid boosting followed a flat schedule across the whole tournament, effort stayed level even as traffic was already dropping off, and that inefficiency was baked in.</p>
+      <div class="rec">
+        <p><b>Assumption:</b> if short-video publishing or boosting decisions were made reactively, week to week, rather than planned against the tournament calendar ahead of time, that means underinvesting during the traffic peak (missing the best conversion window) and overinvesting during the lulls (spending on low-efficiency stretches). Hot Games betting barely moved during finals weekend, just <b class="hl">$298</b> combined GGR over three days, which confirms the acquisition window really had already closed.</p>
+        <p><b>Next time:</b> plan short-video release and boosting against the historical heat curve for each tournament stage (group stage, knockouts, finals) ahead of time, and only fine-tune once the event starts. Deciding next week's push based on this week's numbers is already a step behind.</p>
+      </div>
+    </div></div>
+
+    <div class="find"><div class="num" style="background:var(--r3)">5</div><div><h3>If any short-video content featured a big Hot Games win, that may be a one-off that won't repeat</h3>
+      <p>Nearly all of 12bet Hot Games' margin came from one player's single bet on 6/7 (GGR <b class="hl">$11,544</b>); take it out and 12bet actually runs a loss of <b class="hl">$499</b>. No comparable big bettor showed up again during the finals.</p>
+      <p>Big-win footage is a common short-video format. If any content featured or referenced a large payout from these titles, it's probably using exactly this kind of number, which isn't likely to happen again.</p>
+      <div class="rec">
+        <p><b>Assumption:</b> packaging a single outlier as the pitch might grab clicks short-term, but the gap between that footage and what most players actually experience can damage trust in these games, and in the Hub campaign as a whole, hurting long-term retention.</p>
+        <p><b>Next time:</b> any short-video content about Hot Games payouts should represent the real, broad distribution of outcomes (like Nova88's genuinely small, spread-out wins) instead of any single large case, so the impression matches what most players actually experience.</p>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="border-top:1px solid var(--line);padding-top:16px">
+    <b style="color:var(--ink)">Sources:</b> Sections 01–04 (metrics overview, funnel, Thailand market, weekly trend) are the UI/UX team's own figures from the "WC26 UX &amp; Behavioral Insights Report" deck (analysis window May 28 – July 16, 2026, GA4+Clarity), not recalculated on our end. The funnel diagram in Section 02 and the trend line chart in Section 04 were redrawn by us from that same data, to show the actual shape and day-by-day movement. Sections 05–07 (Hot Games financials, brand comparison, deposit conversion uplift) are our own financial data; the Hot Games financials (Sections 05–06) cover 2026-05-26–07-20, the entire finals weekend (Prod DB, Admin basis, daily exchange rates, games matched against the authoritative Siebog.HotGames list), and the deposit conversion uplift (Section 07) uses the original GA4 window. The analysis, assumptions, and recommendations in Sections 08 (UI/UX), 09 (PO), and 10 (Marketing) are each our own independent read from that role's perspective, not quotes or paraphrases of the deck's own narrative. The PO section is scoped to this feature's next iteration and doesn't extend to company-wide platform revenue or other external targets. This report covers the full tournament, finals included, and is the complete version for this campaign.
+  </div>
+</footer>
+</main>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onScroll(){
+    var y=window.scrollY+120,best=0;
+    for(var i=0;i<secs.length;i++){ if(secs[i]&&secs[i].offsetTop<=y) best=i; }
+    links.forEach(function(l,i){ l.style.color=(i===best)?'var(--gold)':''; l.style.fontWeight=(i===best)?'700':''; });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
+</script>
