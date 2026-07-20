@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2026 World Cup revenue wrap-up: playbook for the next tournament</title>
+<style>
+:root{
+  --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
+  --gold:#B8862E; --gold-soft:#F7EED9;
+  --analyst:#1868A6; --analyst-soft:#E4F1FB;
+  --mkt:#C2621F; --mkt-soft:#FCEEDD;
+  --po:#6C3FA6; --po-soft:#F1E8FB;
+  --pos:#1E8E5A; --pos-soft:#E3F5EA;
+  --neg:#C4383B; --neg-soft:#FBE6E6;
+  --font-serif: Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',serif;
+  --font-cjk: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-mono: ui-monospace,'SF Mono',Menlo,Consolas,'Cascadia Code',monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#0E1116; --ink:#EDEFF4; --muted:#96A0B0; --card:#171B22; --line:rgba(237,239,244,.10);
+    --gold:#D9AE5C; --gold-soft:#332711;
+    --analyst:#5FA8E4; --analyst-soft:#152534;
+    --mkt:#E29552; --mkt-soft:#33220F;
+    --po:#B78EE0; --po-soft:#241A34;
+    --pos:#4FBE86; --pos-soft:#132A1F;
+    --neg:#E2807F; --neg-soft:#33191A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1116; --ink:#EDEFF4; --muted:#96A0B0; --card:#171B22; --line:rgba(237,239,244,.10);
+  --gold:#D9AE5C; --gold-soft:#332711;
+  --analyst:#5FA8E4; --analyst-soft:#152534;
+  --mkt:#E29552; --mkt-soft:#33220F;
+  --po:#B78EE0; --po-soft:#241A34;
+  --pos:#4FBE86; --pos-soft:#132A1F;
+  --neg:#E2807F; --neg-soft:#33191A;
+}
+:root[data-theme="light"]{
+  --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
+  --gold:#B8862E; --gold-soft:#F7EED9;
+  --analyst:#1868A6; --analyst-soft:#E4F1FB;
+  --mkt:#C2621F; --mkt-soft:#FCEEDD;
+  --po:#6C3FA6; --po-soft:#F1E8FB;
+  --pos:#1E8E5A; --pos-soft:#E3F5EA;
+  --neg:#C4383B; --neg-soft:#FBE6E6;
+}
+*{box-sizing:border-box}
+body{background:var(--paper); color:var(--ink); font-family:var(--font-cjk); line-height:1.7; font-size:16px; margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:44px 24px 100px}
+.eyebrow{font-family:var(--font-serif); font-style:italic; font-size:13px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; margin:0 0 8px}
+h1{font-family:var(--font-cjk); font-weight:800; font-size:clamp(30px,5vw,46px); line-height:1.15; margin:0 0 10px; text-wrap:balance;
+  background:linear-gradient(100deg,var(--ink),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent}
+h2{font-family:var(--font-cjk); font-weight:800; font-size:22px; margin:0 0 14px; text-wrap:balance; display:flex; align-items:center; gap:10px}
+h2 .dot{width:11px;height:11px;border-radius:3px;flex:none}
+h3{font-family:var(--font-cjk);font-weight:700;font-size:16.5px;margin:0 0 10px}
+.sub{color:var(--muted); font-size:16px; margin:0 0 6px; font-weight:600}
+header.top{padding-bottom:8px; margin-bottom:38px}
+.meta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+.meta-chip{font-size:12.5px; color:var(--ink); background:var(--card); border:1px solid var(--line); padding:5px 12px; border-radius:20px; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.meta-chip b{font-weight:700}
+
+.kpi-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:14px 0 26px}
+@media (max-width:820px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+.kpi-card{background:var(--k-soft); border:1px solid var(--line); border-radius:10px; padding:13px 15px}
+.kpi-card .lbl{font-size:12px; color:var(--muted); margin-bottom:4px}
+.kpi-card .val{font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-size:19px; font-weight:700; color:var(--k)}
+.kpi-card .note{font-size:11.5px; color:var(--muted); margin-top:3px}
+
+.section-card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:32px 32px 8px; margin-top:38px; box-shadow:0 2px 10px rgba(20,20,10,.04)}
+.section-card.analyst{border-top:6px solid var(--analyst)}
+.section-card.mkt{border-top:6px solid var(--mkt)}
+.section-card.po{border-top:6px solid var(--po)}
+.section-card h2.analyst-h,.dot.analyst{color:var(--analyst)} .dot.analyst{background:var(--analyst)}
+.section-card h2.mkt-h,.dot.mkt{color:var(--mkt)} .dot.mkt{background:var(--mkt)}
+.section-card h2.po-h,.dot.po{color:var(--po)} .dot.po{background:var(--po)}
+
+p{margin:0 0 14px; max-width:72ch}
+ul,ol{margin:0 0 16px; padding-left:22px; max-width:68ch}
+li{margin-bottom:7px}
+strong,b{font-weight:700}
+
+.callout{border-left:4px solid var(--analyst); background:var(--analyst-soft); padding:15px 19px; border-radius:0 10px 10px 0; margin:18px 0; max-width:76ch}
+.callout.neg{border-left-color:var(--neg); background:var(--neg-soft)}
+.callout.warn{border-left-color:var(--mkt); background:var(--mkt-soft)}
+.callout.po{border-left-color:var(--po); background:var(--po-soft)}
+.callout.gold{border-left-color:var(--gold); background:var(--gold-soft)}
+.callout .cnum{font-family:var(--font-mono); font-weight:700; font-variant-numeric:tabular-nums}
+
+table{border-collapse:collapse; width:100%; margin:12px 0 20px; font-size:14.5px}
+.twrap{overflow-x:auto; margin:12px 0 22px; border-radius:10px}
+th,td{padding:9px 13px; text-align:left; border-bottom:1px solid var(--line)}
+th{font-weight:700; font-size:12.5px; color:#fff; text-transform:uppercase; letter-spacing:.03em; background:var(--t-head, #1A1F2B)}
+th:first-child{border-top-left-radius:8px} th:last-child{border-top-right-radius:8px}
+td.num, th.num{font-family:var(--font-mono); font-variant-numeric:tabular-nums; text-align:right}
+tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+:root[data-theme="dark"] tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+@media (prefers-color-scheme:dark){tr:nth-child(even) td{background:rgba(255,255,255,.025)}}
+.pos{color:var(--pos); font-weight:700}
+.neg{color:var(--neg); font-weight:700}
+.mini{font-size:12.5px; color:var(--muted)}
+
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+
+footer{margin-top:44px; padding:26px 32px 30px; background:var(--card); border-radius:16px; border:1px solid var(--line); font-size:13.5px; color:var(--muted)}
+footer h3{color:var(--ink); font-size:14px}
+footer ul{padding-left:18px}
+.brand-card{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--analyst); border-radius:0 12px 12px 0; padding:18px 22px 6px; margin:16px 0}
+.brand-card h4{margin:0 0 10px; font-size:15.5px; font-weight:800; color:var(--analyst)}
+.brand-card p{margin:0 0 11px; max-width:none}
+.brand-card p.lead{font-size:15.5px; font-weight:700; color:var(--ink); padding-bottom:11px; border-bottom:1px solid var(--line); margin-bottom:13px}
+.brand-card.po{border-left-color:var(--po)}
+.brand-card.po h4{color:var(--po)}
+.hl{font-family:var(--font-mono); font-weight:700; font-variant-numeric:tabular-nums; color:var(--gold)}
+.key{font-weight:700; color:var(--po)}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Tournament wrap · final edition</p>
+  <h1>2026 World Cup revenue wrap-up</h1>
+  <p class="sub">Four brands broken down, plus a playbook for the 2028 Euros and 2030 World Cup</p>
+  <div class="meta-row">
+    <span class="meta-chip"><b>Tournament span</b>: 2026-06-12 to 07-20 (GMT+8, 39 days)</span>
+    <span class="meta-chip"><b>Matches</b>: 104/104 played (final 07-20, Spain vs Argentina)</span>
+    <span class="meta-chip"><b>Brands</b>: 12bet / Nova88 / Goal123 / Bwing</span>
+  </div>
+</header>
+
+<!-- FINAL NUMBERS -->
+<section>
+  <h2><span class="dot" style="background:var(--gold)"></span>Final numbers</h2>
+  <div class="kpi-grid">
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">12bet</div><div class="val">$43,033,796</div><div class="note">GGR $1,353,215 · Margin 3.14% · Avg bet size $50.4</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Nova88</div><div class="val">$6,205,331</div><div class="note">GGR $451,264 · Margin 7.27% · Avg bet size $27.0</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Goal123</div><div class="val">$6,169,424</div><div class="note">GGR $306,998 · Margin 4.98% · Avg bet size $35.6</div></div>
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Bwing</div><div class="val">$3,546,256</div><div class="note">GGR $169,314 · Margin 4.77% · Avg bet size $30.1</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">Combined TO, four brands</div><div class="val">$58,954,808</div><div class="note">GGR $2,280,791 · Margin 3.87% · 1.37M bets</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Biggest single match (four brands)</div><div class="val">$1,473,010</div><div class="note">Largest match of the tournament, 2.5% of total TO</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Knockout avg vs group-stage avg</div><div class="val">1.6 to 2.1x</div><div class="note">12bet 1.57x · Nova88 1.87x · Goal123 2.13x · Bwing 1.88x</div></div>
+    <div class="kpi-card" style="--k:var(--neg);--k-soft:var(--neg-soft)"><div class="lbl">Schedule gaps</div><div class="val">5 days, zero matches</div><div class="note">Plus 8 days with just 1 match; only 10 matches in the final 13 days</div></div>
+  </div>
+</section>
+
+<!-- SECTION 1: THE SHAPE -->
+<div class="section-card analyst">
+<section>
+  <h2 class="analyst-h"><span class="dot analyst"></span>Tournament rhythm: match value climbs, match density thins out</h2>
+
+  <p>The group stage ran 72 matches over 17 days (4.2 matches a day on average). The knockout rounds spread 32 matches across the following 22 days, with 5 days carrying no matches at all and only 10 matches in the final 13 days. Average match value climbed as the tournament went on (the four brands' knockout-round average sat at 1.6 to 2.1 times their group-stage average), but match density fell even faster, so daily betting volume actually peaked during the group stage and the Round of 32, and total volume in the back half of the knockout rounds shrank.</p>
+
+  <svg viewBox="0 0 760 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:6px 0 18px" role="img" aria-label="Combined TO and Margin by stage">
+    <g stroke="var(--line)" stroke-width="1">
+      <line x1="70" y1="280" x2="730" y2="280"/>
+      <line x1="70" y1="230" x2="730" y2="230" stroke-dasharray="3,4"/>
+      <line x1="70" y1="180" x2="730" y2="180" stroke-dasharray="3,4"/>
+      <line x1="70" y1="130" x2="730" y2="130" stroke-dasharray="3,4"/>
+      <line x1="70" y1="80"  x2="730" y2="80"  stroke-dasharray="3,4"/>
+    </g>
+    <g font-family="ui-monospace,Consolas,monospace" font-size="11" fill="var(--muted)" text-anchor="start">
+      <text x="736" y="284">0%</text><text x="736" y="234">5%</text><text x="736" y="184">10%</text><text x="736" y="134">15%</text><text x="736" y="84">20%</text>
+    </g>
+    <g fill="var(--analyst)" opacity="0.85">
+      <rect x="97"  y="80"    width="40" height="200"/>
+      <rect x="191" y="211.4" width="40" height="68.6"/>
+      <rect x="285" y="245.4" width="40" height="34.6"/>
+      <rect x="379" y="259"   width="40" height="21"/>
+      <rect x="473" y="268.9" width="40" height="11.1"/>
+      <rect x="567" y="275.2" width="40" height="4.8"/>
+      <rect x="661" y="271.3" width="40" height="8.7"/>
+    </g>
+    <g font-family="ui-monospace,Consolas,monospace" font-size="11" fill="var(--ink)" text-anchor="middle">
+      <text x="117" y="73">$33.8M</text>
+      <text x="211" y="205">$11.6M</text>
+      <text x="305" y="239">$5.8M</text>
+      <text x="399" y="253">$3.5M</text>
+      <text x="493" y="263">$1.9M</text>
+      <text x="587" y="269">$0.8M</text>
+      <text x="681" y="265">$1.5M</text>
+    </g>
+    <path d="M117,248.5 L211,258.1 L305,264.2 L399,203.7 L493,80.6 L587,195 L681,174.5" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+    <g>
+      <circle cx="117" cy="248.5" r="4" fill="var(--gold)"/>
+      <circle cx="211" cy="258.1" r="4" fill="var(--gold)"/>
+      <circle cx="305" cy="264.2" r="5.5" fill="var(--neg)"/>
+      <circle cx="399" cy="203.7" r="4" fill="var(--gold)"/>
+      <circle cx="493" cy="80.6" r="5.5" fill="var(--pos)"/>
+      <circle cx="587" cy="195" r="4" fill="var(--gold)"/>
+      <circle cx="681" cy="174.5" r="4" fill="var(--gold)"/>
+    </g>
+    <g font-family="ui-monospace,Consolas,monospace" font-size="11.5" font-weight="700" text-anchor="middle">
+      <text x="117" y="240" fill="var(--gold)">3.15%</text>
+      <text x="211" y="250" fill="var(--gold)">2.19%</text>
+      <text x="305" y="284" fill="var(--neg)">1.58%</text>
+      <text x="399" y="196" fill="var(--gold)">7.63%</text>
+      <text x="493" y="70" fill="var(--pos)">19.94%</text>
+      <text x="587" y="216" fill="var(--gold)">8.50%</text>
+      <text x="681" y="166" fill="var(--gold)">10.55%</text>
+    </g>
+    <g font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">
+      <text x="117" y="300">Group stage</text>
+      <text x="211" y="300">R32</text>
+      <text x="305" y="300">R16</text>
+      <text x="399" y="300">QF</text>
+      <text x="493" y="300">SF</text>
+      <text x="587" y="300">3rd place</text>
+      <text x="681" y="300">Final</text>
+    </g>
+    <g font-size="12" fill="var(--muted)">
+      <rect x="70" y="322" width="14" height="10" fill="var(--analyst)" opacity="0.85"/>
+      <text x="90" y="331">Combined TO (left, bars)</text>
+      <line x1="230" y1="327" x2="258" y2="327" stroke="var(--gold)" stroke-width="2.5"/>
+      <circle cx="244" cy="327" r="3.5" fill="var(--gold)"/>
+      <text x="266" y="331">Combined Margin (right, line)</text>
+      <circle cx="446" cy="327" r="4" fill="var(--neg)"/>
+      <text x="456" y="331">Low: Round of 16</text>
+      <circle cx="566" cy="327" r="4" fill="var(--pos)"/>
+      <text x="576" y="331">Peak: semifinal</text>
+    </g>
+  </svg>
+
+  <div class="twrap" style="--t-head:var(--analyst)">
+  <table>
+    <tr><th>Stage</th><th class="num">Matches</th><th class="num">12bet TO</th><th class="num">Nova88 TO</th><th class="num">Goal123 TO</th><th class="num">Bwing TO</th><th class="num">Combined TO</th><th class="num">Combined Margin</th></tr>
+    <tr><td>Group stage (06/12-28)</td><td class="num">72</td><td class="num">$25,319,032</td><td class="num">$3,391,469</td><td class="num">$3,168,792</td><td class="num">$1,930,124</td><td class="num">$33,809,416</td><td class="num">3.15%</td></tr>
+    <tr><td>Round of 32</td><td class="num">16</td><td class="num">$8,436,256</td><td class="num">$1,149,642</td><td class="num">$1,312,200</td><td class="num">$699,801</td><td class="num">$11,597,899</td><td class="num">2.19%</td></tr>
+    <tr><td>Round of 16</td><td class="num">8</td><td class="num">$4,030,628</td><td class="num">$684,595</td><td class="num">$742,196</td><td class="num">$385,946</td><td class="num">$5,843,365</td><td class="num">1.58%</td></tr>
+    <tr><td>Quarterfinal</td><td class="num">4</td><td class="num">$2,462,782</td><td class="num">$395,574</td><td class="num">$424,243</td><td class="num">$261,781</td><td class="num">$3,544,380</td><td class="num">7.63%</td></tr>
+    <tr><td>Semifinal</td><td class="num">2</td><td class="num">$1,321,063</td><td class="num">$210,663</td><td class="num">$216,130</td><td class="num">$126,894</td><td class="num">$1,874,750</td><td class="num">19.94%</td></tr>
+    <tr><td>3rd place</td><td class="num">1</td><td class="num">$532,222</td><td class="num">$110,870</td><td class="num">$112,269</td><td class="num">$56,627</td><td class="num">$811,988</td><td class="num">8.50%</td></tr>
+    <tr><td>Final</td><td class="num">1</td><td class="num">$931,813</td><td class="num">$262,520</td><td class="num">$193,594</td><td class="num">$85,084</td><td class="num">$1,473,009</td><td class="num">10.55%</td></tr>
+  </table>
+  </div>
+
+  <p>Margin varied sharply by stage, bottoming out at <b>the Round of 16</b>: 12bet's eight matches that round combined for <span class="hl">-0.09%</span>, and <span class="hl">6</span> of 12 groups also finished negative. The common thread across this stretch is a negative Margin, meaning bettors collectively came out ahead. The actual mechanism (say, how often favorites advanced, or how odds were set) would need market-level data to confirm; what's shown here is the Margin distribution by stage, not a claim about why. Pinning down which markets the losses concentrate in (moneyline, handicap, totals) would need bet-level data, and right now the data only goes down to the match level. Profit recovery concentrated after the quarterfinals, with Margin turning positive across every stage from there. <b>The last 8 matches from the quarterfinals on made up <span class="hl">7.7%</span> of matches and <span class="hl">13.1%</span> of TO, but delivered <span class="hl">38.1%</span> of the tournament's GGR</b>, a per-match profit rate <span class="hl">7.4x</span> the first 96 matches.</p>
+
+  <div class="callout gold">
+    The single biggest day was 06/30, when three Round-of-32 matches combined for roughly <span class="cnum">$2.76M</span> across the four brands, with Netherlands vs Morocco the largest single match outside the final (by TO). The final itself brought in <span class="cnum">$1.47M</span> and <span class="cnum">33,888</span> bets, the largest single match of the tournament by TO. But if you're looking at profit rather than volume, the real winner was the semifinal between France and Spain: 12bet's Margin on that match hit <span class="cnum">27.2%</span>, with GGR of <span class="cnum">$187,738</span>, the single biggest GGR of any match in the tournament. Big occasions clearly draw money. There just aren't many of them in one tournament.
+  </div>
+</section>
+</div>
+
+<!-- SECTION 2: FOUR BRANDS -->
+<div class="section-card analyst">
+<section>
+  <h2 class="analyst-h"><span class="dot analyst"></span>Four brands, three different situations</h2>
+
+  <p class="mini">The four brands really map to three situations. <b>12bet</b> has the highest volume but the thinnest Margin. <b>Nova88 and Goal123</b> look similar on paper but land in very different places, and the cause is still unconfirmed. <b>Bwing</b> is small but healthy. The breakdown below marks each claim as either confirmed by the data or still needing further digging.</p>
+
+  <div class="twrap" style="--t-head:var(--analyst)">
+  <table>
+    <tr><th>Brand</th><th class="num">TO</th><th class="num">GGR</th><th class="num">Margin</th><th class="num">Bet count</th><th class="num">Avg bet size</th><th class="num">SABA share</th><th class="num">SABA Margin</th></tr>
+    <tr><td>12bet</td><td class="num">$43,033,796</td><td class="num">$1,353,215</td><td class="num">3.14%</td><td class="num">853,276</td><td class="num">$50.4</td><td class="num">80.9%</td><td class="num">3.50%</td></tr>
+    <tr><td>Nova88</td><td class="num">$6,205,331</td><td class="num">$451,264</td><td class="num">7.27%</td><td class="num">229,728</td><td class="num">$27.0</td><td class="num">85.3%</td><td class="num">7.86%</td></tr>
+    <tr><td>Goal123</td><td class="num">$6,169,424</td><td class="num">$306,998</td><td class="num">4.98%</td><td class="num">173,514</td><td class="num">$35.6</td><td class="num">90.1%</td><td class="num">5.16%</td></tr>
+    <tr><td>Bwing</td><td class="num">$3,546,256</td><td class="num">$169,314</td><td class="num">4.77%</td><td class="num">117,993</td><td class="num">$30.1</td><td class="num">79.7%</td><td class="num">4.75%</td></tr>
+  </table>
+  </div>
+
+  <div class="brand-card">
+  <h4>12bet: highest volume, thinnest cut per dollar wagered</h4>
+  <p class="lead">It alone carries <span class="hl">73%</span> of the four brands' TO, but keeps just <span class="hl">$3.14</span> per $100 wagered, the lowest of the four.</p>
+  <p>12bet's average bet size runs <span class="hl">$50.4</span>, the highest of the four. That volume-and-Margin combination fits the profile of large-stake, price-conscious bettors: the kind who look for whichever provider's odds sit closest to true probability. The closer the odds sit to true probability, the thinner the Margin left for the house. Worth flagging: this is an inference drawn from the shape of the data, not something confirmed by actual customer research, the same caveat that applies to the Nova88/Goal123 comparison below. What's confirmed is the provider-concentration numbers; the customer motivation itself remains an inference.</p>
+  <p>This tournament, Pinnacle kept just <span class="hl">$1.64</span> per $100 of TO, and BTI kept <span class="hl">$1.80</span>, both well below 12bet's overall <span class="hl">$3.14</span>. Neither number points to a trading mistake. That's simply how this customer base bets.</p>
+  <p>For 12bet, pushing more volume through the same base has limited upside; the base is already large. The better lever is getting the same customers to place more bets on higher-Margin formats, like parlays. Lifting the blended Margin from <span class="hl">3.14%</span> to the four-brand average of <span class="hl">3.87%</span> would add roughly <span class="hl">$314K</span> on the same TO. More on how in playbook item three.</p>
+  </div>
+
+  <div class="brand-card">
+  <h4>Nova88 and Goal123: same TO, very different profit, cause unconfirmed</h4>
+  <p class="lead">TO is nearly identical (<span class="hl">$6.21M</span> vs <span class="hl">$6.17M</span>), but GGR differs by <span class="hl">47%</span> (<span class="hl">$451K</span> vs <span class="hl">$307K</span>).</p>
+  <p>Ruling out the obvious explanation first: provider dependence is similar for both, and both lean heavily on SABA (Nova88 <span class="hl">85.3%</span>, Goal123 <span class="hl">90.1%</span>). That gap is not wide enough to explain a 47% difference in GGR.</p>
+  <p>On the same SABA book, Nova88's Margin runs <span class="hl">7.86%</span>, against just <span class="hl">5.16%</span> for Goal123. The final made the gap obvious: same match, Nova88 kept <span class="hl">21.9%</span> and earned <span class="hl">$57,602</span>, while Goal123 kept only <span class="hl">4.8%</span> and earned <span class="hl">$9,348</span>.</p>
+  <p>The data on hand only goes down to the brand level, so it does not show what actually differs about how each brand's players bet (single bets vs parlays, customer mix, VIP share). No confident claim about the cause is possible without bet-level data.</p>
+  <p>Whatever the cause turns out to be, <b>Goal123 is the clearest Margin-improvement opportunity among the four brands</b>. Finding and copying whatever Nova88 is doing right would grow profit without growing TO, and figuring that out should be the first data project before the next tournament.</p>
+  </div>
+
+  <div class="brand-card">
+  <h4>Bwing: smallest brand, healthy fundamentals, just needs scale</h4>
+  <p class="lead">TO is only <span class="hl">57%</span> of Goal123's, and Margin at <span class="hl">4.77%</span> sits close to Goal123's number too.</p>
+  <p>Its dependence on SABA is also the lowest of the four (<span class="hl">79.7%</span>), meaning its volume is not riding on a single provider.</p>
+  <p>The stronger evidence is its Margin trend across the tournament: <span class="hl">4.40%</span> in the group stage, dropping to <span class="hl">0.77%</span> in the Round of 32, recovering to <span class="hl">3.03%</span> in the Round of 16, <span class="hl">8.01%</span> in the quarterfinals, and climbing to <span class="hl">29.87%</span> in the semifinal, tracking the same low-early-high-late curve as 12bet, Nova88, and Goal123.</p>
+  <p>Matching that broader pattern suggests Bwing's customer base and odds response are healthy, not just quietly stable because a few unusual bets happened to cancel out. The real difference between Bwing and the other three brands is scale, not underlying health, which means its growth path looks different from 12bet's or Goal123's: it needs volume, not a fix to how it books bets.</p>
+  </div>
+
+  <div class="brand-card">
+  <h4>Provider picture: SABA dominates, 9W finished in the red</h4>
+  <p class="lead">SABA takes eight to nine out of every ten dollars wagered across all four brands.</p>
+  <p>BTI, the second-largest provider, holds <span class="hl">12.1%</span> of 12bet's TO but only <span class="hl">1.8%</span> Margin; Pinnacle holds <span class="hl">5.5%</span> at <span class="hl">1.64%</span> Margin. Low-Margin providers like these concentrate almost entirely in 12bet, which is the direct reason 12bet's overall Margin lands at the bottom.</p>
+  <p>9W finished the whole tournament in the red on 12bet (Margin <span class="hl">-6.6%</span>), and its renewal is not in question, but the reason for the loss is worth understanding before the next tournament.</p>
+  <p>A few explanations are plausible. Small volume can produce statistical noise: 9W's volume is far below SABA's, so a handful of big winning bets could flip the total negative on their own. Odds could be priced too generously: if 9W's prices were systematically closer to true probability than they should be, the loss would be structural rather than bad luck. Or a specific promotion, or a concentration of large bettors, could be exposed on this one provider.</p>
+  <p>Confirming which one it is means pulling 9W's match-by-match profit and loss to see whether the loss concentrates in a handful of matches or spreads evenly, comparing 9W's odds against a reference price such as Pinnacle's, and checking whether any promotion is specifically tied to 9W.</p>
+  </div>
+</section>
+</div>
+
+<!-- SECTION 3: PLAYBOOK -->
+<div class="section-card po">
+<section>
+  <h2 class="po-h"><span class="dot po"></span>2028 Euros, 2030 World Cup: earning more than this tournament</h2>
+
+  <p>Here is a piece of good luck that costs nothing. This tournament was hosted across the US, Canada, and Mexico, putting matches at 3am to 9am GMT+8; bettors either stayed up or missed them. The 2028 Euros run in the UK and Ireland, and the 2030 World Cup is hosted across Spain, Portugal, and Morocco. European afternoon and evening kickoffs will land at 9pm to the early hours in Asia, generally an easier window to reach active bettors during (whether that is actually this platform's peak betting window would need a look at historical hour-by-hour volume to confirm). Same tournament, but the time zone alone could widen the pool of reachable active bettors. Luck like that is free, but only pays off if the platform is ready to catch it. The five items below are all built from this tournament's 104 matches.</p>
+
+  <div class="brand-card po">
+  <h4>1. Bet heavy on the knockout rounds: the schedule locks in a year out</h4>
+  <p class="lead">The four brands' knockout-round average sits at <span class="hl">1.6 to 2.1x</span> their group-stage average, and Margin turns positive across the board from the quarterfinals on.</p>
+  <p>A single semifinal's GGR outweighs a full day of the group stage. And the knockout rounds' dates, match count, and kickoff times are all locked in the moment the schedule is published, a rare marketing window that can be planned a full year ahead.</p>
+  <p>How this tournament's marketing budget was actually allocated, and whether it concentrated on the knockout rounds, is not something the betting data can show; only MKT's data can answer that. Step one before the next tournament is understanding MKT's actual spend pattern this time and comparing it against this betting data, to confirm whether resources landed where they mattered. If spend turns out to have been spread evenly, the next tournament should flip that: cheap content to keep daily activity alive during the group stage, with real acquisition and CRM budget locked into the two weeks after the quarterfinals, something that can go on the 2028 calendar right now.</p>
+  </div>
+
+  <div class="brand-card po">
+  <h4>2. Fill the schedule gaps: this tournament gave away five full days</h4>
+  <p class="lead">5 of the 39 days carried <span class="hl">no matches</span>, 8 days had only one, and the final 13 days had just <span class="hl">10 matches</span> total.</p>
+  <p>Betting volume on a gap day runs to zero, and that is exactly where players' app habits break. Before the next tournament, build an off-day content calendar: parlays on concurrent leagues, next-round prediction contests, match-recap features for days without a fixture.</p>
+  <p><span class="key">The point is not to earn big on a gap day. It is to keep the habit alive so people are still around when the big matches return.</span></p>
+  </div>
+
+  <div class="brand-card po">
+  <h4>3. Lift 12bet's blended Margin: the cheapest lever available</h4>
+  <p class="lead">The four brands' Margin gap runs wide, from 12bet's <span class="hl">3.14%</span> up to Nova88's <span class="hl">7.27%</span>.</p>
+  <p>That gap says Margin is mostly a function of how customers bet, not luck, and how customers bet can be nudged by product design.</p>
+  <p>12bet does not need to touch moneyline pricing to chase away its big spenders. The move is pushing parlays further into the betting flow: multiplying several legs' odds together compounds the built-in edge, which is why parlays carry structurally higher Margin.</p>
+  <p>On this tournament's $43M in 12bet TO, every <span class="hl">0.5</span> percentage point of blended Margin is worth about <span class="hl">$215K</span> in GGR, roughly <span class="hl">9%</span> of the tournament's total GGR, and it is a product fix, not a marketing spend.</p>
+  </div>
+
+  <div class="brand-card po">
+  <h4>4. Find out why Goal123 trails Nova88 before copying anything</h4>
+  <p class="lead">Same volume, same primary provider, a <span class="hl">47%</span> GGR gap, and no confirmed explanation. The next move should start with finding out, not copying.</p>
+  <p>The brand comparison above was honest about this: brand-level data proves the gap exists, not why. Moving Nova88's playing structure onto Goal123 before the cause is known means betting on an unverified assumption.</p>
+  <p>The real first step before the next tournament is breaking down each brand's bet composition (single bets vs parlays, customer profile, VIP share, market mix) to find the actual source of the 47% gap. Only once that is confirmed will it be clear which part of Nova88's setup is worth copying, or whether these are simply two different customer bases that need two different playbooks.</p>
+  </div>
+
+  <div class="brand-card po">
+  <h4>5. Match promotional spend to Margin by stage</h4>
+  <p class="lead">The group stage combined for <span class="hl">3.15%</span> Margin, with <span class="hl">6</span> of 12 groups finishing negative, and the Round of 16 dropped further to <span class="hl">1.58%</span>, all confirmed in this tournament's data.</p>
+  <p>These stages are already thin. If promotions happen to stack refund-style offers on top during the same window, that is a double loss. But how promotions are actually allocated, and whether they overlap with this Margin low point, is the same open question as item one: only MKT's data can answer it, and it is worth reconciling with them directly.</p>
+  <p>Looking forward, promotions during these low-Margin stages could shift toward parlay boosts or specials on goals, corners, and other derivative markets, steering volume toward higher-Margin bets. Refund-style offers could wait for the quarterfinals on, once Margin turns positive across the board; the same budget would earn back differently. Pinning down exactly which markets the low-Margin losses come from still needs bet-level breakdown (see above) before deciding what to tighten.</p>
+  </div>
+
+  <div class="callout po">
+    <b>Four things to bring to 2028:</b>
+    <ol style="margin:10px 0 0; padding-left:20px">
+      <li>The knockout schedule locks in a year ahead. Commit marketing budget to those weeks instead of spreading it evenly across the tournament.</li>
+      <li>Have the gap-day content calendar ready before kickoff so player habits do not break.</li>
+      <li>Push 12bet's blended Margin up through parlays. That is a product fix and costs no marketing budget.</li>
+      <li>Find out why Goal123 trails Nova88 by 47% before deciding whether to copy Nova88's approach.</li>
+    </ol>
+  </div>
+</section>
+</div>
+
+<footer>
+  <h3>Data sources and methodology</h3>
+  <ul>
+    <li>All figures come from the 0720 final-tally WC Excel (all 104 matches settled, GMT+8), extracted via the wc_extract pipeline: match, stage, daily, provider, and per-brand splits. All amounts in USD.</li>
+    <li>Four brands = 12bet (OT) plus Nova88, Goal123, and Bwing (the three N8X sites). The site-level breakdown and the N8X summary table show a small discrepancy (TO +0.03%, GGR -2.0%, from rounding and attribution differences in the source tables); this report uses the site-level breakdown throughout, so the four-brand total ($58,954,808 / $2,280,791) differs slightly from summing the OT+N8X main tables.</li>
+    <li>"Knockout-to-group multiple" is each brand's 32-match knockout average divided by its 72-match group-stage average. "SABA Margin" is that brand's SABA-booked GGR divided by TO.</li>
+    <li>The 2028 Euros (UK/Ireland) and 2030 World Cup (Spain/Portugal/Morocco, plus commemorative matches in South America) reflect publicly announced hosting arrangements. Kickoff-time estimates are a straight timezone conversion; actual schedules will follow the official release.</li>
+    <li>This is a tournament-final draft. Figures were aggregated within this session (stage totals reconcile against each brand's cumulative totals) and have not yet been independently reviewed by a fresh agent; that review will run before final publication.</li>
+  </ul>
+</footer>
+
+</div>
