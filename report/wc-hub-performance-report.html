@@ -35,6 +35,8 @@
   .mast h1{font-size:30px;font-weight:800;letter-spacing:-.01em;margin:6px 0 4px;color:#fff}
   .mast .sub{color:#a9c1d4;font-size:14px}
   .mast .verdict{margin-top:16px;padding:12px 16px;background:rgba(255,255,255,.06);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:14.5px;color:#eaf1f7}
+  .mast .verdict p{margin:0 0 10px}
+  .mast .verdict p:last-child{margin-bottom:0}
   .period-pill{display:inline-block;margin-top:10px;font-size:12px;color:#cfe0ee;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px 12px}
   .role-legend{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0 0}
   .role-legend span{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#cfe0ee}
@@ -112,35 +114,44 @@
 
   .note{font-size:12px;color:var(--muted);margin-top:10px}
   footer{padding:30px 0 50px;color:var(--muted);font-size:12px}
+
+  .hl{color:var(--gold)!important;font-weight:700}
+  .insight .row .val p{margin:0 0 8px}
+  .insight .row .val p:last-child{margin-bottom:0}
+  .find .rec p{margin:0 0 6px}
+  .find .rec p:last-child{margin-bottom:0}
 </style>
 
 <header class="mast">
   <div class="wrap">
-    <div class="eyebrow">Executive Briefing · Shareholder Deck</div>
-    <h1>2026 World Cup Hub 成效診斷</h1>
-    <div class="sub">世界盃即將落幕 — 這個功能交出的成績單與下一步</div>
-    <span class="period-pill tnum">UX 行為數據：2026-05-28–07-16（GA4+Clarity，UI/UX 團隊原始數字）｜Hot Games 財務：2026-05-26–07-17（Prod DB，Admin 口徑）</span>
-    <div class="verdict"><b>核心結論：</b>Hub 證實能有效導流互動與存款意圖、手機優先策略完全驗證成功；但 Hot Games 營收高度集中於單一鯨魚、泰國在地化缺口、賽後動能衰退，是下一次迭代要優先解決的課題。Hub 目前的財務規模仍小，其現階段價值在於<b>導流與活化</b>，下一步的關鍵是把這份導流力更緊密地接上公司其他大額投注品類（Sportsbook）。</div>
+    <div class="eyebrow">Executive Briefing · Shareholder Deck · FINAL</div>
+    <h1>2026 World Cup Hub 成效診斷（FINAL）</h1>
+    <div class="sub">世界盃已經打完了，這是涵蓋決賽的完整版成績單</div>
+    <span class="period-pill tnum">UX 行為數據：2026-05-28–07-16（GA4+Clarity，UI/UX 團隊決賽後最終版簡報）｜Hot Games 財務：2026-05-26–07-20（Prod DB，Admin 口徑，涵蓋決賽週末）</span>
+    <div class="verdict">
+      <p><b>核心結論：</b>這次 World Cup Hub 最重要的意義，不是它賺了多少錢，而是它是公司四個品牌（OT/12bet、Nova88、Goal123、Bwing）第一次在世界盃、歐國盃這類大型賽事裡，真正做出一個「專區」。過去每逢大賽，<b class="hl">我們最賺錢的比賽從來沒有專屬入口、專屬內容去承接，流量跟營收就這樣散在各自的頁面裡</b>，沒有人把它們收攏起來變成一個可以持續優化的資產。</p>
+      <p>Hub 帶動了互動跟存款意圖，手機優先的設計也證明是對的。決賽週末（7/18–7/20）Hot Games 幾乎沒有增量，證實賽事熱度在小組賽後就已經退燒，這件事跟泰國轉換率卡住、營收品質過度依賴少數玩家一樣，是下一版最該先處理的。Hub 目前賺的錢不多，它的價值還是在導流跟喚醒老客，下一步該把這股導流力接到 Sportsbook，這才是公司真正靠它賺錢的地方。</p>
+    </div>
     <div class="role-legend">
       <span><span class="sw" style="background:var(--r1)"></span>01 數據分析師</span>
       <span><span class="sw" style="background:var(--r2)"></span>02 UI/UX</span>
-      <span><span class="sw" style="background:var(--r3)"></span>03 Marketing</span>
-      <span><span class="sw" style="background:var(--r4)"></span>04 Product Owner</span>
+      <span><span class="sw" style="background:var(--r4)"></span>03 Product Owner</span>
+      <span><span class="sw" style="background:var(--r3)"></span>04 Marketing</span>
     </div>
   </div>
 </header>
 
 <nav class="toc"><div class="wrap">
-  <a href="#overview">指標總覽</a><a href="#funnel">漏斗</a><a href="#thailand">泰國市場</a><a href="#trend">週趨勢</a><a href="#hotgames">Hot Games</a><a href="#brand">品牌對照</a><a href="#deposit">存款轉換增量</a><a href="#ux">UX 反思</a><a href="#mkt">MKT 評估</a><a href="#po">PO 下一步</a>
+  <a href="#overview">指標總覽</a><a href="#funnel">漏斗</a><a href="#thailand">泰國市場</a><a href="#trend">週趨勢</a><a href="#hotgames">Hot Games</a><a href="#brand">品牌對照</a><a href="#deposit">存款轉換增量</a><a href="#ux">UX 反思</a><a href="#po">PO 下一步</a><a href="#mkt">MKT 評估</a>
 </div></nav>
 
 <main class="wrap">
 
-<!-- ============ ROLE 01: 數據分析師（鉅細靡遺，全公司共通） ============ -->
+<!-- ============ ROLE 01: 數據分析師 ============ -->
 
 <section id="overview">
   <div class="sec-head"><span class="n">01</span><span class="role-tag" style="background:var(--r1)">數據分析師</span><h2>核心事件與轉化率指標總覽</h2></div>
-  <p class="lead">這一節是「全公司任何角色都會用到」的標準指標，數字直接取自 UI/UX 團隊「WC26 UX &amp; Behavioral Insights Report」簡報（人數皆去重人數基準），未經改動，供各角色後續解讀之共同事實基礎。</p>
+  <p class="lead">這節的數字全公司都用得到，直接取自 UI/UX 團隊「WC26 UX &amp; Behavioral Insights Report」簡報（人數都是去重後的），沒有改動。後面幾節的解讀都建立在這些數字上。</p>
 
   <div class="tscroll"><table>
     <thead><tr><th>分析向度</th><th>核心事件／轉化率指標</th><th>OT/12BET</th><th>NOVA88</th><th>指標定義與功用</th></tr></thead>
@@ -149,33 +160,37 @@
       <tr><td class="lft">DepositClick（存款按鈕點擊總量）</td><td class="n tnum">1,656</td><td class="n tnum">2,293</td><td class="lft" style="font-size:12px;color:var(--muted)">監測具有充值意圖的用戶規模（含既有會員）</td></tr>
       <tr><td class="lft">KnockoutSwipe／FloatingSoccerClick</td><td class="n tnum">798</td><td class="n tnum">1,363</td><td class="lft" style="font-size:12px;color:var(--muted)">觀測賽事互動卡片與浮動懸浮窗的活躍度</td></tr>
       <tr><td class="lft">CompleteRegistration（完成註冊總量）</td><td class="n tnum">225</td><td class="n tnum">123</td><td class="lft" style="font-size:12px;color:var(--muted)">衡量註冊表單最終遞交流程的絕對成功次數</td></tr>
-      <tr><td rowspan="2" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">核心轉換效率<br>（去重人數基準）</td><td class="lft"><b>RegisterClick 註冊點擊人數（去重）</b></td><td class="n tnum"><b>1,109</b></td><td class="n tnum"><b>472</b></td><td class="lft" style="font-size:12px;color:var(--muted)">扣除重複點擊，計算真實動念要註冊的獨立訪客</td></tr>
+      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">核心轉換效率<br>（去重人數基準）</td><td class="lft"><b>RegisterClick 註冊點擊人數（去重）</b></td><td class="n tnum"><b>1,109</b></td><td class="n tnum"><b>472</b></td><td class="lft" style="font-size:12px;color:var(--muted)">扣除重複點擊，計算真實動念要註冊的獨立訪客</td></tr>
       <tr><td class="lft"><b>CompleteRegistration 註冊完成人數</b></td><td class="n tnum"><b>225</b></td><td class="n tnum"><b>122</b></td><td class="lft" style="font-size:12px;color:var(--muted)">成功打通註冊漏斗，轉化為新註冊會員之獨立用戶</td></tr>
+      <tr><td class="lft">Hub 訪客（不重複，單一查詢不拆裝置）</td><td class="n tnum">30,477 人</td><td class="n tnum">21,561 人</td><td class="lft" style="font-size:12px;color:var(--muted)">跨裝置去重後的活動全期淨進站人數</td></tr>
+      <tr><td class="lft"><b>Hub 註冊轉換率（RegisterClick ÷ Hub 訪客）</b></td><td class="n tnum"><b>3.5%</b></td><td class="n tnum"><b>2.1%</b></td><td class="lft" style="font-size:12px;color:var(--muted)">反映整體受眾對註冊首要行動點的轉化效率</td></tr>
     </tbody>
   </table></div>
 
   <div class="card" style="margin-top:14px">
     <div class="eyebrow" style="color:var(--r1)">數據分析師解讀：兩品牌是「量」與「質」的兩種結構，不是誰優誰劣</div>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">從去重人數看，OT 的漏斗基數（RegisterClick 1,109 人）是 Nova88（472 人）的 <b style="color:var(--ink)">2.3 倍</b>，但完成率（20.3%）反而略低於 Nova88（25.8%）。白話解釋：<b style="color:var(--ink)">OT 吸引到比較多人點「註冊」，但這些人裡面，最後真的把表單填完、成功開戶的比例比較低</b>——每 100 個點註冊的人，OT 只有約 20 人真的辦成，Nova88 卻有約 26 人辦成。換句話說，Nova88 點註冊的人雖然少很多，但點進去的人比較少是「隨手點點看」，多半是本來就打定主意要開戶的人；OT 點註冊的人裡面，則有比較多人是點了之後看一看、猶豫一下就放棄，沒有走到底。</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">這代表兩個品牌不是「誰做得好、誰做得差」的關係，而是<b style="color:var(--ink)">面對的問題不一樣</b>：OT 該優先解決「為什麼點了註冊卻中途放棄」（流程卡點），Nova88 該優先解決「怎麼讓更多人願意點註冊」（量太少）。如果拿同一套標準去要求兩個品牌（例如統一要求「完成率都要到 25%」），會忽略掉 OT 真正該修的其實是流程本身，而不是想辦法多騙一點人來點擊；後續在分配 UX 修復資源或行銷預算時，這兩個品牌應該對症下不同的藥，不能套用同一個目標值。</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)"><b style="color:var(--ink)">存款點擊 vs 完成註冊的比值（OT 5.7 倍／Nova88 10.1 倍）</b>是本節最關鍵的訊號：兩個品牌 Hub 流量的主要構成都是「回流老客」而非「淨新戶」，且 Nova88 這個現象更極端——這代表 Nova88 的 Hub 事實上更像一個「會員促活工具」，而非拉新工具，這一點會直接影響後面 UX／MKT／PO 三節的判斷方向。</p>
-    <p class="note">另註：原始簡報有一句「OT 3.5% vs Nova88 2.1%」的轉化效率表述，但未載明確切分母定義，本節不採用該數字做結論依據，僅以上方去重人數與完成率兩組已知定義清楚的數字進行分析。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">從去重人數看，OT 的漏斗基數（RegisterClick 1,109 人）是 Nova88（472 人）的 <b class="hl">2.3</b> 倍，完成率（<b class="hl">20.3%</b>）卻略低於 Nova88（<b class="hl">25.8%</b>）。白話一點說：OT 吸引到比較多人點註冊，但這群人裡面真正把表單填完、開戶成功的比例比較低。每 100 個點註冊的人，OT 只有約 20 人真的辦成，Nova88 卻有約 26 人辦成。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">換句話說，Nova88 點註冊的人雖然少很多，但點進去的人比較少是「隨手點點看」，多半是本來就打定主意要開戶的人；OT 點註冊的人裡面，則有比較多人是點了之後看一看、猶豫一下就放棄，沒有走到底。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Hub 訪客這組數字補上了另一層：OT 的整體進站人數（30,477 人）是 Nova88（21,561 人）的 <b class="hl">1.4</b> 倍，但 RegisterClick 轉換率（<b class="hl">3.5%</b>）卻是 Nova88（<b class="hl">2.1%</b>）的 <b class="hl">1.7</b> 倍。也就是說 OT 不只是流量大，連「讓進站的人願意點註冊」這一步都做得比 Nova88 好；OT 真正卡住的地方，是點了註冊之後的表單填寫這一段。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Nova88 反過來，是「願意點註冊的人比例本來就低，但一旦點了，填完的比例又比 OT 高」。這跟前面完成率的觀察合起來看，兩個品牌的漏斗卡點根本不在同一個環節。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">所以這兩個品牌不是誰做得好誰做得差，是問題不一樣。OT 該先搞清楚為什麼人點了註冊卻中途放棄，這是流程卡點；Nova88 該先想辦法讓更多進站的人願意點進註冊這一步，這是入口意願的問題。如果拿同一套標準要求兩邊，比如都要完成率到 <b class="hl">25%</b>，OT 真正該修的流程問題會被忽略，資源分配也會跟著錯。這兩個品牌得對症下藥，不能套同一個目標值。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">存款點擊跟完成註冊的比值，OT 是 <b class="hl">5.7</b> 倍，Nova88 是 <b class="hl">10.1</b> 倍。這組數字很關鍵：兩個品牌 Hub 裡的流量主力都是回流老客，不是淨新戶，Nova88 又更極端一些，也就是說 Nova88 的 Hub 目前比較像會員促活工具，不太像拉新工具。這會影響後面 UX、PO、MKT 三節的判斷。</p>
   </div>
 </section>
 
 <section id="funnel">
   <div class="sec-head"><span class="n">02</span><span class="role-tag" style="background:var(--r1)">數據分析師</span><h2>雙品牌註冊轉換漏斗</h2></div>
-  <p class="lead">下圖以實際漏斗形狀呈現：上緣寬度代表點擊註冊的人數（100%），下緣寬度依實際完成率等比例縮放。存款點擊為獨立事件、非本漏斗的下一個環節，故未納入漏斗本身，另列於旁側。</p>
+  <p class="lead">下面畫成真正的漏斗形狀：上寬代表點擊註冊的人數（100%），下窄代表真正填完表單的人數，寬度是照比例縮的，窄多少一眼就看得出來。存款點擊是另一個獨立事件、不是註冊漏斗的下一步，所以沒有畫進漏斗裡，另外列在旁邊。</p>
   <div class="grid cols-2">
     <div class="card">
       <div class="eyebrow" style="color:var(--ot)">OT / 12Bet 轉化漏斗</div>
       <svg viewBox="0 0 260 210" style="display:block;width:100%;max-width:280px;margin:10px auto 0" role="img" aria-label="OT 註冊轉換漏斗">
-        <defs><linearGradient id="fOT2" x1="0" y1="0" x2="0" y2="1">
+        <defs><linearGradient id="fOT" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" style="stop-color:var(--ot);stop-opacity:0.28"/>
           <stop offset="100%" style="stop-color:var(--ot);stop-opacity:0.95"/>
         </linearGradient></defs>
         <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 1,109（100%）</text>
-        <polygon points="20,20 240,20 152.3,180 107.7,180" fill="url(#fOT2)" stroke="var(--ot)" stroke-width="1"/>
+        <polygon points="20,20 240,20 152.3,180 107.7,180" fill="url(#fOT)" stroke="var(--ot)" stroke-width="1"/>
         <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 225（20.3%）</text>
       </svg>
       <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">存款點擊（平行指標，非漏斗下一步）：<b style="color:var(--ink)">1,292 人</b></div>
@@ -183,12 +198,12 @@
     <div class="card">
       <div class="eyebrow" style="color:var(--nv)">Nova88 轉化漏斗</div>
       <svg viewBox="0 0 260 210" style="display:block;width:100%;max-width:280px;margin:10px auto 0" role="img" aria-label="Nova88 註冊轉換漏斗">
-        <defs><linearGradient id="fNV2" x1="0" y1="0" x2="0" y2="1">
+        <defs><linearGradient id="fNV" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" style="stop-color:var(--nv);stop-opacity:0.28"/>
           <stop offset="100%" style="stop-color:var(--nv);stop-opacity:0.95"/>
         </linearGradient></defs>
         <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 472（100%）</text>
-        <polygon points="20,20 240,20 158.4,180 101.6,180" fill="url(#fNV2)" stroke="var(--nv)" stroke-width="1"/>
+        <polygon points="20,20 240,20 158.4,180 101.6,180" fill="url(#fNV)" stroke="var(--nv)" stroke-width="1"/>
         <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 122（25.8%）</text>
       </svg>
       <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">存款點擊（平行指標，非漏斗下一步）：<b style="color:var(--ink)">1,231 人</b></div>
@@ -196,7 +211,7 @@
   </div>
   <div class="card" style="margin-top:14px">
     <div class="eyebrow">存款點擊 vs 完成註冊：規模落差</div>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">OT：存款點擊 1,292 人 ÷ 完成註冊 225 人 ＝ <b style="color:var(--ink)">5.7 倍</b>；Nova88：1,231 人 ÷ 122 人 ＝ <b style="color:var(--ink)">10.1 倍</b>。此落差是本報告最重要的資料事實之一，UX／MKT／PO 三節的判斷都建立在這個事實上（詳見各節解讀）。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">OT：存款點擊 1,292 人 ÷ 完成註冊 225 人 ＝ <b class="hl">5.7</b> 倍；Nova88：1,231 人 ÷ 122 人 ＝ <b class="hl">10.1</b> 倍。這個落差後面幾節會反覆用到，UX、PO、MKT 的判斷都是從這裡出發的。</p>
   </div>
 </section>
 
@@ -211,66 +226,103 @@
       <tr><td class="lft">其他長尾市場（越南／印）</td><td class="n">樣本偏小</td><td class="n">24.0% ~ 28.5%</td><td class="lft">供在地化做法對標參考</td></tr>
     </tbody>
   </table></div>
-  <p class="note">核心定量結論（原簡報）：泰國市場在 OT/12Bet 的註冊點擊率（2.68%）全場居首，但完成率卻墊底。排除裝置技術差異後，高度懷疑問題存在於泰文版註冊表單流程的本地化缺陷。</p>
+  <p class="note">（簡報結論）泰國 629 次點擊裡有 <b class="hl">65%</b> 來自 elitegame12.com 這個單一渠道，這個渠道的完成率只有 <b class="hl">8.8%</b>；其他來源（direct/tiktok/google）完成率都在 <b class="hl">27%</b> 以上。結論是：不是泰文表單或在地化的問題，是這個特定渠道帶進來的人本來就比較少會填完表單，泰文表單健檢的優先度可以往後排。</p>
 </section>
 
 <section id="trend">
   <div class="sec-head"><span class="n">04</span><span class="role-tag" style="background:var(--r1)">數據分析師</span><h2>週趨勢：動能峰值與下滑</h2></div>
-  <p class="lead">「W25」是<b style="color:var(--ink)">日曆週數（Week 25）</b>的簡寫，也就是 2026 年第 25 週，對照到實際日期是 <b style="color:var(--ink)">6/15–6/21</b>。原簡報以「W22–W29」（第 22–29 週，約 5/25–7/19）呈現整段活動期間的週趨勢。</p>
-  <div class="grid cols-2">
-    <div class="card"><div class="eyebrow">W25（6/15–6/21）黃金峰值</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">雙品牌 RegisterClick 與 DepositClick 均在 <b style="color:var(--ink)">W25（06/15–06/21）</b>達到全期高峰，得益於世界盃小組賽最白熱化階段。</p></div>
-    <div class="card"><div class="eyebrow">峰值後連續下滑</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">自 W25 拐點後，雙品牌數據連續下滑；Nova88 DepositClick 每週遠高於 RegisterClick（3–5 倍），拉新動能降溫。</p></div>
-    <div class="card"><div class="eyebrow">日均註冊點擊衰退</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">OT 日均註冊點擊從小組賽 <b style="color:var(--ink)">43.9 次/天</b> 降至 07-16 的 <b style="color:var(--ink)">7.0 次/天（−84%）</b>；Nova88 同步衰退 <b style="color:var(--ink)">66%</b>。</p></div>
-    <div class="card"><div class="eyebrow">Referral 渠道效益</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">elitegame12.com 點擊率泰國 <b style="color:var(--ink)">5.02%</b>、越南 <b style="color:var(--ink)">4.48%</b>；兩國直接流量點擊皆低於 1%。</p></div>
+  <p class="lead">「W25」是日曆週數（Week 25）的簡寫，也就是 2026 年第 25 週，對照到實際日期是 6/15–6/21。原簡報用「W22–W29」（第 22–29 週）呈現週趨勢，但沒有附上實際折線圖跟精確數字。下面這張圖是我方獨立拉的 GA4 逐日 RegisterClick 數據（5/28–7/16，跟 PPTX 同一個事件、統計窗口稍有出入，兩邊數字先前已交叉核對過），畫出來給大家看真正的峰值長什麼樣子。</p>
+
+  <div class="card">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:6px;font-size:12.5px;color:var(--muted)">
+      <span><span style="display:inline-block;width:14px;height:3px;background:var(--ot);border-radius:2px;vertical-align:middle;margin-right:6px"></span>12bet／OT 每日 RegisterClick</span>
+      <span><span style="display:inline-block;width:14px;height:3px;background:var(--nv);border-radius:2px;vertical-align:middle;margin-right:6px"></span>Nova88 每日 RegisterClick</span>
+      <span style="margin-left:auto">本方 GA4 重算，非 PPTX 原圖</span>
+    </div>
+    <svg viewBox="0 0 960 280" style="display:block;width:100%;height:auto" role="img" aria-label="每日 RegisterClick 趨勢">
+      <g stroke="var(--line)" stroke-width="1">
+        <line x1="44" y1="16" x2="948" y2="16"/><line x1="44" y1="137" x2="948" y2="137"/><line x1="44" y1="254" x2="948" y2="254"/>
+      </g>
+      <g fill="var(--muted)" font-size="10" text-anchor="end">
+        <text x="40" y="20">70</text><text x="40" y="141">35</text><text x="40" y="258">0</text>
+      </g>
+      <g stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 3" opacity="0.7">
+        <line x1="302.3" y1="10" x2="302.3" y2="254"/><line x1="634.4" y1="10" x2="634.4" y2="254"/>
+      </g>
+      <g fill="var(--gold)" font-size="9.5" font-weight="700" text-anchor="middle">
+        <text x="302.3" y="8">▲ 開賽 6/11</text><text x="634.4" y="8">▲ 16強 6/29</text>
+      </g>
+      <polyline fill="none" stroke="var(--ot)" stroke-width="2.2" stroke-linejoin="round" points="44.0,196.2 62.4,118.0 80.9,141.8 99.3,220.0 117.8,209.8 136.2,216.6 154.7,169.0 173.1,145.2 191.6,192.8 210.0,121.4 228.5,104.4 246.9,118.0 265.4,80.6 283.8,53.4 302.3,107.8 320.7,131.6 339.2,128.2 357.6,169.0 376.1,158.8 394.5,29.6 413.0,80.6 431.4,80.6 449.9,101.0 468.3,80.6 486.8,90.8 505.2,111.2 523.7,141.8 542.1,131.6 560.6,19.4 579.0,97.6 597.5,124.8 615.9,162.2 634.4,179.2 652.8,189.4 671.3,179.2 689.7,152.0 708.2,175.8 726.6,196.2 745.1,162.2 763.5,179.2 782.0,165.6 800.4,192.8 818.9,203.0 837.3,189.4 855.8,226.8 874.2,203.0 892.7,213.2 911.1,203.0 929.6,206.4 948.0,182.6"/>
+      <polyline fill="none" stroke="var(--nv)" stroke-width="2.2" stroke-linejoin="round" points="44.0,203.0 62.4,233.6 80.9,206.4 99.3,237.0 117.8,220.0 136.2,216.6 154.7,233.6 173.1,186.0 191.6,243.8 210.0,175.8 228.5,220.0 246.9,226.8 265.4,220.0 283.8,226.8 302.3,70.4 320.7,155.4 339.2,223.4 357.6,186.0 376.1,189.4 394.5,175.8 413.0,162.2 431.4,169.0 449.9,196.2 468.3,209.8 486.8,189.4 505.2,206.4 523.7,203.0 542.1,216.6 560.6,189.4 579.0,216.6 597.5,206.4 615.9,182.6 634.4,209.8 652.8,209.8 671.3,196.2 689.7,209.8 708.2,199.6 726.6,213.2 745.1,220.0 763.5,226.8 782.0,216.6 800.4,223.4 818.9,240.4 837.3,220.0 855.8,226.8 874.2,186.0 892.7,233.6 911.1,213.2 929.6,203.0 948.0,206.4"/>
+      <circle cx="560.6" cy="19.4" r="3.5" fill="var(--ot)"/><text x="560.6" y="12" font-size="9.5" fill="var(--ot)" font-weight="700" text-anchor="middle">OT 峰值 69（6/25）</text>
+      <circle cx="302.3" cy="70.4" r="3.5" fill="var(--nv)"/><text x="302.3" y="270" font-size="9.5" fill="var(--nv)" font-weight="700" text-anchor="middle">Nova 峰值 54（6/11）</text>
+      <g fill="var(--muted)" font-size="10" text-anchor="middle">
+        <text x="44" y="270">05-28</text><text x="302" y="270">06-11</text><text x="561" y="16">6/25</text><text x="689" y="270">07-02</text><text x="948" y="270">07-16</text>
+      </g>
+    </svg>
+    <p class="note">兩邊峰值時間點不完全一樣：OT 在 6/25（69 次）最高、Nova88 在開賽首日 6/11（54 次）就衝到最高，但整體趨勢都是開賽後衝一波、6 月底開始回落。</p>
+  </div>
+
+  <div class="grid cols-2" style="margin-top:14px">
+    <div class="card"><div class="eyebrow">W25（6/15–6/21）黃金峰值</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">兩個品牌的 RegisterClick 和 DepositClick 都在 W25 衝到全期最高，這正是小組賽打得最激烈的一週。</p></div>
+    <div class="card"><div class="eyebrow">峰值後連續下滑</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">W25 過後兩邊都一路往下掉。Nova88 尤其明顯，DepositClick 每週都是 RegisterClick 的 3–5 倍，拉新的動能在退燒。</p></div>
+    <div class="card"><div class="eyebrow">日均註冊點擊衰退（決賽後最終版數字）</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">最終版簡報改用「小組賽 vs 4強期間」的階段均值來看衰退：OT 從 43.9 次/天掉到 13.5 次/天，跌了 <b class="hl">69%</b>；Nova88 從 17.8 次/天掉到 13.5 次/天，跌了 <b class="hl">24%</b>。賽事舉辦日的流量並沒有明顯高於休兵日，說明拉新期在小組賽後就已經結束，往留存跟再行銷轉的判斷是對的。</p></div>
+    <div class="card"><div class="eyebrow">Referral 渠道效益</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">elitegame12.com 的點擊率泰國 <b class="hl">5.02%</b>、越南 <b class="hl">4.48%</b>；兩國的直接流量點擊都低於 <b class="hl">1%</b>。</p></div>
   </div>
 </section>
 
 <section id="hotgames">
-  <div class="sec-head"><span class="n">05</span><span class="role-tag" style="background:var(--r1)">數據分析師</span><h2>Hot Games 財務數據（Admin 口徑）</h2></div>
-  <p class="lead">後台 CMS「WorldCupHotGames」設定 12bet 30 款、nova 10 款足球主題遊戲。5/26–7/17 投注表現，USD，已與 PowerBI 演算法交叉驗證。</p>
+  <div class="sec-head"><span class="n">05</span><span class="role-tag" style="background:var(--r1)">數據分析師</span><h2>Hot Games 財務數據（Admin 口徑，FINAL）</h2></div>
+  <p class="lead">後台 CMS「WorldCupHotGames」設定 12bet 30 款、nova 10 款足球主題遊戲。這節統計到 5/26–7/20，涵蓋整個決賽週末，USD，逐日匯率換算，遊戲配對用 CMS 名單精確比對過。</p>
   <div class="grid kpis">
-    <div class="card kpi"><div class="k-lab">投注額 TO</div><div class="k-val tnum">$100.7K</div><div class="k-sub">投注 <b class="tnum">~224K</b> 筆</div></div>
-    <div class="card kpi"><div class="k-lab">毛利 GGR</div><div class="k-val tnum">$13,500</div><div class="k-sub">Margin <b>13.4%</b></div></div>
-    <div class="card kpi"><div class="k-lab">扣除鯨魚後 GGR</div><div class="k-val" style="color:var(--bad)">$1,949</div><div class="k-sub">真實廣度營收非常薄</div></div>
+    <div class="card kpi"><div class="k-lab">投注額 TO</div><div class="k-val tnum">$151.4K</div><div class="k-sub">投注 <b class="tnum">~365K</b> 筆</div></div>
+    <div class="card kpi"><div class="k-lab">毛利 GGR</div><div class="k-val tnum">$15,013</div><div class="k-sub">Margin <b>9.9%</b></div></div>
+    <div class="card kpi"><div class="k-lab">扣除鯨魚後 GGR</div><div class="k-val" style="color:var(--bad)">$3,469</div><div class="k-sub">真實廣度營收依然很薄</div></div>
     <div class="card kpi"><div class="k-lab">設定遊戲數</div><div class="k-val tnum">40</div><div class="k-sub">12bet 30｜nova 10</div></div>
   </div>
   <div class="card" style="margin-top:14px">
-    <div class="eyebrow">鯨魚集中風險</div>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">12bet「Football」一款的毛利幾乎全來自 1 位 INR 高額玩家（6/7 晚間 9 分鐘、投注 ≈US$34K，貢獻 GGR $11,551）。<b style="color:var(--ink)">扣除前</b>：合併 GGR $13,500。<b style="color:var(--ink)">扣除後</b>：合併 GGR 僅 $1,949（12bet 反轉淨虧 −$335）。7 月鯨魚未再現，12bet 當月 GGR 僅約 +$600（近乎打平），印證營收品質問題而非規模問題。</p>
+    <div class="eyebrow">決賽週末幾乎沒有帶來增量</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">決賽週末（7/18–7/20）三天，OT 只新增 TO <b class="hl">$1,429</b>、GGR <b class="hl">$183</b>，Nova88 新增 TO <b class="hl">$3,489</b>、GGR <b class="hl">$115</b>，加起來連整體 GGR 的零頭都不到。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">這跟第 04 節「拉新期在小組賽後就結束」的判斷是同一件事：不只是新戶不再進來，連 Hot Games 的投注量能也沒有被決賽這種收視高峰帶動起來。</p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="eyebrow">鯨魚集中風險，決賽也沒有出現新的</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">12bet「Football」這款遊戲的毛利幾乎全靠一位 INR 玩家撐著，他 6/7 晚上花 9 分鐘投注約 <b class="hl">$31.5K</b>，貢獻了 GGR <b class="hl">$11,544</b>，幾乎等於這款遊戲全期的全部毛利。把他算進去，合併 GGR 是 <b class="hl">$15,013</b>；拿掉他，只剩 <b class="hl">$3,469</b>，12bet 那邊甚至反過來虧 <b class="hl">$499</b>。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">決賽期間沒有再出現類似的單一大額玩家，7/18–20 三天全部遊戲加起來 GGR 才 <b class="hl">$298</b>（OT $183 + Nova88 $115）。問題還是老問題：不在規模，在營收的品質太脆弱。</p>
   </div>
 
   <h3 style="font-size:15px;margin:20px 0 6px;color:var(--ot)">12bet（OT）· 全 30 款逐款明細（依 TO 排序，含零下注）</h3>
   <div class="tscroll"><table>
     <thead><tr><th>三方</th><th>遊戲</th><th>主要市場（TO 占比）</th><th>TO $</th><th>GGR $</th><th>Margin</th></tr></thead>
     <tbody>
-<tr><td>ES (Endorphina)</td><td class="g">Football</td><td class="c">INR 100%</td><td class="n">34,151</td><td class="n pos">12,510</td><td class="n">37%</td></tr>
-<tr><td>PlayTech</td><td class="g">Football! Cash Collect</td><td class="c">INR 66%·MYR 22%·THB 12%</td><td class="n">17,047</td><td class="n neg">−2,244</td><td class="n">−13%</td></tr>
-<tr><td>Pragmatic Play</td><td class="g">Big Bass Football Bonanza</td><td class="c">MYR 65%·THB 11%·IDR 9%</td><td class="n">2,910</td><td class="n pos">372</td><td class="n">13%</td></tr>
-<tr><td>Joker</td><td class="g">Nudge Goal Fever</td><td class="c">THB 95%·INR 3%</td><td class="n">2,434</td><td class="n pos">224</td><td class="n">9%</td></tr>
-<tr><td>JILI</td><td class="g">World Cup</td><td class="c">VND 66%·BDT 15%·MYR 11%</td><td class="n">1,578</td><td class="n pos">9</td><td class="n">1%</td></tr>
-<tr><td>AdvantPlay</td><td class="g">Golden Football</td><td class="c">THB 49%·MYR 33%·INR 14%</td><td class="n">1,230</td><td class="n pos">69</td><td class="n">6%</td></tr>
-<tr><td>Microgaming</td><td class="g">123 Soccer Link&amp;Merge</td><td class="c">THB 68%·INR 31%</td><td class="n">1,221</td><td class="n pos">130</td><td class="n">11%</td></tr>
-<tr><td>Spadegaming</td><td class="g">Kong The Striker</td><td class="c">MYR 48%·THB 22%·INR 17%</td><td class="n">1,087</td><td class="n pos">35</td><td class="n">3%</td></tr>
-<tr><td>Nextspin</td><td class="g">Soccer King</td><td class="c">THB 95%·INR 3%</td><td class="n">720</td><td class="n pos">10</td><td class="n">1%</td></tr>
-<tr><td>Skywind</td><td class="g">Soccer Joker</td><td class="c">MYR 67%·INR 20%·THB 10%</td><td class="n">561</td><td class="n neg">−33</td><td class="n">−6%</td></tr>
-<tr><td>Skywind</td><td class="g">Go Goal</td><td class="c">THB 58%·MYR 26%·INR 10%</td><td class="n">544</td><td class="n neg">−127</td><td class="n">−23%</td></tr>
-<tr><td>AdvantPlay</td><td class="g">Football Fever</td><td class="c">VND 88%·MYR 6%·THB 4%</td><td class="n">440</td><td class="n neg">−9</td><td class="n">−2%</td></tr>
-<tr><td>PlayTech</td><td class="g">Football Rules</td><td class="c">MYR 83%·THB 16%</td><td class="n">405</td><td class="n pos">67</td><td class="n">17%</td></tr>
-<tr><td>JILI</td><td class="g">Plinko Football</td><td class="c">THB 61%·MYR 33%·INR 5%</td><td class="n">378</td><td class="n pos">234</td><td class="n">62%</td></tr>
-<tr><td>Microgaming</td><td class="g">Ultimate Goal Blitz</td><td class="c">MYR 54%·THB 22%·INR 20%</td><td class="n">277</td><td class="n pos">67</td><td class="n">24%</td></tr>
-<tr><td>Microgaming</td><td class="g">Football Star Deluxe</td><td class="c">THB 61%·MYR 24%·VND 8%</td><td class="n">236</td><td class="n neg">−17</td><td class="n">−7%</td></tr>
-<tr><td>ES (Endorphina)</td><td class="g">Football Superstar</td><td class="c">MYR 84%·INR 16%</td><td class="n">129</td><td class="n neg">−25</td><td class="n">−19%</td></tr>
-<tr><td>ES (Endorphina)</td><td class="g">Football Mayhem</td><td class="c">IDR 80%·VND 15%·INR 5%</td><td class="n">119</td><td class="n pos">12</td><td class="n">10%</td></tr>
-<tr><td>Microgaming</td><td class="g">Football Star</td><td class="c">INR 70%·MYR 28%</td><td class="n">83</td><td class="n pos">38</td><td class="n">46%</td></tr>
-<tr><td>Microgaming</td><td class="g">Soccer Striker</td><td class="c">THB 60%·VND 40%</td><td class="n">47</td><td class="n neg">−7</td><td class="n">−15%</td></tr>
-<tr><td>Microgaming</td><td class="g">SoccerX</td><td class="c">MYR 83%·INR 11%</td><td class="n">37</td><td class="n pos">2</td><td class="n">6%</td></tr>
-<tr><td>Funky Game</td><td class="g">Football Strike</td><td class="c">VND 80%·BDT 17%</td><td class="n">29</td><td class="n pos">9</td><td class="n">31%</td></tr>
-<tr><td>JILI</td><td class="g">Football Golden Cup</td><td class="c">VND 77%·INR 21%</td><td class="n">28</td><td class="n pos">21</td><td class="n">74%</td></tr>
-<tr><td>NetEnt</td><td class="g">Football Champions Cup</td><td class="c">MYR 74%·INR 26%</td><td class="n">28</td><td class="n neg">−4</td><td class="n">−15%</td></tr>
-<tr><td>JILI</td><td class="g">Mines football</td><td class="c">MYR 51%·VND 34%·INR 15%</td><td class="n">22</td><td class="n neg">−33</td><td class="n">−150%</td></tr>
-<tr><td>ES (Endorphina)</td><td class="g">Football: 2022</td><td class="c">INR 91%·MYR 9%</td><td class="n">12</td><td class="n neg">−0</td><td class="n">−0%</td></tr>
-<tr><td>Funky Game</td><td class="g">Football Mines</td><td class="c">VND 63%·INR 37%</td><td class="n">1</td><td class="n pos">0</td><td class="n">37%</td></tr>
-<tr><td>Funky Game</td><td class="g">KenoSoccer</td><td class="c">INR 100%</td><td class="n">1</td><td class="n neg">−0</td><td class="n">−36%</td></tr>
+<tr><td>ES (Endorphina)</td><td class="g">Football</td><td class="c">INR 100%</td><td class="n">31,530</td><td class="n pos">11,544</td><td class="n">36.6%</td></tr>
+<tr><td>PlayTech</td><td class="g">Football! Cash Collect</td><td class="c">MYR 46%·INR 39%·THB 15%</td><td class="n">27,020</td><td class="n neg">−820</td><td class="n">−3.0%</td></tr>
+<tr><td>Pragmatic Play</td><td class="g">Big Bass Football Bonanza</td><td class="c">MYR 79%·IDR 7%·THB 6%</td><td class="n">5,804</td><td class="n pos">249</td><td class="n">4.3%</td></tr>
+<tr><td>Joker</td><td class="g">Nudge Goal Fever</td><td class="c">THB 97%·INR 1%·MYR 1%</td><td class="n">4,598</td><td class="n neg">−163</td><td class="n">−3.6%</td></tr>
+<tr><td>JILI</td><td class="g">World Cup</td><td class="c">VND 67%·MYR 10%·BDT 9%</td><td class="n">2,514</td><td class="n pos">145</td><td class="n">5.7%</td></tr>
+<tr><td>Spadegaming</td><td class="g">Kong The Striker</td><td class="c">THB 30%·VND 30%·MYR 23%</td><td class="n">2,376</td><td class="n pos">239</td><td class="n">10.1%</td></tr>
+<tr><td>AdvantPlay</td><td class="g">Golden Football</td><td class="c">THB 47%·MYR 37%·INR 8%</td><td class="n">2,194</td><td class="n pos">215</td><td class="n">9.8%</td></tr>
+<tr><td>Skywind</td><td class="g">Soccer Joker</td><td class="c">MYR 88%·INR 6%·VND 4%</td><td class="n">2,001</td><td class="n neg">−224</td><td class="n">−11.2%</td></tr>
+<tr><td>Microgaming</td><td class="g">123 Soccer Link&amp;Merge</td><td class="c">THB 68%·INR 30%·MYR 2%</td><td class="n">1,234</td><td class="n pos">140</td><td class="n">11.4%</td></tr>
+<tr><td>Nextspin</td><td class="g">Soccer King</td><td class="c">THB 94%·INR 3%·MYR 1%</td><td class="n">1,140</td><td class="n pos">48</td><td class="n">4.2%</td></tr>
+<tr><td>Skywind</td><td class="g">Go Goal</td><td class="c">THB 56%·MYR 23%·INR 12%</td><td class="n">631</td><td class="n neg">−81</td><td class="n">−12.9%</td></tr>
+<tr><td>AdvantPlay</td><td class="g">Football Fever</td><td class="c">VND 82%·THB 12%·MYR 5%</td><td class="n">612</td><td class="n pos">32</td><td class="n">5.2%</td></tr>
+<tr><td>Microgaming</td><td class="g">Ultimate Goal Blitz</td><td class="c">THB 54%·MYR 31%·INR 10%</td><td class="n">510</td><td class="n neg">−464</td><td class="n">−91.0%</td></tr>
+<tr><td>PlayTech</td><td class="g">Football Rules</td><td class="c">MYR 78%·THB 21%·INR 1%</td><td class="n">446</td><td class="n pos">61</td><td class="n">13.8%</td></tr>
+<tr><td>JILI</td><td class="g">Plinko Football</td><td class="c">THB 64%·MYR 30%·INR 5%</td><td class="n">440</td><td class="n neg">−2</td><td class="n">−0.4%</td></tr>
+<tr><td>Microgaming</td><td class="g">Football Star Deluxe</td><td class="c">THB 60%·MYR 24%·VND 8%</td><td class="n">245</td><td class="n neg">−11</td><td class="n">−4.6%</td></tr>
+<tr><td>Microgaming</td><td class="g">Football Star</td><td class="c">CNY 62%·INR 27%·MYR 10%</td><td class="n">244</td><td class="n pos">81</td><td class="n">33.2%</td></tr>
+<tr><td>ES (Endorphina)</td><td class="g">Football Superstar</td><td class="c">MYR 70%·INR 18%·IDR 12%</td><td class="n">160</td><td class="n neg">−16</td><td class="n">−10.0%</td></tr>
+<tr><td>ES (Endorphina)</td><td class="g">Football Mayhem</td><td class="c">IDR 78%·VND 14%·INR 7%</td><td class="n">143</td><td class="n pos">26</td><td class="n">18.4%</td></tr>
+<tr><td>Microgaming</td><td class="g">SoccerX</td><td class="c">MYR 90%·VND 5%·INR 4%</td><td class="n">133</td><td class="n pos">4</td><td class="n">3.0%</td></tr>
+<tr><td>Microgaming</td><td class="g">Soccer Striker</td><td class="c">THB 70%·VND 30%</td><td class="n">63</td><td class="n pos">2</td><td class="n">3.0%</td></tr>
+<tr><td>JILI</td><td class="g">Football Golden Cup</td><td class="c">MYR 54%·VND 36%·INR 9%</td><td class="n">60</td><td class="n pos">51</td><td class="n">85.5%</td></tr>
+<tr><td>JILI</td><td class="g">Mines football</td><td class="c">THB 53%·MYR 24%·VND 14%</td><td class="n">52</td><td class="n neg">−31</td><td class="n">−60.3%</td></tr>
+<tr><td>Funky Game</td><td class="g">KenoSoccer</td><td class="c">INR 100%</td><td class="n">30</td><td class="n pos">16</td><td class="n">53.5%</td></tr>
+<tr><td>Funky Game</td><td class="g">Football Strike</td><td class="c">VND 80%·BDT 17%·INR 2%</td><td class="n">29</td><td class="n pos">9</td><td class="n">30.7%</td></tr>
+<tr><td>NetEnt</td><td class="g">Football Champions Cup</td><td class="c">MYR 76%·INR 24%</td><td class="n">28</td><td class="n neg">−4</td><td class="n">−15.9%</td></tr>
+<tr><td>ES (Endorphina)</td><td class="g">Football: 2022</td><td class="c">INR 87%·MYR 10%·VND 3%</td><td class="n">12</td><td class="n pos">0</td><td class="n">2.2%</td></tr>
+<tr><td>Funky Game</td><td class="g">Football Mines</td><td class="c">VND 58%·INR 42%</td><td class="n">1</td><td class="n pos">0</td><td class="n">41.8%</td></tr>
 <tr><td>Game Play</td><td class="g">World Soccer Slot</td><td class="c">—</td><td class="n">0</td><td class="n">0</td><td class="n">—</td></tr>
 <tr><td>Game Play</td><td class="g">World Soccer Slot 2</td><td class="c">—</td><td class="n">0</td><td class="n">0</td><td class="n">—</td></tr>
     </tbody>
@@ -280,19 +332,19 @@
   <div class="tscroll"><table>
     <thead><tr><th>三方</th><th>遊戲</th><th>主要市場（TO 占比）</th><th>TO $</th><th>GGR $</th><th>Margin</th></tr></thead>
     <tbody>
-<tr><td>Pragmatic Play</td><td class="g">Big Bass Football Bonanza</td><td class="c">MYR 52%·THB 30%·IDR 18%</td><td class="n">9,338</td><td class="n pos">283</td><td class="n">3%</td></tr>
-<tr><td>Microgaming</td><td class="g">Ultimate Goal Blitz</td><td class="c">MYR 64%·THB 32%</td><td class="n">7,520</td><td class="n pos">290</td><td class="n">4%</td></tr>
-<tr><td>AdvantPlay</td><td class="g">Golden Football</td><td class="c">MYR 86%·THB 11%</td><td class="n">7,339</td><td class="n pos">1,315</td><td class="n">18%</td></tr>
-<tr><td>PG Soft</td><td class="g">Ultimate Striker</td><td class="c">THB 72%·IDR 28%</td><td class="n">5,935</td><td class="n pos">12</td><td class="n">0%</td></tr>
-<tr><td>Joker</td><td class="g">Nudge Goal Fever</td><td class="c">THB 69%·MYR 30%</td><td class="n">4,743</td><td class="n neg">−378</td><td class="n">−8%</td></tr>
-<tr><td>Amigo Gaming</td><td class="g">Football Hits</td><td class="c">MYR 88%·VND 8%·IDR 3%</td><td class="n">2,370</td><td class="n pos">565</td><td class="n">24%</td></tr>
-<tr><td>Spadegaming</td><td class="g">Kong The Striker</td><td class="c">THB 44%·MYR 38%·IDR 18%</td><td class="n">2,215</td><td class="n pos">108</td><td class="n">5%</td></tr>
-<tr><td>Nextspin</td><td class="g">Soccer King</td><td class="c">MYR 54%·THB 38%·IDR 8%</td><td class="n">785</td><td class="n pos">33</td><td class="n">4%</td></tr>
-<tr><td>JILI</td><td class="g">Football Golden Cup</td><td class="c">THB 63%·MYR 37%</td><td class="n">380</td><td class="n pos">34</td><td class="n">9%</td></tr>
-<tr><td>Skywind</td><td class="g">Soccer Joker</td><td class="c">MYR 76%·THB 24%</td><td class="n">201</td><td class="n pos">56</td><td class="n">28%</td></tr>
+<tr><td>PG Soft</td><td class="g">Ultimate Striker</td><td class="c">VND 57%·THB 34%·IDR 9%</td><td class="n">18,049</td><td class="n pos">406</td><td class="n">2.2%</td></tr>
+<tr><td>Pragmatic Play</td><td class="g">Big Bass Football Bonanza</td><td class="c">MYR 57%·THB 27%·IDR 15%</td><td class="n">11,990</td><td class="n pos">320</td><td class="n">2.7%</td></tr>
+<tr><td>Microgaming</td><td class="g">Ultimate Goal Blitz</td><td class="c">MYR 72%·THB 25%·VND 2%</td><td class="n">11,312</td><td class="n pos">625</td><td class="n">5.5%</td></tr>
+<tr><td>AdvantPlay</td><td class="g">Golden Football</td><td class="c">MYR 77%·THB 14%·VND 8%</td><td class="n">10,140</td><td class="n pos">1,610</td><td class="n">15.9%</td></tr>
+<tr><td>Joker</td><td class="g">Nudge Goal Fever</td><td class="c">THB 65%·MYR 34%·IDR 1%</td><td class="n">6,403</td><td class="n pos">138</td><td class="n">2.2%</td></tr>
+<tr><td>Spadegaming</td><td class="g">Kong The Striker</td><td class="c">MYR 53%·THB 25%·VND 13%</td><td class="n">4,330</td><td class="n pos">47</td><td class="n">1.1%</td></tr>
+<tr><td>Amigo Gaming</td><td class="g">Football Hits</td><td class="c">MYR 86%·VND 8%·THB 3%</td><td class="n">2,786</td><td class="n pos">511</td><td class="n">18.3%</td></tr>
+<tr><td>Nextspin</td><td class="g">Soccer King</td><td class="c">MYR 46%·THB 45%·IDR 6%</td><td class="n">1,104</td><td class="n pos">53</td><td class="n">4.8%</td></tr>
+<tr><td>JILI</td><td class="g">Football Golden Cup</td><td class="c">THB 54%·MYR 34%·VND 12%</td><td class="n">545</td><td class="n pos">106</td><td class="n">19.5%</td></tr>
+<tr><td>Skywind</td><td class="g">Soccer Joker</td><td class="c">MYR 84%·THB 10%·IDR 6%</td><td class="n">507</td><td class="n pos">152</td><td class="n">30.0%</td></tr>
     </tbody>
   </table></div>
-  <p class="note">明細表與上方 KPI 卡為同一份 Admin 口徑資料，僅拆解至單一遊戲層級；本方財務數據，非 PPTX 原始資料。</p>
+  <p class="note">明細表跟上面的 KPI 卡是同一份 Admin 口徑數據，只是拆到單一遊戲層級；三方名稱與遊戲名稱都用 Siebog.HotGames／TpList 現場查證過；本方財務數據，非 PPTX。</p>
 </section>
 
 <section id="brand">
@@ -301,21 +353,21 @@
     <table>
       <thead><tr><th>指標</th><th>nova88</th><th>12bet</th><th>合併</th></tr></thead>
       <tbody>
-        <tr><td>Hot Games 投注筆數</td><td class="tnum">163,521</td><td class="tnum">61,132</td><td class="tnum">224,653</td></tr>
-        <tr><td>投注額 TO (USD)</td><td class="tnum">$38,529</td><td class="tnum">$62,164</td><td class="tnum">$100,693</td></tr>
-        <tr><td>毛利 GGR (USD)</td><td class="tnum pos">$2,284</td><td class="tnum pos">$11,216</td><td class="tnum pos">$13,500</td></tr>
-        <tr><td>Margin</td><td class="tnum">5.9%</td><td class="tnum">18.0%</td><td class="tnum">13.4%</td></tr>
-        <tr><td>扣鯨魚後 GGR</td><td class="tnum">$2,284</td><td class="tnum neg">−$335</td><td class="tnum">$1,949</td></tr>
+        <tr><td>Hot Games 投注筆數</td><td class="tnum">257,095</td><td class="tnum">107,630</td><td class="tnum">364,725</td></tr>
+        <tr><td>投注額 TO (USD)</td><td class="tnum">$67,166</td><td class="tnum">$84,249</td><td class="tnum">$151,414</td></tr>
+        <tr><td>毛利 GGR (USD)</td><td class="tnum pos">$3,968</td><td class="tnum pos">$11,045</td><td class="tnum pos">$15,013</td></tr>
+        <tr><td>Margin</td><td class="tnum">5.9%</td><td class="tnum">13.1%</td><td class="tnum">9.9%</td></tr>
+        <tr><td>扣鯨魚後 GGR</td><td class="tnum">$3,968</td><td class="tnum neg">−$499</td><td class="tnum">$3,469</td></tr>
         <tr><td>主力玩家幣別</td><td>MYR · THB（東南亞）</td><td>INR（印度，高額集中）</td><td>—</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note">nova88：最多人玩，注單量為 12bet 的 2.7 倍，真·多人小額、無鯨魚扭曲，但 margin 僅 5.9%。12bet：margin 帳面較高，但幾乎全靠 1 位鯨魚，穩定度低。</p>
+  <p class="note">nova88 最多人玩，注單量是 12bet 的 <b class="hl">2.4</b> 倍，真的是多人小額、沒有鯨魚扭曲，margin 穩定維持在 <b class="hl">5.9%</b>。12bet 的 margin 帳面比較高（<b class="hl">13.1%</b>），但幾乎全靠一位鯨魚撐著，穩定度不高，這次連決賽週末都沒有再出現類似的大額玩家。</p>
 </section>
 
 <section id="deposit">
   <div class="sec-head"><span class="n">07</span><span class="role-tag" style="background:var(--r1)">數據分析師</span><h2>存款轉換增量：Hub 名單 vs 自然註冊</h2></div>
-  <p class="lead">本節檢驗一個更根本的問題：透過 World Cup Hub 完成註冊的會員，其後續存款轉換是否優於同期以一般流程註冊的會員。做法為將 GA4 WC26HubCompleteRegistration 事件名單反查至會員 CustId，與同期（排除 Hub 名單本身）自然註冊會員分別計算「已存款人數 ÷ 名單總人數」。本方財務數據，非 PPTX。</p>
+  <p class="lead">這節回答一個更根本的問題：透過 WC Hub 完成註冊的人，跟同一段時間自己走一般流程註冊的人比起來，有沒有比較願意存款？做法是把 GA4 的 WC26HubCompleteRegistration 事件名單反查回會員 CustId，跟同期（排除 Hub 名單本身）的自然註冊會員各自算「有存過款的人數 ÷ 名單總人數」。本方財務數據，非 PPTX。</p>
   <div class="grid cols-2">
     <div class="card">
       <div class="eyebrow" style="color:var(--ot)">12bet · Hub 名單 vs 自然註冊</div>
@@ -324,7 +376,7 @@
         <div class="bar-row"><span class="bar-lab">自然註冊（同期）</span><div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--muted)"></div></div><span class="bar-val tnum">20.99%</span></div>
       </div>
       <div style="font-size:22px;font-weight:800;color:var(--good);margin-top:10px" class="tnum">+7.65 個百分點</div>
-      <div style="font-size:12.5px;color:var(--muted)">213 人名單換算：TO $213,882、GGR +$14,860（相對自然註冊基準的增量）</div>
+      <div style="font-size:12.5px;color:var(--muted)">213 人的名單，換算成金額是 TO <b class="hl">$213,882</b>、GGR <b class="hl">+$14,860</b>（相對自然註冊基準的增量）</div>
     </div>
     <div class="card">
       <div class="eyebrow" style="color:var(--nv)">nova88 · Hub 名單 vs 自然註冊</div>
@@ -333,94 +385,152 @@
         <div class="bar-row"><span class="bar-lab">自然註冊（同期）</span><div class="bar-track"><div class="bar-fill" style="width:63%;background:var(--muted)"></div></div><span class="bar-val tnum">24.02%</span></div>
       </div>
       <div style="font-size:22px;font-weight:800;color:var(--good);margin-top:10px" class="tnum">+13.94 個百分點</div>
-      <div style="font-size:12.5px;color:var(--muted)">108 人名單換算：TO $12,062、GGR +$481（相對自然註冊基準的增量）</div>
+      <div style="font-size:12.5px;color:var(--muted)">108 人的名單，換算成金額是 TO <b class="hl">$12,062</b>、GGR <b class="hl">+$481</b>（相對自然註冊基準的增量）</div>
     </div>
   </div>
   <div class="card" style="margin-top:14px">
-    <div class="eyebrow">解讀</div>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">兩品牌 Hub 名單的存款轉換率均明顯高於同期自然註冊，nova88 的增量（+13.94pp）大於 12bet（+7.65pp）。惟名單規模有限（213 人、108 人），金額增量目前仍屬小數字；World Cup Hub 對整體營收的貢獻主力仍在第 05 節 Hot Games 投注，本節呈現的是「品質」訊號——經由活動導入的會員，後續存款意願確實較高，非僅止於點擊未轉化。</p>
+    <div class="eyebrow">怎麼解讀這組數字</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">兩個品牌都是 Hub 名單的存款率明顯高於自然註冊，nova88 的增量（<b class="hl">+13.94pp</b>）又比 12bet（<b class="hl">+7.65pp</b>）更大。但名單本身不大（213 人、108 人），金額增量目前還是小數字。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">World Cup Hub 對整體營收的貢獻主要還是看第 05 節的 Hot Games 投注，這裡看到的是「品質」訊號：透過活動進來的人，後續比較願意掏錢，不是只有點擊沒有轉化。</p>
   </div>
 </section>
 
 <!-- ============ ROLE 02: UI/UX ============ -->
 <section id="ux">
   <div class="sec-head"><span class="n">08</span><span class="role-tag" style="background:var(--r2)">UI/UX</span><h2>功能反思：後續可以如何優化調整</h2></div>
-  <p class="lead">以下是我以 UX 角色對第 01–07 節數據的獨立解讀與優化構想，不是覆述簡報本身的敘述——數字取自簡報與本方數據，判斷與建議是我的分析。</p>
+  <p class="lead">以下是我以 UX 角色對第 01–07 節數據的獨立解讀跟優化構想，不是覆述簡報本身的敘述，數字取自簡報跟我方數據，判斷跟建議是我的分析。</p>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">1・現在的手機版可能只是「把電腦版縮小塞進手機」，還沒有真正為手機重新設計</h3>
-    <div class="row"><span class="lbl">解讀</span><span class="val">很多網站做「手機版」的方式，其實是先設計好電腦版，再把同樣的版面、同樣的按鈕、同樣的欄位排列直接縮小塞進手機螢幕——這就是「桌面漏斗搬到手機上」的意思：手機版只是電腦版的縮小版，不是為手機重新想過一遍。這樣做常見的問題是：按鈕做得太小、太靠近螢幕上緣（拇指伸不到）；或是點下一個輸入框時，手機鍵盤彈出來剛好把「下一步」按鈕擋住，用戶要先收起鍵盤才點得到，多了一個不必要的步驟。<br><br>目前的 20.1%/25.4% 完成率不算差，但既然快 9 成的人都是用手機在填這個表單，這個表單「本質上就是一個手機 App 的表單」，不應該只是「電腦版表單的手機縮小版」。我們目前<b style="color:var(--ink)">不知道</b>這個表單有沒有針對「單手拿手機操作」這件事專門檢查過——例如按鈕是不是大拇指點得到的位置、鍵盤跳出來會不會擋住重要按鈕。</span></div>
-    <div class="row"><span class="lbl">構想</span><span class="val">找人實際「只用一隻手、拿著手機」把整個註冊流程走一遍，看看有沒有按鈕點不到、鍵盤擋住東西、要用兩隻手才能操作的地方；也可以測試把「一次填好幾個欄位」的表單改成「一次只填一兩個欄位、往下滑就出現下一步」的方式——這種「單頁捲動式」在手機上通常比「一次塞很多欄位」更順手，能再多留住一些原本會放棄的用戶。</span></div>
+    <h3 style="color:var(--r2)">1・手機優先策略方向是對的，該往更細的地方挖</h3>
+    <div class="row"><span class="lbl">解讀</span><div class="val">
+      <p>手機專屬 Header CTA 設計讓手機版拿到 <b class="hl">20.1%/25.4%</b> 的完成率，手機優先是正確的方向。</p>
+      <p>但策略方向對，不代表每個環節都已經榨乾，畢竟還有 <b class="hl">75 到 80%</b> 的人點了註冊卻沒把表單填完，這中間還是有空間。問題的重點該放在「手機版哪個欄位卡最多人」，而不是「要不要做手機版」。</p>
+    </div></div>
+    <div class="row"><span class="lbl">構想</span><span class="val">下一步該做欄位級別的放棄率分析，抓出表單第幾欄開始流失最多人，把力氣放在具體卡點上。</span></div>
   </div>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">2・泰國「點擊很高、完成很低」——先懷疑 CTA 承諾與落地頁內容的落差，而不只是表單本身</h3>
-    <div class="row"><span class="lbl">解讀</span><span class="val">2.8 倍的 CTR/CR 落差可能不是單一原因；除了表單欄位設計，另一個常見成因是「進來的期待」跟「看到的內容」不一致（例如廣告文案承諾的優惠，落地頁沒有清楚呼應），導致用戶點進來後很快放棄，而不是卡在填表單那一步。目前的分析還無法區分「表單難填」跟「內容不符期待」這兩種完全不同的問題。</span></div>
-    <div class="row"><span class="lbl">構想</span><span class="val">先用 session recording／熱圖看泰國用戶實際在哪一步放棄（進站就走 vs 填一半放棄），區分出是「入口期待落差」還是「表單摩擦」，兩種問題的修法完全不同，不要還沒分辨就直接跳去改表單。</span></div>
+    <h3 style="color:var(--r2)">2・泰國「點擊很高、完成很低」的根因是特定渠道流量品質問題，不是表單或落地頁</h3>
+    <div class="row"><span class="lbl">解讀</span><div class="val">
+      <p>拆開流量來源後看到，泰國 629 次點擊裡 <b class="hl">65%</b> 來自 elitegame12.com，這個來源完成率只有 <b class="hl">8.8%</b>，其他來源（direct/tiktok/google）完成率都在 <b class="hl">27%</b> 以上。</p>
+      <p>不是表單或在地化問題，是這個特定渠道帶來的人本來就比較少會填完表單，泰文表單健檢的優先度可以往後排。</p>
+    </div></div>
+    <div class="row"><span class="lbl">構想</span><div class="val">
+      <p>下一步該搞清楚 elitegame12.com 這個渠道的流量本質：是這個媒體受眾本來就跟目標客群不合，還是它的素材承諾了什麼落地頁沒兌現的東西（比如標題寫限時大禮，落地頁卻沒有對應內容）。</p>
+      <p>這兩種情況的解法完全不同，前者該減少採買，後者只要調整素材文案跟落地頁的一致性就好。</p>
+    </div></div>
   </div>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">3・存款入口跟註冊入口目前很可能共用同一個視覺層級，造成兩種用戶互相干擾</h3>
-    <div class="row"><span class="lbl">解讀</span><span class="val">存款點擊遠多於完成註冊，其中一個可能原因是：頁面上「存款」CTA 的視覺權重或位置本來就比「註冊」更顯眼／更容易點到，導致既有會員很自然地點了存款，而真正的新戶反而在一堆既有會員導向的內容裡找不到清楚的入口。</span></div>
-    <div class="row"><span class="lbl">構想</span><span class="val">在登入前後顯示完全不同的首屏配置——未登入訪客看到的第一個 CTA 應該是「註冊」，已登入會員看到的第一個 CTA 才是「存款」，用登入狀態分流，而不是讓兩種意圖的用戶擠在同一組視覺元素前互相干擾。</span></div>
+    <h3 style="color:var(--r2)">3・存款入口跟註冊入口可能共用同一個視覺層級，兩種用戶互相干擾</h3>
+    <div class="row"><span class="lbl">解讀</span><span class="val">存款點擊遠多於完成註冊，一個可能的原因是頁面上「存款」CTA 本來就比「註冊」更顯眼、更容易點到，既有會員很自然地就點了存款，真正的新戶反而在一堆給老會員看的內容裡找不到清楚的入口。</span></div>
+    <div class="row"><span class="lbl">構想</span><div class="val">
+      <p>登入前後給不同的首屏配置：沒登入的訪客，第一個看到的 CTA 應該是「註冊」；已登入的會員，第一個看到的才是「存款」。</p>
+      <p>用登入狀態分流，不要讓兩種完全不同意圖的用戶擠在同一組視覺元素前面。</p>
+    </div></div>
   </div>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">4・頁面本身可能一直是「靜態」的，這正好可以解釋為什麼賽事日流量沒有明顯高於非賽事日</h3>
-    <div class="row"><span class="lbl">解讀</span><span class="val">如果賽事日流量沒有顯著高於休兵日，其中一個解釋是頁面內容本身不會隨當天賽程變化（例如首屏圖片、倒數計時、焦點賽事卡片是否每天更新）——用戶如果覺得「今天跟昨天看到的一樣」，賽事熱度就無法轉化成回訪動機。</span></div>
-    <div class="row"><span class="lbl">構想</span><span class="val">驗證頁面首屏是否有「今日賽事」動態區塊，若沒有，優先加上（今日對戰組合、即時比分、倒數計時），讓賽事熱度有具體的頁面內容可以承接，而不只是依賴外部話題自然導流。</span></div>
+    <h3 style="color:var(--r2)">4・頁面內容可能一直是靜態的，這能解釋為什麼賽事日流量沒有明顯拉高</h3>
+    <div class="row"><span class="lbl">解讀</span><div class="val">
+      <p>用「小組賽 vs 4強期間」的階段均值來看，OT 日均註冊點擊從 43.9 次/天掉到 13.5 次/天，跌了 <b class="hl">69%</b>；Nova88 從 17.8 次/天掉到 13.5 次/天，跌了 <b class="hl">24%</b>，賽事舉辦日的流量也沒有明顯高於休兵日，說明賽事熱度沒有轉化成回訪動機。</p>
+      <p>頁面內容是否隨賽程更新（首屏圖片、倒數計時、焦點賽事卡片），可能是造成這個現象的原因之一，這部分是我自己的解讀，不是簡報驗證過的結論。</p>
+    </div></div>
+    <div class="row"><span class="lbl">構想</span><span class="val">先確認首屏有沒有「今日賽事」這種動態區塊，沒有的話優先加上：今天有哪些對戰、即時比分、倒數計時，讓賽事熱度有具體的東西可以承接，不要只靠外部話題自己帶流量進來。</span></div>
   </div>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">5・目前無法區分「渠道品質」跟「頁面體驗」對轉換率的個別貢獻，是這次分析最大的方法論缺口</h3>
-    <div class="row"><span class="lbl">解讀</span><span class="val">泰國整體 CR 偏低，但特定 referral 渠道（如 elitegame12.com）明顯轉換較好——這代表「頁面體驗」對不同來源的用戶效果可能不一樣：對已被預熱的訪客，頁面體驗的缺陷可能被渠道帶來的高意圖蓋過去了；對一般流量，同樣的頁面缺陷就直接反映在低轉換率上。目前的 CR 數字是全渠道混算，看不出這個交互作用。</span></div>
-    <div class="row"><span class="lbl">構想</span><span class="val">下次分析與 A/B 測試都應該「按渠道分層」執行，而不是看全渠道平均 CR——同一個頁面改版，對 referral 流量可能沒有明顯效果（因為他們本來就會轉換），但對一般流量可能才是真正見效的地方。</span></div>
+    <h3 style="color:var(--r2)">5・渠道品質跟頁面體驗，對轉換率各自貢獻多少，目前分不出來</h3>
+    <div class="row"><span class="lbl">解讀</span><span class="val">不同渠道的完成率差距可以到 <b class="hl">3 倍</b>以上（elitegame12.com <b class="hl">8.8%</b>，其他來源 <b class="hl">27%</b> 以上），這代表全渠道混算的完成率會掩蓋渠道之間的巨大差異，看不出頁面體驗跟流量品質各自的貢獻。</span></div>
+    <div class="row"><span class="lbl">構想</span><div class="val">
+      <p>下次分析跟 A/B 測試都該按渠道分開看，不要只看全渠道平均值。</p>
+      <p>同一個頁面改版，對高完成率渠道可能感覺不出差別，但對低完成率渠道（比如 elitegame12.com 這種帶量不帶轉化的）說不定才是真正該優先處理的地方。</p>
+    </div></div>
   </div>
 </section>
 
-<!-- ============ ROLE 03: MKT ============ -->
-<section id="mkt">
-  <div class="sec-head"><span class="n">09</span><span class="role-tag" style="background:var(--r3)">Marketing</span><h2>成效未達標的情境評估、假設與下一步</h2></div>
-  <p class="lead">以下是我以 MKT 角色對同一份數據的獨立推演——關注的是「這些數字背後，代表哪些預算決策可能是誤判」，而不是重述數字本身或簡報既有的結論。</p>
-
-  <div class="card">
-    <div class="find"><div class="num" style="background:var(--r3)">1</div><div><h3>情境：拉新曝光量可能被回流會員的互動「稀釋」了成效判讀</h3><p>DepositClick／KnockoutSwipe／FloatingSoccer 這些高量互動事件，若曾被納入拉新類 campaign 的「觸及成效」報告，數字會顯得漂亮，但其中大部分很可能是既有會員的行為（存款點擊是完成註冊的 5.7–10.1 倍）。</p><div class="rec"><b>假設：</b>如果過去用「總互動量」或「DepositClick 量」佐證某支拉新廣告的成效，很可能把老客的自然回流行為誤算成廣告帶來的新增效果，導致該廣告的真實 ROI 被高估。<b>下次：</b>拉新類 campaign 的成效指標一律鎖定 CompleteRegistration 或更下游的行為，且要求媒體代理商／內部報表同步改用同一套定義，避免同一個活動在不同報表上呈現兩套不同故事。</div></div></div>
-
-    <div class="find"><div class="num" style="background:var(--r3)">2</div><div><h3>情境：泰國預算配置可能建立在「流量單價」而非「轉換單價」上，方向從一開始就選錯了指標</h3><p>泰國 CTR 全場最高（2.68%），如果採購媒體時是用「點擊成本」或「流量規模」來評估泰國市場的投放效率，這個市場帳面上會顯得很划算。</p><div class="rec"><b>假設：</b>用「流量效率」挑市場、卻不看「轉換效率」，等於是在獎勵一個轉換率全場最低（16.0%）的市場繼續拿到更多預算——這可能是泰國持續被加碼、但整體成效沒有跟著等比例成長的根本原因。<b>下次：</b>市場預算配置的評估指標必須換成「每完成註冊成本」而非「每點擊成本」，並在活動進行中就定期重算，而不是等賽後才發現落差。</div></div></div>
-
-    <div class="find"><div class="num" style="background:var(--r3)">3</div><div><h3>情境：Referral 渠道的價值可能被「一次性活動預算」的思維低估</h3><p>elitegame12.com 這類渠道在泰國／越南的轉換效率明顯優於一般流量，但世界盃是一次性活動，這類渠道很可能只被當成「這次活動用一次」的戰術性採買，而非長期渠道經營對象。</p><div class="rec"><b>假設：</b>若合作模式是短期、單次曝光採購，MKT 可能低估了這類渠道對「長期獲客成本」的價值，錯失把它談成常態化合作、拿到更好議價條件的機會。<b>下次：</b>對高轉換效率的渠道，應該在活動結束前就啟動續約／擴大合作的談判，而不是等活動結束、數據出爐後才開始評估，屆時談判籌碼已經變弱。</div></div></div>
-
-    <div class="find"><div class="num" style="background:var(--r3)">4</div><div><h3>情境：賽事熱度曲線的預算節奏，可能是「跟著賽程反應」而非「提前佈局」</h3><p>W25（小組賽白熱化）是雙指標峰值，其後連續下滑；如果媒體排期是照著整個賽季平均分配預算（例如每週固定預算），就會在流量本來就要衰退的階段還維持原本的投放強度，效率必然變差。</p><div class="rec"><b>假設：</b>預算節奏若是「跟著當週表現微調」而非「賽前就依賽程階段預先規劃強弱週期」，會在流量高峰期投放不足（錯過最大轉換窗口）、在流量低谷期投放過剩（浪費在低效率階段）。<b>下次：</b>賽前就依歷史賽事（小組賽／淘汰賽／決賽）的熱度曲線預先排定預算權重，開賽後只做微調，不要用「本週表現」重新決定下週預算，那已經慢了一拍。</div></div></div>
-
-    <div class="find"><div class="num" style="background:var(--r3)">5</div><div><h3>情境：Hot Games 相關的推廣素材，可能誤用了一次性的異常收益數字</h3><p>12bet Hot Games 的毛利幾乎全來自單一玩家的一場投注，若這批遊戲曾出現在任何行銷素材的「高回饋／高中獎」話術裡，用的可能正是這種不可複製的個案數字。</p><div class="rec"><b>假設：</b>用單一異常值包裝出來的行銷話術，短期或許吸引點擊，但真實體驗與素材承諾落差過大時，反而會傷害對這批遊戲乃至整個 Hub 活動的信任度，不利長期留存。<b>下次：</b>Hot Games 相關素材的數字佐證，應該用「多人參與規模」（例如 nova88 真實的多人小額分布）而非任何單一大額案例，確保素材承諾與多數玩家的真實體驗一致。</div></div></div>
-  </div>
-</section>
-
-<!-- ============ ROLE 04: PO ============ -->
+<!-- ============ ROLE 03: PO ============ -->
 <section id="po">
-  <div class="sec-head"><span class="n">10</span><span class="role-tag" style="background:var(--r4)">Product Owner</span><h2>綜觀：下次 World Cup Hub 如何做更好</h2></div>
-  <p class="lead">聚焦在 World Cup Hub 這個功能本身的下一版迭代方向，整合前面三個角色的發現，給出優先序建議。</p>
+  <div class="sec-head"><span class="n">09</span><span class="role-tag" style="background:var(--r4)">Product Owner</span><h2>綜觀：下次 World Cup Hub 如何做更好</h2></div>
+  <p class="lead">聚焦在 World Cup Hub 這個功能本身的下一版迭代方向，整合前面幾節的發現，給出優先序建議。</p>
 
   <div class="grid cols-2">
-    <div class="card"><div class="eyebrow" style="color:var(--r4)">定位釐清</div><h3 style="font-size:16px;margin:6px 0 8px">Hub 是「導流／活化」工具，價值在漏斗前段與存量會員促活</h3><p style="margin:0;color:var(--muted);font-size:13.5px">Hot Games 財務規模（12bet ≈$62K、Nova88 ≈$38.5K）遠低於公司整體平台量級；Hub 真正的成果是互動觸及與存款意圖的帶動，這才是它該被評估的方式，不該用 Hot Games 營收數字評斷整個 Hub 的成敗。</p></div>
-    <div class="card"><div class="eyebrow" style="color:var(--r4)">下次資源分配優先序</div><h3 style="font-size:16px;margin:6px 0 8px">修復泰國轉換 > 加碼拉新流量</h3><p style="margin:0;color:var(--muted);font-size:13.5px">泰國流量與意圖已經是最大最強，只差最後一哩的表單體驗；修好轉換的 ROI 遠高於再砸更多流量進一個轉換率已知偏低的漏斗。</p></div>
+    <div class="card"><div class="eyebrow" style="color:var(--r4)">定位釐清</div><h3 style="font-size:16px;margin:6px 0 8px">Hub 是「導流／活化」工具，價值在漏斗前段與存量會員促活</h3><p style="margin:0 0 8px;color:var(--muted);font-size:13.5px">Hot Games 賺的錢（12bet <b class="hl">$11K</b>、Nova88 <b class="hl">$4K</b>，合併 <b class="hl">$15K</b>）跟公司整體平台比起來還是很小，決賽週末更是幾乎沒有增量。</p><p style="margin:0;color:var(--muted);font-size:13.5px">Hub 真正的價值是帶動了多少互動跟存款意圖，這才是該拿來評估它的方式，不該拿 Hot Games 的營收數字去斷定整個 Hub 做得好不好。</p></div>
+    <div class="card"><div class="eyebrow" style="color:var(--r4)">下次資源分配優先序</div><h3 style="font-size:16px;margin:6px 0 8px">修復泰國轉換 > 加碼拉新流量</h3><p style="margin:0;color:var(--muted);font-size:13.5px">泰國的流量跟意圖已經是最大最強的，只差表單體驗這最後一哩路。把這個修好，效果會比再砸更多流量進一個轉換率已知偏低的漏斗好得多。</p></div>
   </div>
 
   <div class="card" style="margin-top:14px">
     <div class="eyebrow" style="color:var(--r4)">下次賽事（亞洲盃／歐國盃等）產品待辦清單</div>
     <div style="margin-top:10px">
-      <div class="find"><div class="num" style="background:var(--r4)">1</div><div><h3>埋點治理：每個漏斗步驟都要能對回帳號</h3><p>目前 KnockoutSwipe／FloatingSoccer／Promotion 點擊全部匿名，無法做存量會員 uplift 論證；下次一律帶 user_id／UserName 參數，登入態全程可追蹤。</p></div></div>
-      <div class="find"><div class="num" style="background:var(--r4)">2</div><div><h3>Hub 內容更緊密導向 Sportsbook</h3><p>目前 Hub 內容（Hot Games／Promotions）自成一個小樂園，跟公司真正的大額投注品類（體育博彩）連結薄弱；下次應設計明確的 Hub → Sportsbook 導流路徑與追蹤，這是把 Hub 的導流力接上公司更大規模營收目標的關鍵。</p></div></div>
-      <div class="find"><div class="num" style="background:var(--r4)">3</div><div><h3>提早上線、延長暖身期、內容隨賽程階段動態調整</h3><p>本次上線與流量高峰集中在小組賽期間，賽前暖身覆蓋不足，賽後衰退也沒有對應內容切換；下次應提早 2–3 週上線，並設計「賽程階段感知」的內容模組。</p></div></div>
-      <div class="find"><div class="num" style="background:var(--r4)">4</div><div><h3>新戶漏斗與老客促活徹底拆分</h3><p>存款點擊與完成註冊的規模落差證明兩種用戶意圖完全不同；下次頁面設計、數據看板、行銷 campaign 都要用兩條獨立路徑處理，不可混算。</p></div></div>
-      <div class="find"><div class="num" style="background:var(--r4)">5</div><div><h3>Hot Games 選品重新評估，並建立即時儀表板</h3><p>避免依賴高 RTP／低 hold 遊戲造成營收對單一玩家的高度依賴；同時，本次國家/裝置/渠道分析都是賽後才拉出來看，下次若有即時儀表板，泰國轉換卡住這類問題可以在賽事中修復，不用等賽後才發現。</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">1</div><div><h3>埋點治理：每個漏斗步驟都要能對回帳號</h3><p>目前 KnockoutSwipe、FloatingSoccer、Promotion 這些點擊全部是匿名的，沒辦法拿來論證對老會員的帶動效果。下次一律帶 user_id 或 UserName 參數，登入狀態全程可以追蹤。</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">2</div><div><h3>Hub 內容更緊密導向 Sportsbook</h3><p>目前 Hub 裡的內容（Hot Games、Promotions）自己成一個小樂園，跟公司真正的大生意，也就是體育博彩，連結很淡。下次應該設計清楚的 Hub 通往 Sportsbook 的路徑，並且追蹤得到，這是把 Hub 的導流力接上公司更大營收的關鍵。</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">3</div><div><h3>提早上線、延長暖身期、內容隨賽程階段動態調整</h3><p>這次上線跟流量高峰都集中在小組賽，賽前暖身不夠，賽後熱度掉了也沒有換內容因應。下次應該提早兩三週上線，並且讓內容隨賽程階段自動切換。</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">4</div><div><h3>新戶漏斗與老客促活徹底拆分</h3><p>存款點擊跟完成註冊的規模落差，證明這是兩種完全不同的用戶意圖。下次頁面設計、數據看板、行銷 campaign 都該用兩條獨立的路徑處理，不能混著算。</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">5</div><div><h3>Hot Games 選品重新評估，並建立即時儀表板</h3><p>要避免選了太多高 RTP、低 hold 的遊戲，讓營收過度依賴單一玩家。這次的國家、裝置、渠道分析都是賽後才拉出來看的，如果有即時儀表板，泰國轉換卡住這類問題賽事進行中就能發現、就能修，不用等賽後才知道。</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">6</div><div><h3>註冊 CTA 視覺增重，搭配賽事倒數限定文案</h3><p>調整首頁懸浮按鈕的視覺權重，加入「世界盃倒數最後好禮」這類限定感文案，跟第 3 節提到的「新戶入口被存款 CTA 蓋過去」是同一個方向的修法。</p></div></div>
+      <div class="find"><div class="num" style="background:var(--r4)">7</div><div><h3>每日任務發 freebet ＋ Hub 導向 Sportsbook 下注優惠，把單次曝光換成重複來訪跟跨品類消費</h3>
+        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">賽事熱度在小組賽後就迅速消退（OT 日均註冊點擊 <b class="hl">-69%</b>、Nova88 <b class="hl">-24%</b>），Hub 目前也還沒有把導流力接上 Sportsbook（見第 2 項）。可以設計兩層誘因去對症下藥。</p>
+        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">第一層是「每日任務」：登入 Hub、瀏覽當日賽事卡片、在任一 Hot Games 投注一次即可累積任務，完成後發放小額 freebet，把單次的賽事話題性轉成每天回訪的習慣，不用只靠賽程熱度驅動流量。</p>
+        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">第二層是「Hub 導向 Sportsbook 優惠」：玩家從 Hub 的入口點進 Sportsbook、對世界盃賽事下注，可以拿到加碼賠率或投注保險（輸了退還部分本金），直接把 Hub 的導流力兌現成公司真正的大額投注品類。</p>
+        <p style="margin:0;font-size:13.5px;color:var(--muted)">兩個機制都要靠第 1 項的埋點治理來追蹤 entry_source，freebet 跟投注保險務必設定發放上限跟流水倍數，避免被刷單利用；上線後直接拿 DepositClick、CompleteRegistration 這類既有事件當對照組，量化這波誘因機制實際帶來多少淨增量，賽事進行中就能看到效果，不用等賽後才知道有沒有用。</p>
+      </div></div>
     </div>
+  </div>
+</section>
+
+<!-- ============ ROLE 04: MKT ============ -->
+<section id="mkt">
+  <div class="sec-head"><span class="n">10</span><span class="role-tag" style="background:var(--r3)">Marketing</span><h2>成效未達標的情境評估、假設與下一步</h2></div>
+  <p class="lead">World Cup Hub 目前的推廣方式是短影音為主的整體曝光，沒有針對個別功能投放精準廣告。以下是我以 MKT 角色在這個實際狀況下的獨立推演，關注的是這些數字背後代表哪些推廣判斷可能被誤判，不是重述數字本身或簡報既有的結論。</p>
+
+  <div class="card">
+    <div class="find"><div class="num" style="background:var(--r3)">1</div><div><h3>短影音的曝光聲量，可能沒有真正換成新戶</h3>
+      <p>如果短影音的成效是用觀看數、按讚分享數這類聲量指標來衡量，聲量可以很好看，但這些數字本身無法告訴我們有多少人因此完成註冊。</p>
+      <p>存款點擊是完成註冊的 <b class="hl">5.7</b> 到 <b class="hl">10.1</b> 倍，顯示 Hub 本身導入的新戶比例不高；短影音如果也主要觸及既有受眾，真正帶來的淨新戶會比聲量數字暗示的少很多。</p>
+      <div class="rec">
+        <p><b>假設：</b>如果短影音的成效報告只看觀看數跟互動率，沒有搭配追蹤觀看後的 RegisterClick、CompleteRegistration 這類下游行為，可能高估了這波曝光對拉新的實際貢獻。</p>
+        <p><b>下次：</b>短影音成效除了聲量指標，務必搭配到站後的完成註冊或更下游行為做歸因；就算短影音本身不是精準投放工具，也該用活動代碼追蹤有多少流量最終轉成新戶。</p>
+      </div>
+    </div></div>
+
+    <div class="find"><div class="num" style="background:var(--r3)">2</div><div><h3>泰國的短影音觸及很大，但完成率沒有人在看</h3>
+      <p>泰國 CTR 全場最高（<b class="hl">2.68%</b>）。如果短影音在泰國市場的成效是用觸及人數、播放量、CTR 來評估，泰國市場帳面上會很出色。</p>
+      <div class="rec">
+        <p><b>假設：</b>只看觸及跟 CTR、不看完成率，等於是在獎勵一個完成率全場最低（<b class="hl">16.0%</b>）的市場繼續拿更多短影音資源。泰國持續被視為重點市場，整體成效卻沒跟著成長，這可能就是原因之一。</p>
+        <p><b>下次：</b>泰國市場短影音的成效評估要搭配完成率一起看，不是只看觸及跟點擊，活動進行中就該定期複查，不要等賽後才發現落差。</p>
+      </div>
+    </div></div>
+
+    <div class="find"><div class="num" style="background:var(--r3)">3</div><div><h3>elitegame12.com 貢獻了泰國六成五的點擊，但完成率是全場最差</h3>
+      <p>拆開泰國流量來源後看到，elitegame12.com 這個渠道貢獻了泰國 <b class="hl">65%</b> 的點擊量，完成率卻只有 <b class="hl">8.8%</b>，是全場最差的渠道；其他來源（direct/tiktok/google）完成率都在 <b class="hl">27%</b> 以上。</p>
+      <div class="rec">
+        <p><b>假設：</b>如果評估這個渠道的價值只看點擊量或 CTR（<b class="hl">5.02%</b>），看起來會覺得表現不錯，但完成率攤開來看是完全相反的結論。如果這是付費推廣的渠道，可能一直在把資源投進一個轉換品質很差的地方；如果是自然導流的合作，也代表這個渠道帶來的受眾跟目標客群不太合。</p>
+        <p><b>下次：</b>不管是付費投放還是自然合作渠道，續約或維持合作前一定要看完成率而不是只看點擊量；對 elitegame12.com 這類已知低轉換的渠道，應該先查是流量素質問題還是內容承諾落差，再決定怎麼處理。</p>
+      </div>
+    </div></div>
+
+    <div class="find"><div class="num" style="background:var(--r3)">4</div><div><h3>短影音的推廣節奏，可能是跟著賽程反應，不是提前排好的</h3>
+      <p>用「小組賽 vs 4強期間」量化衰退幅度：OT 日均註冊點擊 <b class="hl">-69%</b>、Nova88 <b class="hl">-24%</b>。W25（小組賽白熱化）是雙指標峰值，之後連續下滑。如果短影音的發布跟加碼是照整個賽季平均分配，流量本來就要往下掉的階段，推廣力道卻沒跟著調整，效率一定會變差。</p>
+      <div class="rec">
+        <p><b>假設：</b>如果短影音的發布或加碼節奏是跟著當週熱度臨時決定，而不是賽前就依賽程階段排好強弱週期，會在流量高峰時力道不足，錯過最大轉換窗口；流量低谷時還維持一樣的力道，浪費在低效率階段。決賽週末 Hot Games 投注幾乎沒有增量（三天合計 GGR 只有 <b class="hl">$298</b>），顯示拉新的窗口確實早就關了。</p>
+        <p><b>下次：</b>短影音的發布跟加碼排期，賽前就該依歷史賽事的熱度曲線規劃好強弱週期，開賽後只做微調，不要等本週數據出來才決定下週的推廣力道。</p>
+      </div>
+    </div></div>
+
+    <div class="find"><div class="num" style="background:var(--r3)">5</div><div><h3>如果短影音拍過 Hot Games 的大額中獎畫面，那可能是不會再重演的個案</h3>
+      <p>12bet Hot Games 的毛利幾乎全靠一位玩家 6/7 那一場投注撐著（GGR <b class="hl">$11,544</b>），扣掉他整個 12bet 反而倒虧 <b class="hl">$499</b>。決賽期間沒有再出現類似的大額玩家。</p>
+      <p>短影音很常見的內容形式就是秀中獎瞬間，如果曾經拍過或引用過這批遊戲的大額中獎畫面，用的很可能正是這種不會再重演的個案數字。</p>
+      <div class="rec">
+        <p><b>假設：</b>用單一異常值包裝出來的中獎畫面，短期或許能吸引點閱，但真實體驗跟畫面承諾落差太大，反而會傷害用戶對這批遊戲甚至整個 Hub 活動的信任，不利長期留存。</p>
+        <p><b>下次：</b>短影音如果要呈現 Hot Games 的中獎內容，該用多人參與的真實規模（比如 nova88 那種多人小額的分布）取代任何單一大額案例，確保短影音給人的印象跟大多數玩家的真實體驗一致。</p>
+      </div>
+    </div></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap" style="border-top:1px solid var(--line);padding-top:16px">
-    <b style="color:var(--ink)">資料來源：</b>第 01–04 節（指標總覽／漏斗／泰國市場／週趨勢）取自 UI/UX 團隊「WC26 UX &amp; Behavioral Insights Report」簡報原始數字（分析期間 2026-05-28–07-16，GA4+Clarity），未經本方重新計算；第 02 節漏斗圖形與第 04 節趨勢折線圖為本方依同一組數字重新繪製，用以呈現實際形狀與逐日走勢。第 05–07 節（Hot Games 財務／品牌對照／存款轉換增量）為本方財務數據（Prod DB，Admin 口徑，統計期間 2026-05-26–07-17），已與 PowerBI 演算法交叉驗證。第 08（UI/UX）、09（MKT）、10（PO）節的解讀、假設與建議<b style="color:var(--ink)">皆為本方以該角色視角對上述數據的獨立分析</b>，非引用或改寫簡報本身的敘述、假設或行動建議。PO 節聚焦 Hub 功能本身的下一版迭代方向。本報告完全針對 World Cup Hub 這個功能的成效進行評估，不涉及公司整體平台流水或其他對外目標。本報告產出於決賽開打前，數字統計到 07-16/07-17，尚未涵蓋冠軍賽當週的表現，待決賽結束後應再出一版完整版。
+    <b style="color:var(--ink)">資料來源：</b>第 01–04 節（指標總覽、漏斗、泰國市場、週趨勢）取自 UI/UX 團隊「WC26 UX &amp; Behavioral Insights Report」簡報的原始數字（分析期間 2026-05-28–07-16，GA4+Clarity），沒有重新計算過。第 02 節的漏斗圖形跟第 04 節的趨勢折線圖，是我方拿同一組數字重新畫的，目的是把真正的形狀跟逐日走勢畫出來。第 05–07 節（Hot Games 財務、品牌對照、存款轉換增量）是我方的財務數據，其中 Hot Games 財務（第 05–06 節）統計期間為 2026-05-26–07-20，涵蓋整個決賽週末（Prod DB，Admin 口徑，逐日匯率，遊戲配對用 Siebog.HotGames 權威名單核對過）；存款轉換增量（第 07 節）統計期間為原本的 GA4 統計窗口。第 08（UI/UX）、09（PO）、10（MKT）節的解讀、假設跟建議，都是我以該角色的視角對上面數據做的獨立分析，不是引用或改寫簡報本身的敘述。PO 節聚焦在 Hub 這個功能本身下一版該怎麼做，不涉及公司整體平台流水或其他對外目標。本報告涵蓋整個世界盃賽事（含決賽），是本次活動的完整版報告。
   </div>
 </footer>
 </main>
