@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2026 World Cup・1B 目標複盤 Final ver.：給 MKT 的下一步</title>
+<style>
+:root{
+  --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
+  --gold:#B8862E; --gold-soft:#F7EED9;
+  --analyst:#1868A6; --analyst-soft:#E4F1FB;
+  --mkt:#C2621F; --mkt-soft:#FCEEDD;
+  --po:#6C3FA6; --po-soft:#F1E8FB;
+  --pos:#1E8E5A; --pos-soft:#E3F5EA;
+  --neg:#C4383B; --neg-soft:#FBE6E6;
+  --font-serif: Georgia,'Iowan Old Style','Palatino Linotype','Book Antiqua',serif;
+  --font-cjk: 'Microsoft JhengHei','PingFang TC','Noto Sans TC',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-mono: ui-monospace,'SF Mono',Menlo,Consolas,'Cascadia Code',monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#0E1116; --ink:#EDEFF4; --muted:#96A0B0; --card:#171B22; --line:rgba(237,239,244,.10);
+    --gold:#D9AE5C; --gold-soft:#332711;
+    --analyst:#5FA8E4; --analyst-soft:#152534;
+    --mkt:#E29552; --mkt-soft:#33220F;
+    --po:#B78EE0; --po-soft:#241A34;
+    --pos:#4FBE86; --pos-soft:#132A1F;
+    --neg:#E2807F; --neg-soft:#33191A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1116; --ink:#EDEFF4; --muted:#96A0B0; --card:#171B22; --line:rgba(237,239,244,.10);
+  --gold:#D9AE5C; --gold-soft:#332711;
+  --analyst:#5FA8E4; --analyst-soft:#152534;
+  --mkt:#E29552; --mkt-soft:#33220F;
+  --po:#B78EE0; --po-soft:#241A34;
+  --pos:#4FBE86; --pos-soft:#132A1F;
+  --neg:#E2807F; --neg-soft:#33191A;
+}
+:root[data-theme="light"]{
+  --paper:#F6F7FB; --ink:#161A22; --muted:#667085; --card:#FFFFFF; --line:rgba(22,26,34,.09);
+  --gold:#B8862E; --gold-soft:#F7EED9;
+  --analyst:#1868A6; --analyst-soft:#E4F1FB;
+  --mkt:#C2621F; --mkt-soft:#FCEEDD;
+  --po:#6C3FA6; --po-soft:#F1E8FB;
+  --pos:#1E8E5A; --pos-soft:#E3F5EA;
+  --neg:#C4383B; --neg-soft:#FBE6E6;
+}
+*{box-sizing:border-box}
+body{background:var(--paper); color:var(--ink); font-family:var(--font-cjk); line-height:1.7; font-size:16px; margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:44px 24px 100px}
+.eyebrow{font-family:var(--font-serif); font-style:italic; font-size:13px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; margin:0 0 8px}
+h1{font-family:var(--font-cjk); font-weight:800; font-size:clamp(28px,5vw,42px); line-height:1.15; margin:0 0 10px; text-wrap:balance;
+  background:linear-gradient(100deg,var(--ink),var(--mkt)); -webkit-background-clip:text; background-clip:text; color:transparent}
+h2{font-family:var(--font-cjk); font-weight:800; font-size:22px; margin:0 0 14px; text-wrap:balance; display:flex; align-items:center; gap:10px}
+h2 .dot{width:11px;height:11px;border-radius:3px;flex:none}
+h3{font-family:var(--font-cjk);font-weight:700;font-size:16.5px;margin:0 0 10px}
+.sub{color:var(--muted); font-size:16px; margin:0 0 6px; font-weight:600}
+.pendbadge{display:inline-flex; align-items:center; gap:6px; font-family:var(--font-serif); font-style:italic; font-size:12.5px; letter-spacing:.05em; color:var(--mkt); border:1px solid var(--mkt); background:var(--mkt-soft); padding:4px 11px; border-radius:20px; margin-top:16px}
+header.top{padding-bottom:8px; margin-bottom:38px}
+.meta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+.meta-chip{font-size:12.5px; color:var(--ink); background:var(--card); border:1px solid var(--line); padding:5px 12px; border-radius:20px; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.meta-chip b{font-weight:700}
+
+.kpi-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:14px 0 26px}
+@media (max-width:820px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+.kpi-card{background:var(--k-soft); border:1px solid var(--line); border-radius:10px; padding:13px 15px}
+.kpi-card .lbl{font-size:12px; color:var(--muted); margin-bottom:4px}
+.kpi-card .val{font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-size:19px; font-weight:700; color:var(--k)}
+.kpi-card .note{font-size:11.5px; color:var(--muted); margin-top:3px}
+
+.section-card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:32px 32px 8px; margin-top:38px; box-shadow:0 2px 10px rgba(20,20,10,.04)}
+.section-card.analyst{border-top:6px solid var(--analyst)}
+.section-card.mkt{border-top:6px solid var(--mkt)}
+.section-card.po{border-top:6px solid var(--po)}
+.section-card h2.analyst-h,.dot.analyst{color:var(--analyst)} .dot.analyst{background:var(--analyst)}
+.section-card h2.mkt-h,.dot.mkt{color:var(--mkt)} .dot.mkt{background:var(--mkt)}
+.section-card h2.po-h,.dot.po{color:var(--po)} .dot.po{background:var(--po)}
+
+p{margin:0 0 14px; max-width:74ch}
+ul,ol{margin:0 0 16px; padding-left:22px; max-width:70ch}
+li{margin-bottom:7px}
+strong,b{font-weight:700}
+
+.callout{border-left:4px solid var(--analyst); background:var(--analyst-soft); padding:15px 19px; border-radius:0 10px 10px 0; margin:18px 0; max-width:78ch}
+.callout.neg{border-left-color:var(--neg); background:var(--neg-soft)}
+.callout.warn{border-left-color:var(--mkt); background:var(--mkt-soft)}
+.callout.po{border-left-color:var(--po); background:var(--po-soft)}
+.callout.gold{border-left-color:var(--gold); background:var(--gold-soft)}
+.callout .cnum{font-family:var(--font-mono); font-weight:700; font-variant-numeric:tabular-nums}
+
+table{border-collapse:collapse; width:100%; margin:12px 0 20px; font-size:14.5px}
+.twrap{overflow-x:auto; margin:12px 0 22px; border-radius:10px}
+th,td{padding:9px 13px; text-align:left; border-bottom:1px solid var(--line)}
+th{font-weight:700; font-size:12.5px; color:#fff; text-transform:uppercase; letter-spacing:.03em; background:var(--t-head, var(--ink))}
+th:first-child{border-top-left-radius:8px} th:last-child{border-top-right-radius:8px}
+td.num, th.num{font-family:var(--font-mono); font-variant-numeric:tabular-nums; text-align:right}
+tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+:root[data-theme="dark"] tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+@media (prefers-color-scheme:dark){tr:nth-child(even) td{background:rgba(255,255,255,.025)}}
+.pos{color:var(--pos); font-weight:700}
+.neg{color:var(--neg); font-weight:700}
+.mini{font-size:12.5px; color:var(--muted)}
+
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+
+.brand-card{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--mkt); border-radius:0 12px 12px 0; padding:18px 22px 6px; margin:16px 0}
+.brand-card h4{margin:0 0 10px; font-size:15.5px; font-weight:800; color:var(--mkt)}
+.brand-card p{margin:0 0 11px; max-width:none}
+.brand-card p.lead{font-size:15.5px; font-weight:700; color:var(--ink); padding-bottom:11px; border-bottom:1px solid var(--line); margin-bottom:13px}
+.hl{font-family:var(--font-mono); font-weight:700; font-variant-numeric:tabular-nums; color:var(--gold)}
+.key{font-weight:700; color:var(--po)}
+
+.summary-card{background:linear-gradient(135deg,var(--mkt-soft),var(--card)); border:1px solid var(--line); border-radius:16px; padding:26px 30px; margin:20px 0}
+.summary-card ol{padding-left:24px}
+.summary-card li{margin-bottom:14px; font-size:15.5px}
+
+footer{margin-top:44px; padding:26px 32px 30px; background:var(--card); border-radius:16px; border:1px solid var(--line); font-size:13.5px; color:var(--muted)}
+footer h3{color:var(--ink); font-size:14px}
+footer ul{padding-left:18px}
+.tag-inline{font-family:var(--font-mono); font-size:12.5px; background:var(--paper); border:1px solid var(--line); padding:1px 7px; border-radius:5px}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">MKT Review Deck</p>
+  <h1>2026 World Cup・1B 目標複盤 <span style="font-size:0.45em; font-weight:600; -webkit-text-fill-color:var(--ink); color:var(--ink); opacity:.75">(Final ver.)</span></h1>
+  <p class="sub">給 MKT 的結果總結與下一步</p>
+  <div class="meta-row">
+    <span class="meta-chip"><b>資料窗期</b>：2026-06-12 ～ 2026-07-20（GMT+8，39 天，賽事全數結束）</span>
+    <span class="meta-chip"><b>範圍</b>：OT（12bet）平台</span>
+    <span class="meta-chip"><b>資料來源</b>：Admin 後台（核心加總數字）＋ Looker（多維度細節，全 39 天新鮮匯出）</span>
+  </div>
+</header>
+
+<!-- P1 摘要：結論先行 -->
+<section>
+  <h2><span class="dot" style="background:var(--mkt)"></span>先講結論</h2>
+  <div class="summary-card">
+    <ol>
+      <li><b>1B 的定義已確認為「賽事期間全平台絕對量」，最終達成率 <span class="hl">35.1%</span>。</b>39 天 Admin 口徑 Valid TO 收在 <span class="hl">$351.0M</span>（未剔除作廢 $361.9M，36.2%）。差距有多大？達成 1B 要日均 <span class="hl">$25.6M</span>，實際日均 <span class="hl">$9.0M</span>，等於要求平台在 39 天做出平常 <span class="hl">111 天</span>的量。這不是行銷加把勁能補的量級。事件隔離對照給出了實際的增量：世界盃讓全平台較平時基期多做 <span class="hl">+3.1%</span>（Sportsbook +14.8%，Non-Sports −7.9%），而 1B 要求的是 +194%，目標與事件實際拉力差了約 <span class="hl">60 倍</span>。35.1% 的達成率反映的是目標量級，不是執行力。</li>
+      <li><b>世界盃活動在追蹤系統裡幾乎是隱形的。</b>用「Event」查、用「Source」查，明確標記為 World Cup 的下注量都卡在 <span class="hl">0.03%～0.05%</span>，<span class="hl">99.80%</span> 的量掛在既有的「Old Event」機制上。一場全平台都在推的世界盃，歸因量低到這種程度，第一個該懷疑的是標籤系統沒接住流量，而不是活動沒人玩。追蹤問題排除之前，這份報告裡所有活動成效數字都只能當下限讀，不是定論。</li>
+      <li><b>在「可被追蹤到」的範圍內，MKT 主控通路的歸因貢獻約 2.3%。</b>Paid Ads、SEO、Social Media、KOL、各幣別 CM 團隊加上其餘小項，歸因加總約 <span class="hl">$8.13M</span>，占全平台 Valid TO 的 <span class="hl">2.26%</span>；Organic（<span class="hl">58.56%</span>）加 Affiliate team（<span class="hl">39.18%</span>）吃掉 97.7% 以上。這個 2.26% 跟上一條出自同一套歸因系統，標籤覆蓋有缺陷的話，它同樣被低估。</li>
+      <li><b>供應商/遊戲層級有 12 筆負 GGR，合計虧損約 $168,680（占總 GGR 1.39%）</b>，其中 Pronet（PG Sports）與 TCG SEA Lottery 兩項就占了 78%。金額對整體影響不大，但值得 Risk 團隊抽查（詳見風險揭露段落）。</li>
+    </ol>
+  </div>
+
+  <div class="callout po" style="border-left-width:6px; padding:19px 24px">
+    <p style="font-size:17.5px; font-weight:800; color:var(--po); margin:0 0 10px">想請 MKT 協助補齊的三份資訊</p>
+    <p style="font-size:15.5px; margin:0">這份報告只有平台側的數據，很多「為什麼」目前只能停在假設，<span class="key">這對 MKT 其實不公平：追蹤系統看不見的貢獻，光靠平台數據永遠還原不出來</span>。如果 MKT 方便把下面這幾份資訊同步給 AT 團隊，兩邊的資料對起來看，活動的真實成效才拼得完整，<span class="key">MKT 被歸因系統低估的部分也才有機會浮現</span>：</p>
+  </div>
+  <div class="twrap" style="--t-head:var(--po)">
+  <table>
+    <tr><th>想請 MKT 同步的資訊</th><th>用來對照的平台數據</th><th>一起能回答的問題</th></tr>
+    <tr><td>世界盃期間各通路實際投放金額（分週）</td><td>Group 維度歸因結果（Paid Ads 0.70%／SEO 1.32%等）</td><td>2.26% 是「投得少」還是「投了沒被追蹤到」</td></tr>
+    <tr><td>WC 活動上線時間表與入口位置清單（活動頁/首頁/下注流程）</td><td>Event/Source 維度的 WC 標記量（0.03%~0.05%）</td><td>歸因量低是「曝光位置沒進下注路徑」還是「標籤沒貼對」</td></tr>
+    <tr><td>WC 專屬紅利的發放名單（或發放量）</td><td>我們會從 DB 抽這批玩家的實際注單，查標籤覆蓋率</td><td>直接驗證追蹤系統有沒有壞，這是分辨上面兩題的決定性證據</td></tr>
+  </table>
+  </div>
+  <p class="mini">第三項的 DB 抽樣由 AT 數據團隊執行，MKT 只需要提供紅利發放名單或活動代碼，不用做任何分析工作。做完這一項，「活動成效不彰」還是「追蹤沒接住」就能水落石出，如果是後者，MKT 這次的付出就能被正確地算回來。</p>
+</section>
+
+<!-- 四口徑對照 -->
+<section style="margin-top:38px">
+  <h2><span class="dot" style="background:var(--gold)"></span>四口徑對照：距離 10 億美元目標</h2>
+  <div class="twrap" style="--t-head:var(--gold)">
+  <table>
+    <tr><th>口徑</th><th class="num">金額（USD）</th><th class="num">% of 1B</th><th>說明</th></tr>
+    <tr><td>① WC 賽事本身 Turnover</td><td class="num">$43,033,796</td><td class="num"><span class="hl">4.30%</span></td><td>104/104 場全部完賽，Sportsbook 六家 provider 賽事投注</td></tr>
+    <tr><td>② Sportsbook Turnover（Sports+VS+ES）</td><td class="num">$190,112,502</td><td class="num"><span class="hl">19.01%</span></td><td>全平台體育類 Valid TO</td></tr>
+    <tr><td>③ Non-Sports Turnover</td><td class="num">$160,905,813</td><td class="num"><span class="hl">16.09%</span></td><td>全平台減 Sportsbook；②+③=④</td></tr>
+    <tr><td>④ 全平台 Total Turnover</td><td class="num">$351,018,315</td><td class="num"><span class="hl">35.10%</span></td><td>Valid TO；未剔除作廢為 $361,909,886（36.19%）</td></tr>
+  </table>
+  </div>
+  <p class="mini">Admin 口徑，39 天全窗期（06-12~07-20）。1B 的定義為賽事期間全平台絕對量，對應④，最終達成率 35.10%。</p>
+</section>
+
+<!-- 事件隔離對照 -->
+<div class="section-card mkt">
+<section>
+  <h2 class="mkt-h"><span class="dot mkt"></span>事件隔離對照：世界盃期間 vs 平時基準</h2>
+  <p>基準期取賽事開打前、同樣長度的 39 天（<b>2026-05-04～06-11</b>），兩邊窗期等長、口徑相同，直接對比。這一段回答的是整份報告最核心的問題：世界盃到底幫平台多賺了多少。</p>
+  <div class="twrap" style="--t-head:var(--mkt)">
+  <table>
+    <tr><th>指標</th><th class="num">基準期（05-04~06-11）</th><th class="num">世界盃期間（06-12~07-20）</th><th class="num">變化</th></tr>
+    <tr><td>②Sportsbook Valid TO</td><td class="num">$165,575,460</td><td class="num">$190,112,502</td><td class="num pos">+14.8%</td></tr>
+    <tr><td>③Non-Sports Valid TO</td><td class="num">$174,745,631</td><td class="num">$160,905,813</td><td class="num neg">−7.9%</td></tr>
+    <tr><td>④全平台 Valid TO</td><td class="num">$340,321,091</td><td class="num">$351,018,315</td><td class="num pos">+3.1%</td></tr>
+    <tr><td>④全平台 GGR</td><td class="num">$11,835,183</td><td class="num">$11,832,643</td><td class="num">−0.02%（持平）</td></tr>
+    <tr><td>Company Margin（Valid）</td><td class="num">3.48%</td><td class="num">3.37%</td><td class="num">−0.11pp</td></tr>
+    <tr><td>Total Betcount</td><td class="num">47,247,209</td><td class="num">49,141,403</td><td class="num pos">+4.0%</td></tr>
+    <tr><td>Bet User（不重複下注人數）</td><td class="num">25,954</td><td class="num">26,756</td><td class="num pos">+3.1%</td></tr>
+  </table>
+  </div>
+
+  <p><b>發現一：世界盃把 Sportsbook 拉高 <span class="hl">14.8%</span>，但全平台總量只多 <span class="hl">3.1%</span>，因為 Non-Sports 同期掉了 <span class="hl">7.9%</span>。</b>Sportsbook 占比從基準期的 <span class="hl">48.7%</span> 升到 <span class="hl">54.2%</span>。也就是說，賽事期間有一部分的量是從其他產品線移過來的，不全是新錢。至於這是「玩家把預算從 Casino/Lottery 挪去投世界盃」的分流，還是 Non-Sports 剛好自然回落，以現有的彙總資料分不出來，要看玩家層級的交叉數據（同一批人是否減少非體育投注）才能確認。</p>
+  <p><b>發現二：TO 多了 <span class="hl">3.1%</span>，GGR 卻持平。</b>賽事期間 Margin 從 <span class="hl">3.48%</span> 滑到 <span class="hl">3.37%</span>。方向上可以說世界盃帶來的是「量」不是「利」，但兩邊 GGR 的差距（<span class="hl">−0.02%</span>）遠小於方法論本身的誤差（見文末但書），持平是唯一站得住的講法，不能說賺得更少。</p>
+  <p><b>發現三：拿基準期對照 1B，目標與事件實際拉力差了約 <span class="hl">60 倍</span>。</b>1B 相當於要求賽事期間做出比平時基期多 <span class="hl">194%</span> 的量，世界盃實際帶動的全平台增量是 <span class="hl">+3.1%</span>。<span class="hl">35.1%</span> 的達成率不是執行不力的結果，是目標本身超出了這類事件能拉動的量級。下次訂目標，這兩個數字（基期 <span class="hl">$340M</span>、事件增量約 <span class="hl">3%</span>）就是起點。</p>
+  <div class="callout warn">
+    對 MKT 的意義：全平台 <span class="cnum">+3.1%</span> 看起來不多，但 Sportsbook <span class="cnum">+14.8%</span> 是實打實的拉抬，Bet User 也多了 <span class="cnum">3.1%</span>（約 <span class="cnum">800</span> 人）。下次的重點不是「讓賽事拉更多量」，是兩件事：讓 Sportsbook 的增量少被 Non-Sports 的下滑吃掉（如果分流屬實，交叉銷售的設計就是關鍵），以及把增量做成能歸因的形式，讓 MKT 的貢獻看得見。
+  </div>
+</section>
+</div>
+
+<!-- 平台實際發生了什麼 -->
+<div class="section-card analyst">
+<section>
+  <h2 class="analyst-h"><span class="dot analyst"></span>平台實際發生了什麼（39 天全窗期）</h2>
+
+  <h3>核心指標（Admin 口徑，權威值）</h3>
+  <div class="kpi-grid">
+    <div class="kpi-card" style="--k:var(--gold);--k-soft:var(--gold-soft)"><div class="lbl">Valid Turnover</div><div class="val">$351,018,315</div><div class="note">Admin 口徑；Looker 為 $360,172,285（+2.61%）</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">GGR</div><div class="val">$11,832,643</div><div class="note">Admin 口徑；Looker 為 $12,100,149（+2.26%）</div></div>
+    <div class="kpi-card" style="--k:var(--pos);--k-soft:var(--pos-soft)"><div class="lbl">Company Margin</div><div class="val">3.37%</div><div class="note">Looker 口徑為 3.36%，兩者高度一致</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Total Betcount</div><div class="val">49,141,403</div><div class="note">Admin 口徑；Looker 為 50,306,862（+2.37%）</div></div>
+    <div class="kpi-card" style="--k:var(--analyst);--k-soft:var(--analyst-soft)"><div class="lbl">Bet User</div><div class="val">26,756～26,801</div><div class="note">DB重建(26,756)與Looker新鮮匯出的貨幣表加總(26,801)兩個獨立來源互相驗證，差距僅0.17%</div></div>
+  </div>
+  <p class="mini">Admin 與 Looker 的落差（2.26%～2.61%）方向與過去歷次報告的落差模式（1.8%～5.1%）一致，推測與 Resettle／匯率時基／結算快照時點有關，確切成因未查明。核心對外數字一律以 Admin 為準，Looker 數字僅供交叉參考與提供 Admin 無法拆解的維度細節。</p>
+
+  <h3>世界盃歸因：兩個追蹤維度都測不到量</h3>
+  <div class="twrap" style="--t-head:var(--analyst)">
+  <table>
+    <tr><th>追蹤維度</th><th class="num">WC相關標記金額</th><th class="num">占全平台 Valid TO</th><th>備註</th></tr>
+    <tr><td>Event（活動/優惠標籤）</td><td class="num">$154,597</td><td class="num">0.043%</td><td>MYR/VND/THB World Cup 標籤 + Trip to WC，共4個標籤加總</td></tr>
+    <tr><td>Source（流量來源標記，細分）</td><td class="num">$119,304</td><td class="num">0.033%</td><td>標記為「WC」＋「WC activities」，共2個標籤加總</td></tr>
+    <tr><td>Old Event（既有非WC機制）</td><td class="num">$359,465,418</td><td class="num">99.80%</td><td>真正扛住量的既有機制</td></tr>
+  </table>
+  </div>
+  <p><b>Event 跟 Source 是兩個各自獨立的 Looker 追蹤維度</b>，同一筆下注可能同時出現在兩邊，故不加總呈現。兩個維度給出的結論一致：世界盃專屬標記的量都在總量的 0.03%～0.05% 之間，這是涵蓋整個賽事期間的完整數字。</p>
+
+  <h3>行銷通路貢獻（Group 維度）</h3>
+  <div class="twrap" style="--t-head:var(--analyst)">
+  <table>
+    <tr><th>通路</th><th class="num">占全平台 Valid TO</th></tr>
+    <tr><td>Organic</td><td class="num">58.56%</td></tr>
+    <tr><td>Affiliate team</td><td class="num">39.18%</td></tr>
+    <tr><td>Paid Ads team</td><td class="num">0.70%</td></tr>
+    <tr><td>SEO team</td><td class="num">1.32%</td></tr>
+    <tr><td>各幣別 CM 團隊（INR/MYR/VND合計）</td><td class="num">0.11%</td></tr>
+    <tr><td>KOL team</td><td class="num">0.04%</td></tr>
+    <tr><td>Social Media team</td><td class="num">0.02%</td></tr>
+    <tr><td>其餘（Content/Onboarding/Operation/Affiliate雜項/TH Telegram project）</td><td class="num">0.06%</td></tr>
+  </table>
+  </div>
+  <p class="mini">MKT自己主控的通路（Paid Ads+SEO+Social+KOL+CM團隊+其餘小項）合計約 2.26%（$8.13M）。</p>
+  <p class="mini">注意：這裡的「Group」維度（團隊歸屬）跟前面「Event/Source」維度是不同的Looker分類方式，彼此的類別邊界不完全對應，不能跨維度直接相減或交叉比對百分比。</p>
+
+  <h3>裝置與幣別分布</h3>
+  <div class="grid2">
+    <div>
+      <div class="twrap" style="--t-head:var(--analyst)">
+      <table>
+        <tr><th>裝置</th><th class="num">占比</th></tr>
+        <tr><td>Mobile</td><td class="num">78.27%</td></tr>
+        <tr><td>Desktop</td><td class="num">21.14%</td></tr>
+        <tr><td>Unknown</td><td class="num">0.59%</td></tr>
+      </table>
+      </div>
+    </div>
+    <div>
+      <div class="twrap" style="--t-head:var(--analyst)">
+      <table>
+        <tr><th>幣別</th><th class="num">占比</th><th class="num">Margin</th></tr>
+        <tr><td>VND</td><td class="num">36.13%</td><td class="num">3.49%</td></tr>
+        <tr><td>THB</td><td class="num">23.64%</td><td class="num">3.36%</td></tr>
+        <tr><td>CNY</td><td class="num">15.67%</td><td class="num">2.74%</td></tr>
+        <tr><td>INR</td><td class="num">15.48%</td><td class="num">3.13%</td></tr>
+        <tr><td>MYR</td><td class="num">7.11%</td><td class="num">4.07%</td></tr>
+        <tr><td>IDR</td><td class="num">1.46%</td><td class="num">5.73%</td></tr>
+        <tr><td>KRW</td><td class="num">0.42%</td><td class="num">3.70%</td></tr>
+        <tr><td>BDT</td><td class="num">0.08%</td><td class="num">2.45%</td></tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <h3>每日 Margin 走勢（39天完整，非片段）</h3>
+  <p>Company Margin 全期在 <span class="hl">1.31%</span>（06-23）到 <span class="hl">5.70%</span>（07-19）之間跳動。07-19 是全期唯一站上 5.7% 的一天，隔天決賽（07-20）卻降回 <span class="hl">2.24%</span>。這兩天擺在一起，說「賽程帶動 Margin 走高」或「賽程對 Margin 沒影響」都站不住，數據就是這麼跳。</p>
+  <p>要提醒一件事：這是全平台混合 Margin，Casino、Lottery 全算在裡面，不是世界盃盤口本身的 Margin。世界盃賽事本身的逐場 Margin 走勢，另一份《2026 World Cup 賽事營收覆盤》有完整揭露（8 強後全面轉正、4 強 France vs Spain 單場 27.2%）。兩份報告量的是不同的東西，不能拿一份去替另一份下結論。</p>
+</section>
+</div>
+
+<!-- 風險揭露 -->
+<div class="section-card analyst">
+<section>
+  <h2 class="analyst-h"><span class="dot analyst"></span>風險揭露：供應商/遊戲層級異常</h2>
+  <p>39天窗期內，共有 <span class="hl">12</span> 個 provider/game type 組合呈現負 GGR，合計虧損約 <span class="hl">$168,680</span>（占全平台總 GGR 的 <span class="hl">1.39%</span>）。金額對整體影響不大，但列出讓 Risk 團隊判斷是否需要抽查。</p>
+  <div class="twrap" style="--t-head:var(--neg)">
+  <table>
+    <tr><th>Provider/Game Type</th><th>類別</th><th class="num">GGR</th><th class="num">Margin</th></tr>
+    <tr><td>Pronet／PG Sports</td><td>Sports</td><td class="num neg">−$86,847</td><td class="num neg">−14.30%</td></tr>
+    <tr><td>TCG／TCG SEA Lottery</td><td>Lottery</td><td class="num neg">−$45,569</td><td class="num neg">−11.09%</td></tr>
+    <tr><td>Live22／Live22 RNG</td><td>Casino</td><td class="num neg">−$22,983</td><td class="num neg">−165.13%</td></tr>
+    <tr><td>Netent／Netent RNG</td><td>Casino</td><td class="num neg">−$4,540</td><td class="num neg">−3.50%</td></tr>
+    <tr><td>V8／V8 Poker</td><td>P2P</td><td class="num neg">−$3,682</td><td class="num neg">−1.91%</td></tr>
+    <tr><td>Skywind／Skywind RNG</td><td>Casino</td><td class="num neg">−$2,372</td><td class="num neg">−0.53%</td></tr>
+    <tr><td>SabaPlay／SabaPlay Poker</td><td>Games</td><td class="num neg">−$958</td><td class="num neg">−4.80%</td></tr>
+    <tr><td>India／India Lotto</td><td>Lottery</td><td class="num neg">−$899</td><td class="num neg">−78.16%</td></tr>
+    <tr><td>AMB／AMB RNG</td><td>Casino</td><td class="num neg">−$626</td><td class="num neg">−1.17%</td></tr>
+    <tr><td>Pinnacle／AP ESport</td><td>ESports</td><td class="num neg">−$176</td><td class="num neg">−0.24%</td></tr>
+    <tr><td>GPI／GPI Fast3</td><td>Lottery</td><td class="num neg">−$27</td><td class="num neg">−1.12%</td></tr>
+    <tr><td>MT／MT Games</td><td>Games</td><td class="num neg">−$1</td><td class="num neg">−16.93%</td></tr>
+  </table>
+  </div>
+  <div class="callout neg">
+    <b>Pronet（PG Sports）與 TCG SEA Lottery 兩項合計占了負 GGR 總額的 78%。</b>Pronet 這件事 OP 已經發現，07-11 通知上了 UM，也同步請 3rd party 調整。<br>
+    <b>Live22 RNG 值得額外注意</b>：金額不大（−$22,983），但 <span class="cnum">−165%</span> 的 Margin 代表賠出去的錢是收進來投注額的 2.65 倍，比例上是所有負 GGR 項目中最極端的。建議 Risk 優先確認是單一大額中獎、bonus buy 理賠、還是其他異常模式。
+  </div>
+</section>
+</div>
+
+<!-- MKT 證據與下次怎麼做 -->
+<div class="section-card mkt">
+<section>
+  <h2 class="mkt-h"><span class="dot mkt"></span>給 MKT：這次的證據，跟下次可以怎麼做</h2>
+
+  <div class="brand-card">
+  <h4>證據一：世界盃活動的追蹤幾乎是空的，但這不等於「活動沒用」</h4>
+  <p class="lead">Event/Source 兩個獨立維度都測到 0.03%～0.05%，Old Event 吃掉 99.80%，數字涵蓋完整 39 天賽期。</p>
+  <p>這件事有三種可能，而且不互斥。一，曝光沒進到玩家的下注路徑：世界盃入口可能只擺在活動頁，沒放進首頁或下注流程。二，標籤沒貼對：玩家其實是衝著世界盃來的，但系統沒認出來。Old Event 吃掉 99.8% 流量這件事，讓這個可能性最值得優先排查。三，曝光到了但誘因不夠，玩家還是選了既有機制。哪個才是真正原因，要抽真實下注紀錄才知道，彙總數字回答不了「為什麼」。</p>
+  </div>
+
+  <div class="brand-card">
+  <h4>證據二：歸因系統看得見的 MKT 主控通路貢獻是 2.26%，但這個數字目前只能當下限讀</h4>
+  <p class="lead">Paid Ads＋SEO＋Social＋KOL＋CM團隊＋其餘小項合計約2.26%，Organic＋Affiliate team吃掉97.7%以上。</p>
+  <p>單看平台側數據，分不出「MKT 真的沒加碼投放」跟「投了但沒被正確歸因」。還有一個結構性的可能：MKT 的投放確實帶來了玩家，但玩家進站後被記成 Organic 或 Affiliate，歸因鏈斷在 landing 之後。真是這樣的話，MKT 的貢獻就藏在那 58.56% 的 Organic 裡，平台側數據永遠看不見。要分辨，只能拿 MKT 的實際投放紀錄（花了多少、投在哪、什麼時候上線）跟這份歸因結果逐段對照。</p>
+  </div>
+
+  <div class="brand-card">
+  <h4>證據三：39天裡只有一天Margin站上5.7%，隔天決賽反而掉下來</h4>
+  <p class="lead">07-19（3強戰/季軍賽當天）是全期Margin最高點，07-20決賽當天卻回落到2.24%。</p>
+  <p>這是全平台混合 Margin，不是世界盃盤口本身的表現。目前只看得到「發生了什麼」，看不到「為什麼」。可能是決賽當天玩家集中下注在低 Margin 的市場（例如獨贏盤），也可能是其他產品線當天拉低了混合值。兩種都只是假設，要拆到產品線層級的每日數據才能確認。</p>
+  </div>
+
+  <h3>下次可以怎麼做</h3>
+  <div class="callout warn">
+    <p><b>先查清楚追蹤到底有沒有壞，再判斷活動有沒有用。</b>抽幾筆確定從 WC banner 進站、或領過 WC 專屬紅利的玩家，看他們實際下注紀錄裡 Event/Source 標籤有沒有貼對。這件事建議排在所有討論之前。追蹤真的有漏洞的話，MKT 的貢獻被嚴重低估，後面所有數字的前提都不成立。</p>
+    <p><b>把實際投放金額跟歸因結果對一遍。</b>付費團隊貢獻偏低這件事，需要拿財務真實的媒體投放紀錄比對Looker歸因結果，才能確認是投放不夠、還是投放了但沒被追蹤到。</p>
+    <p><b>下次提早佈署，位置也要更顯眼。</b>下一次大型賽事（美洲盃、歐洲盃）活動至少提前2週上線，入口放在下注主流程或APP首頁，不要只靠活動頁Banner。這是這次追蹤數字間接指出的問題（Old Event吃掉99.8%流量，代表玩家的下注路徑根本沒有被世界盃活動攔截到）。</p>
+    <p><b>下次改用增量當目標，不要再用事件期間的絕對量。</b>這次 1B 定的是賽事期間全平台絕對量，結果 35.1%。絕對量目標有個結構性缺陷：97.7% 的量本來就來自 Organic 跟 Affiliate 的既有大盤，MKT 做得再好或再差，達成率的分子絕大部分都不是 MKT 能動的。下次用「賽事期間較平時基準提升 X%」這種增量型目標，分子才是活動真正能影響的部分，達成與否也才量得出 MKT 的表現。這次的基準數字已經量出來了：基期 39 天 $340M，世界盃帶動全平台 +3.1%、Sportsbook +14.8%，下次的目標就從這裡起算。</p>
+  </div>
+
+</section>
+</div>
+
+<footer>
+  <h3>資料來源與方法論說明</h3>
+  <ul>
+    <li><b>口徑</b>：SettledTime（GMT+8）、TO=SUM(ValidBet)、GGR=−SUM(WinlostAmount)、Margin=GGR÷Valid TO、SettlementType IN (1,3)、Normal 會員且排除測試帳號。範圍為 OT（12bet）單一平台。</li>
+    <li><b>來源</b>：核心加總數字（TO/GGR/Margin/Betcount）以 Admin 後台為權威值；維度細節（Event/Source/Group/Device/Currency/Provider/每日趨勢）以 Looker 2026-07-21 匯出的完整 39 天資料為來源。兩套口徑本期差距 2.26%~2.61%，一律以 Admin 為準。</li>
+    <li><b>基準期</b>（05-04~06-11）：由底層注單表以同一套口徑重建，經兩條獨立路徑對數一致、另由獨立 agent 單日抽樣驗證。匯率採 39 天平均（抽樣驗證折算差異 0.13%），且與賽事期間可能存在季節性差異；對照表中 ±1% 以內的變化（GGR）應視為持平。</li>
+    <li><b>已知限制</b>：賽事最後 4 天的核心數字為 DB 重建值（與 Admin 有 0.6%~1.0% 已知落差）；Event/Source/Group 為三個獨立維度，不可跨維度直接比較。完整方法論細節見《2026世界盃・OT 1B成果總覽（FINAL版）》報告。</li>
+    <li>全數字經 fresh agent 找碴式獨立覆核。</li>
+  </ul>
+</footer>
+
+</div>
