@@ -124,10 +124,10 @@
 
 <header class="mast">
   <div class="wrap">
-    <div class="eyebrow">Executive Briefing · Shareholder Deck · FINAL</div>
-    <h1>2026 World Cup Hub 成效診斷（FINAL）</h1>
-    <div class="sub">世界盃已經打完了，這是涵蓋決賽的完整版成績單</div>
-    <span class="period-pill tnum">UX 行為數據：2026-05-28–07-16（GA4+Clarity，UI/UX 團隊決賽後最終版簡報）｜Hot Games 財務：2026-05-26–07-20（Prod DB，Admin 口徑，涵蓋決賽週末）</span>
+    <div class="eyebrow">Executive Briefing · Shareholder Deck · FINAL v2</div>
+    <h1>2026 World Cup Hub 成效診斷（FINAL v2）</h1>
+    <div class="sub">跟 UI/UX 團隊最終版簡報重新核對數字後的更新版，跟上一版比對的差異都在文中標註</div>
+    <span class="period-pill tnum">UX 行為數據：2026-05-28–07-20（GA4+Clarity，UI/UX 團隊最終版簡報）｜Hot Games 財務：2026-05-26–07-20（Prod DB，Admin 口徑，涵蓋決賽週末）</span>
     <div class="verdict">
       <p><b>核心結論：</b>這次 World Cup Hub 最重要的意義，不是它賺了多少錢，而是它是公司四個品牌（OT/12bet、Nova88、Goal123、Bwing）第一次在世界盃、歐國盃這類大型賽事裡，真正做出一個「專區」。過去每逢大賽，<b class="hl">我們最賺錢的比賽從來沒有專屬入口、專屬內容去承接，流量跟營收就這樣散在各自的頁面裡</b>，沒有人把它們收攏起來變成一個可以持續優化的資產。</p>
       <p>Hub 帶動了互動跟存款意圖，手機優先的設計也證明是對的。決賽週末（7/18–7/20）Hot Games 幾乎沒有增量，證實賽事熱度在小組賽後就已經退燒，這件事跟泰國轉換率卡住、營收品質過度依賴少數玩家一樣，是下一版最該先處理的。Hub 目前賺的錢不多，它的價值還是在導流跟喚醒老客，下一步該把這股導流力接到 Sportsbook，這才是公司真正靠它賺錢的地方。</p>
@@ -151,30 +151,35 @@
 
 <section id="overview">
   <div class="sec-head"><span class="n">01</span><span class="role-tag" style="background:var(--r1)">數據分析師</span><h2>核心事件與轉化率指標總覽</h2></div>
-  <p class="lead">這節的數字全公司都用得到，直接取自 UI/UX 團隊「WC26 UX &amp; Behavioral Insights Report」簡報（人數都是去重後的），沒有改動。後面幾節的解讀都建立在這些數字上。</p>
+  <p class="lead">這節的數字全公司都用得到，直接取自 UI/UX 團隊「WC26 UX &amp; Behavioral Insights Report」<b>最終版</b>簡報（分析期間 2026-05-28–07-20，人數都是去重後的），沒有改動。後面幾節的解讀都建立在這些數字上。</p>
+
+  <div class="card" style="margin-bottom:14px;border-left:3px solid var(--warn)">
+    <div class="eyebrow" style="color:var(--warn)">Hub 訪客數字前後出現三個版本，UXI 口頭／郵件更正後已定案</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">最終版簡報把統計窗口從 05-28–07-16 延到 05-28–07-20，多納入決賽那幾天，大部分數字都只是小幅上修，唯獨簡報上「Hub 訪客」這個分母：OT 從上一版的 30,477 人跳到 <b class="hl">76,872</b> 人，暴增 152%；Nova88 只從 21,561 人到 24,431 人，微幅成長 13%。多 4 天資料不可能讓 OT 訪客數暴增 1.5 倍，我們把這個異常提出去問 UXI，對方口頭／郵件確認簡報上的 76,872／24,431 是誤植，正確數字是 <b class="hl">OT 25,606 人、Nova88 19,437 人</b>（非新版簡報，是既有最終版簡報的口頭更正，未來若有書面更新版會再核對一次）。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">用更正後的訪客數重算「Hub 註冊轉換率」：OT <b class="hl">4.7%</b>、Nova88 <b class="hl">2.7%</b>，OT 領先的方向跟上一版（3.5% 領先 2.1%）一致，只是差距略微拉大。也就是說先前那次「Nova88 反而領先」是簡報數字誤植造成的假訊號，不是真的反轉，下面的解讀已經改用更正後的數字。</p>
+  </div>
 
   <div class="tscroll"><table>
     <thead><tr><th>分析向度</th><th>核心事件／轉化率指標</th><th>OT/12BET</th><th>NOVA88</th><th>指標定義與功用</th></tr></thead>
     <tbody>
-      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">事件總量規模<br>(EventCount)</td><td class="lft">RegisterClick（註冊按鈕點擊總量）</td><td class="n tnum">1,549</td><td class="n tnum">720</td><td class="lft" style="font-size:12px;color:var(--muted)">檢視首頁主要註冊導流按鈕的點擊熱度</td></tr>
-      <tr><td class="lft">DepositClick（存款按鈕點擊總量）</td><td class="n tnum">1,656</td><td class="n tnum">2,293</td><td class="lft" style="font-size:12px;color:var(--muted)">監測具有充值意圖的用戶規模（含既有會員）</td></tr>
-      <tr><td class="lft">KnockoutSwipe／FloatingSoccerClick</td><td class="n tnum">798</td><td class="n tnum">1,363</td><td class="lft" style="font-size:12px;color:var(--muted)">觀測賽事互動卡片與浮動懸浮窗的活躍度</td></tr>
-      <tr><td class="lft">CompleteRegistration（完成註冊總量）</td><td class="n tnum">225</td><td class="n tnum">123</td><td class="lft" style="font-size:12px;color:var(--muted)">衡量註冊表單最終遞交流程的絕對成功次數</td></tr>
-      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">核心轉換效率<br>（去重人數基準）</td><td class="lft"><b>RegisterClick 註冊點擊人數（去重）</b></td><td class="n tnum"><b>1,109</b></td><td class="n tnum"><b>472</b></td><td class="lft" style="font-size:12px;color:var(--muted)">扣除重複點擊，計算真實動念要註冊的獨立訪客</td></tr>
-      <tr><td class="lft"><b>CompleteRegistration 註冊完成人數</b></td><td class="n tnum"><b>225</b></td><td class="n tnum"><b>122</b></td><td class="lft" style="font-size:12px;color:var(--muted)">成功打通註冊漏斗，轉化為新註冊會員之獨立用戶</td></tr>
-      <tr><td class="lft">Hub 訪客（不重複，單一查詢不拆裝置）</td><td class="n tnum">30,477 人</td><td class="n tnum">21,561 人</td><td class="lft" style="font-size:12px;color:var(--muted)">跨裝置去重後的活動全期淨進站人數</td></tr>
-      <tr><td class="lft"><b>Hub 註冊轉換率（RegisterClick ÷ Hub 訪客）</b></td><td class="n tnum"><b>3.5%</b></td><td class="n tnum"><b>2.1%</b></td><td class="lft" style="font-size:12px;color:var(--muted)">反映整體受眾對註冊首要行動點的轉化效率</td></tr>
+      <tr><td rowspan="5" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">事件總量規模<br>(EventCount)</td><td class="lft">RegisterClick（註冊按鈕點擊總量）</td><td class="n tnum">1,676</td><td class="n tnum">791</td><td class="lft" style="font-size:12px;color:var(--muted)">檢視首頁主要註冊導流按鈕的點擊熱度</td></tr>
+      <tr><td class="lft">DepositClick（存款按鈕點擊總量）</td><td class="n tnum">1,758</td><td class="n tnum">2,558</td><td class="lft" style="font-size:12px;color:var(--muted)">監測具有充值意圖的用戶規模（含既有會員）</td></tr>
+      <tr><td class="lft">KnockoutSwipe</td><td class="n tnum">502</td><td class="n tnum">750</td><td class="lft" style="font-size:12px;color:var(--muted)">觀測賽事互動卡片的滑動參與度</td></tr>
+      <tr><td class="lft">FloatingSoccerSportClick</td><td class="n tnum">316</td><td class="n tnum">700</td><td class="lft" style="font-size:12px;color:var(--muted)">觀測浮動足球活動入口的曝光互動度</td></tr>
+      <tr><td class="lft">CompleteRegistration（完成註冊總量）</td><td class="n tnum">242</td><td class="n tnum">130</td><td class="lft" style="font-size:12px;color:var(--muted)">衡量註冊表單最終遞交流程的絕對成功次數</td></tr>
+      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">核心轉換效率<br>（去重人數基準）</td><td class="lft"><b>RegisterClick 註冊點擊人數（去重）</b></td><td class="n tnum"><b>1,193</b></td><td class="n tnum"><b>518</b></td><td class="lft" style="font-size:12px;color:var(--muted)">扣除重複點擊，計算真實動念要註冊的獨立訪客</td></tr>
+      <tr><td class="lft"><b>CompleteRegistration 註冊完成人數</b></td><td class="n tnum"><b>242</b></td><td class="n tnum"><b>129</b></td><td class="lft" style="font-size:12px;color:var(--muted)">成功打通註冊漏斗，轉化為新註冊會員之獨立用戶</td></tr>
+      <tr><td class="lft">Hub 訪客（不重複，單一查詢不拆裝置，UXI 已更正）</td><td class="n tnum">25,606 人</td><td class="n tnum">19,437 人</td><td class="lft" style="font-size:12px;color:var(--muted)">跨裝置去重後的活動全期淨進站人數</td></tr>
+      <tr><td class="lft"><b>Hub 註冊轉換率（RegisterClick ÷ Hub 訪客）</b></td><td class="n tnum"><b>4.7%</b></td><td class="n tnum"><b>2.7%</b></td><td class="lft" style="font-size:12px;color:var(--muted)">反映整體受眾對註冊首要行動點的轉化效率</td></tr>
     </tbody>
   </table></div>
 
   <div class="card" style="margin-top:14px">
     <div class="eyebrow" style="color:var(--r1)">數據分析師解讀：兩品牌是「量」與「質」的兩種結構，不是誰優誰劣</div>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">從去重人數看，OT 的漏斗基數（RegisterClick 1,109 人）是 Nova88（472 人）的 <b class="hl">2.3</b> 倍，完成率（<b class="hl">20.3%</b>）卻略低於 Nova88（<b class="hl">25.8%</b>）。白話一點說：OT 吸引到比較多人點註冊，但這群人裡面真正把表單填完、開戶成功的比例比較低。每 100 個點註冊的人，OT 只有約 20 人真的辦成，Nova88 卻有約 26 人辦成。</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">換句話說，Nova88 點註冊的人雖然少很多，但點進去的人比較少是「隨手點點看」，多半是本來就打定主意要開戶的人；OT 點註冊的人裡面，則有比較多人是點了之後看一看、猶豫一下就放棄，沒有走到底。</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Hub 訪客這組數字補上了另一層：OT 的整體進站人數（30,477 人）是 Nova88（21,561 人）的 <b class="hl">1.4</b> 倍，但 RegisterClick 轉換率（<b class="hl">3.5%</b>）卻是 Nova88（<b class="hl">2.1%</b>）的 <b class="hl">1.7</b> 倍。也就是說 OT 不只是流量大，連「讓進站的人願意點註冊」這一步都做得比 Nova88 好；OT 真正卡住的地方，是點了註冊之後的表單填寫這一段。</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Nova88 反過來，是「願意點註冊的人比例本來就低，但一旦點了，填完的比例又比 OT 高」。這跟前面完成率的觀察合起來看，兩個品牌的漏斗卡點根本不在同一個環節。</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">所以這兩個品牌不是誰做得好誰做得差，是問題不一樣。OT 該先搞清楚為什麼人點了註冊卻中途放棄，這是流程卡點；Nova88 該先想辦法讓更多進站的人願意點進註冊這一步，這是入口意願的問題。如果拿同一套標準要求兩邊，比如都要完成率到 <b class="hl">25%</b>，OT 真正該修的流程問題會被忽略，資源分配也會跟著錯。這兩個品牌得對症下藥，不能套同一個目標值。</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">存款點擊跟完成註冊的比值，OT 是 <b class="hl">5.7</b> 倍，Nova88 是 <b class="hl">10.1</b> 倍。這組數字很關鍵：兩個品牌 Hub 裡的流量主力都是回流老客，不是淨新戶，Nova88 又更極端一些，也就是說 Nova88 的 Hub 目前比較像會員促活工具，不太像拉新工具。這會影響後面 UX、PO、MKT 三節的判斷。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">從去重人數看，OT 的漏斗基數（RegisterClick 1,193 人）是 Nova88（518 人）的 <b class="hl">2.3</b> 倍，完成率（<b class="hl">20.3%</b>）略低於 Nova88（<b class="hl">24.9%</b>）。白話一點說：OT 吸引到比較多人點註冊，但這群人裡面真正把表單填完、開戶成功的比例比較低。每 100 個點註冊的人，OT 約 20 人真的辦成，Nova88 約 25 人辦成，跟上一版的落差幅度差不多，這段結論沒有變。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Hub 訪客這組數字用更正後的版本重算：OT 的整體進站人數（25,606 人）是 Nova88（19,437 人）的 <b class="hl">1.3</b> 倍，RegisterClick 轉換率是 <b class="hl">4.7%</b>，比 Nova88 的 <b class="hl">2.7%</b> 高出 <b class="hl">1.7</b> 倍。也就是說 OT 不只是流量大，連「讓進站的人願意點註冊」這一步都做得比 Nova88 好；OT 真正卡住的地方，是點了註冊之後的表單填寫這一段。這個方向跟上一版一致，只是這次的訪客基礎數字已經跟 UXI 核對過，比之前更可信。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Nova88 反過來，是「願意點註冊的人比例本來就低，但一旦點了，填完的比例又比 OT 高」。這跟前面完成率的觀察合起來看，兩個品牌的漏斗卡點根本不在同一個環節。OT 該先搞清楚為什麼人點了註冊卻中途放棄，這是流程卡點；Nova88 該先想辦法讓更多進站的人願意點進註冊這一步，這是入口意願的問題。如果拿同一套標準要求兩邊，比如都要完成率到 <b class="hl">25%</b>，OT 真正該修的流程問題會被忽略，資源分配也會跟著錯。這兩個品牌得對症下藥，不能套同一個目標值。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">存款點擊跟完成註冊的比值，OT 是 <b class="hl">5.7</b> 倍，Nova88 是 <b class="hl">10.3</b> 倍，跟上一版幾乎一樣。這組數字很關鍵：兩個品牌 Hub 裡的流量主力都是回流老客，不是淨新戶，Nova88 又更極端一些，也就是說 Nova88 的 Hub 目前比較像會員促活工具，不太像拉新工具。這會影響後面 UX、PO、MKT 三節的判斷。</p>
   </div>
 </section>
 
@@ -189,11 +194,11 @@
           <stop offset="0%" style="stop-color:var(--ot);stop-opacity:0.28"/>
           <stop offset="100%" style="stop-color:var(--ot);stop-opacity:0.95"/>
         </linearGradient></defs>
-        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 1,109（100%）</text>
+        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 1,193（100%）</text>
         <polygon points="20,20 240,20 152.3,180 107.7,180" fill="url(#fOT)" stroke="var(--ot)" stroke-width="1"/>
-        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 225（20.3%）</text>
+        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 242（20.3%）</text>
       </svg>
-      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">存款點擊（平行指標，非漏斗下一步）：<b style="color:var(--ink)">1,292 人</b></div>
+      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">存款點擊（平行指標，非漏斗下一步）：<b style="color:var(--ink)">1,371 人</b></div>
     </div>
     <div class="card">
       <div class="eyebrow" style="color:var(--nv)">Nova88 轉化漏斗</div>
@@ -202,16 +207,16 @@
           <stop offset="0%" style="stop-color:var(--nv);stop-opacity:0.28"/>
           <stop offset="100%" style="stop-color:var(--nv);stop-opacity:0.95"/>
         </linearGradient></defs>
-        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 472（100%）</text>
+        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 518（100%）</text>
         <polygon points="20,20 240,20 158.4,180 101.6,180" fill="url(#fNV)" stroke="var(--nv)" stroke-width="1"/>
-        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 122（25.8%）</text>
+        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 129（24.9%）</text>
       </svg>
-      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">存款點擊（平行指標，非漏斗下一步）：<b style="color:var(--ink)">1,231 人</b></div>
+      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">存款點擊（平行指標，非漏斗下一步）：<b style="color:var(--ink)">1,333 人</b></div>
     </div>
   </div>
   <div class="card" style="margin-top:14px">
     <div class="eyebrow">存款點擊 vs 完成註冊：規模落差</div>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">OT：存款點擊 1,292 人 ÷ 完成註冊 225 人 ＝ <b class="hl">5.7</b> 倍；Nova88：1,231 人 ÷ 122 人 ＝ <b class="hl">10.1</b> 倍。這個落差後面幾節會反覆用到，UX、PO、MKT 的判斷都是從這裡出發的。</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">OT：存款點擊 1,371 人 ÷ 完成註冊 242 人 ＝ <b class="hl">5.7</b> 倍；Nova88：1,333 人 ÷ 129 人 ＝ <b class="hl">10.3</b> 倍。這個落差後面幾節會反覆用到，UX、PO、MKT 的判斷都是從這裡出發的。</p>
   </div>
 </section>
 
@@ -220,13 +225,17 @@
   <div class="tscroll"><table>
     <thead><tr><th>主要市場區分</th><th>註冊點擊率(CTR)</th><th>表單完成率(CR)</th><th>市場定性分析評等</th></tr></thead>
     <tbody>
-      <tr><td class="lft">泰國（OT/12Bet）</td><td class="n">2.68%（全場最高）</td><td class="n"><span class="chip c-bad">16.0%（全場最低）</span></td><td class="lft">亟待修復的嚴重缺口</td></tr>
-      <tr><td class="lft">泰國（Nova88）</td><td class="n">主要流量佔比</td><td class="n"><span class="chip c-bad">21.2%（品牌內最低）</span></td><td class="lft">跨品牌結構性瓶頸</td></tr>
-      <tr><td class="lft">馬來西亞（Nova88）</td><td class="n">穩定中大型市場</td><td class="n">26.4%</td><td class="lft">指標健康的主力市場</td></tr>
-      <tr><td class="lft">其他長尾市場（越南／印）</td><td class="n">樣本偏小</td><td class="n">24.0% ~ 28.5%</td><td class="lft">供在地化做法對標參考</td></tr>
+      <tr><td class="lft">泰國（OT/12Bet）</td><td class="n">2.8%（全場最高）</td><td class="n"><span class="chip c-bad">16.5%（全場最低）</span></td><td class="lft">亟待修復的嚴重缺口</td></tr>
+      <tr><td class="lft">泰國（Nova88）</td><td class="n">1.6%</td><td class="n"><span class="chip c-bad">21.1%（品牌內最低）</span></td><td class="lft">跨品牌結構性瓶頸，但成因跟 OT 不同</td></tr>
+      <tr><td class="lft">馬來西亞（Nova88）</td><td class="n">2.8%</td><td class="n">27.0%</td><td class="lft">指標健康的主力市場</td></tr>
+      <tr><td class="lft">其他長尾市場（越南／印度，OT）</td><td class="n">0.9%</td><td class="n">24.0% ~ 27.1%</td><td class="lft">供在地化做法對標參考</td></tr>
     </tbody>
   </table></div>
-  <p class="note">（簡報結論）泰國 629 次點擊裡有 <b class="hl">65%</b> 來自 elitegame12.com 這個單一渠道，這個渠道的完成率只有 <b class="hl">8.8%</b>；其他來源（direct/tiktok/google）完成率都在 <b class="hl">27%</b> 以上。結論是：不是泰文表單或在地化的問題，是這個特定渠道帶進來的人本來就比較少會填完表單，泰文表單健檢的優先度可以往後排。</p>
+  <p class="note">（最終版簡報結論，數字微調）泰國 696 次點擊裡有 <b class="hl">59%</b> 來自 elitegame12.com 這個單一渠道（上一版是 629 次點擊、65%），這個渠道的完成率仍是 <b class="hl">8.8%</b>；其他來源（direct/tiktok/google）完成率都在 <b class="hl">27%</b> 以上。結論不變：不是泰文表單或在地化的問題，是這個特定渠道帶進來的人本來就比較少會填完表單，泰文表單健檢的優先度可以往後排。</p>
+  <div class="card" style="margin-top:14px;border-left:3px solid var(--warn)">
+    <div class="eyebrow" style="color:var(--warn)">新發現：Nova88 泰國的問題其實跟 OT 不是同一個成因</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">最終版簡報多補了一句我們之前沒有的資訊：Nova88 泰國的流量沒有 OT 那種被單一渠道壟斷的情況，72% 是 direct 流量。也就是說 OT 泰國轉換率低，抓得到明確戰犯（elitegame12.com）；Nova88 泰國轉換率同樣墊底（21.1%），但源頭是自然流量本身轉換就低，不是某個渠道拖累。兩個品牌都要修泰國，但 OT 該去查渠道，Nova88 該去查落地頁或表單本身，不能套用同一套診斷。</p>
+  </div>
 </section>
 
 <section id="trend">
@@ -266,7 +275,7 @@
   <div class="grid cols-2" style="margin-top:14px">
     <div class="card"><div class="eyebrow">W25（6/15–6/21）黃金峰值</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">兩個品牌的 RegisterClick 和 DepositClick 都在 W25 衝到全期最高，這正是小組賽打得最激烈的一週。</p></div>
     <div class="card"><div class="eyebrow">峰值後連續下滑</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">W25 過後兩邊都一路往下掉。Nova88 尤其明顯，DepositClick 每週都是 RegisterClick 的 3–5 倍，拉新的動能在退燒。</p></div>
-    <div class="card"><div class="eyebrow">日均註冊點擊衰退（決賽後最終版數字）</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">最終版簡報改用「小組賽 vs 4強期間」的階段均值來看衰退：OT 從 43.9 次/天掉到 13.5 次/天，跌了 <b class="hl">69%</b>；Nova88 從 17.8 次/天掉到 13.5 次/天，跌了 <b class="hl">24%</b>。賽事舉辦日的流量並沒有明顯高於休兵日，說明拉新期在小組賽後就已經結束，往留存跟再行銷轉的判斷是對的。</p></div>
+    <div class="card"><div class="eyebrow">日均註冊點擊衰退，決賽週有小反彈但沒回到高峰（最終版數字，跟上一版不同）</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">最終版簡報補上了兩段對照，不只有小組賽跟 4 強期間的比較。小組賽到 4 強期間：OT 從 43.9 次/天掉到 13.5 次/天，跌了 <b class="hl">69%</b>；Nova88 從 17.8 次/天掉到 13.5 次/天，跌了 <b class="hl">24%</b>，這段跟上一版一樣。新加的是決賽週（07/14–07/20）：OT 回升到 <b class="hl">23.0</b> 次/天（相對小組賽高峰仍跌 <b class="hl">48%</b>），Nova88 回升到 <b class="hl">14.9</b> 次/天（相對高峰跌 <b class="hl">17%</b>）。也就是說兩品牌在決賽前後都有短暫回溫，但都明顯低於小組賽高峰，不是一路探底到底部，而是「探底後小反彈」。這個反彈在第 05 節的 Hot Games 投注數字上完全看不到，決賽週末三天投注量能幾乎沒動，代表這波註冊點擊的回溫，並沒有真的轉成投注行為。</p></div>
     <div class="card"><div class="eyebrow">Referral 渠道效益</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">elitegame12.com 的點擊率泰國 <b class="hl">5.02%</b>、越南 <b class="hl">4.48%</b>；兩國的直接流量點擊都低於 <b class="hl">1%</b>。</p></div>
   </div>
 </section>
@@ -403,21 +412,21 @@
   <div class="insight">
     <h3 style="color:var(--r2)">1・手機優先策略方向是對的，該往更細的地方挖</h3>
     <div class="row"><span class="lbl">解讀</span><div class="val">
-      <p>手機專屬 Header CTA 設計讓手機版拿到 <b class="hl">20.1%/25.4%</b> 的完成率，手機優先是正確的方向。</p>
+      <p>手機專屬 Header CTA 設計讓手機版拿到 <b class="hl">20.1%/25.4%</b> 的完成率，手機優先是正確的方向。最終版簡報補了一個數字讓這個決策更站得住腳：手機端訪客占了 Hub 總流量的 <b class="hl">88%</b>，桌機版沒有設計這顆按鈕、點擊趨近於 0 也符合預期，等於資源全押在對的裝置上。</p>
       <p>但策略方向對，不代表每個環節都已經榨乾，畢竟還有 <b class="hl">75 到 80%</b> 的人點了註冊卻沒把表單填完，這中間還是有空間。問題的重點該放在「手機版哪個欄位卡最多人」，而不是「要不要做手機版」。</p>
     </div></div>
     <div class="row"><span class="lbl">構想</span><span class="val">下一步該做欄位級別的放棄率分析，抓出表單第幾欄開始流失最多人，把力氣放在具體卡點上。</span></div>
   </div>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">2・泰國「點擊很高、完成很低」的根因是特定渠道流量品質問題，不是表單或落地頁</h3>
+    <h3 style="color:var(--r2)">2・泰國「點擊很高、完成很低」，OT 跟 Nova88 表面像同一個問題，成因其實不一樣</h3>
     <div class="row"><span class="lbl">解讀</span><div class="val">
-      <p>拆開流量來源後看到，泰國 629 次點擊裡 <b class="hl">65%</b> 來自 elitegame12.com，這個來源完成率只有 <b class="hl">8.8%</b>，其他來源（direct/tiktok/google）完成率都在 <b class="hl">27%</b> 以上。</p>
-      <p>不是表單或在地化問題，是這個特定渠道帶來的人本來就比較少會填完表單，泰文表單健檢的優先度可以往後排。</p>
+      <p>拆開 OT 泰國的流量來源看到，696 次點擊裡 <b class="hl">59%</b> 來自 elitegame12.com，這個來源完成率只有 <b class="hl">8.8%</b>，其他來源（direct/tiktok/google）完成率都在 <b class="hl">27%</b> 以上。不是表單或在地化問題，是這個特定渠道帶來的人本來就比較少會填完表單，泰文表單健檢的優先度可以往後排。</p>
+      <p>最終版簡報多補了一個關鍵資訊：Nova88 泰國沒有這種單一渠道壟斷的情況，72% 是 direct 流量，但完成率一樣墊底（21.1%）。也就是說 OT 泰國的病灶抓得到犯人（elitegame12.com），Nova88 泰國轉換低卻是自然流量本身就轉換不好，兩者表面都是「泰國轉換差」，實際上是兩種不同問題，不能用同一套診斷去套。</p>
     </div></div>
     <div class="row"><span class="lbl">構想</span><div class="val">
-      <p>下一步該搞清楚 elitegame12.com 這個渠道的流量本質：是這個媒體受眾本來就跟目標客群不合，還是它的素材承諾了什麼落地頁沒兌現的東西（比如標題寫限時大禮，落地頁卻沒有對應內容）。</p>
-      <p>這兩種情況的解法完全不同，前者該減少採買，後者只要調整素材文案跟落地頁的一致性就好。</p>
+      <p>OT 這邊，下一步該搞清楚 elitegame12.com 這個渠道的流量本質：是這個媒體受眾本來就跟目標客群不合，還是它的素材承諾了什麼落地頁沒兌現的東西（比如標題寫限時大禮，落地頁卻沒有對應內容）。這兩種情況的解法完全不同，前者該減少採買，後者只要調整素材文案跟落地頁的一致性就好。</p>
+      <p>Nova88 這邊因為流量本身就是 direct、沒有渠道可以歸咎，該回頭檢查泰文版落地頁或表單本身是不是有 OT 沒有的在地化缺口，這條路跟 OT 完全不同，不能因為 OT 那邊「泰文表單健檢優先度降低」就連 Nova88 一起降低。</p>
     </div></div>
   </div>
 
@@ -431,10 +440,10 @@
   </div>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">4・頁面內容可能一直是靜態的，這能解釋為什麼賽事日流量沒有明顯拉高</h3>
+    <h3 style="color:var(--r2)">4・頁面內容可能一直是靜態的，這能解釋為什麼賽事日流量沒有明顯拉高，也解釋了決賽週那波小反彈為什麼沒有用</h3>
     <div class="row"><span class="lbl">解讀</span><div class="val">
       <p>用「小組賽 vs 4強期間」的階段均值來看，OT 日均註冊點擊從 43.9 次/天掉到 13.5 次/天，跌了 <b class="hl">69%</b>；Nova88 從 17.8 次/天掉到 13.5 次/天，跌了 <b class="hl">24%</b>，賽事舉辦日的流量也沒有明顯高於休兵日，說明賽事熱度沒有轉化成回訪動機。</p>
-      <p>頁面內容是否隨賽程更新（首屏圖片、倒數計時、焦點賽事卡片），可能是造成這個現象的原因之一，這部分是我自己的解讀，不是簡報驗證過的結論。</p>
+      <p>最終版簡報多補了決賽週（07/14–07/20）的數字：OT 回升到 23.0 次/天、Nova88 回升到 14.9 次/天，兩品牌都有小反彈，但都遠低於小組賽高峰。這個反彈沒有轉成 Hot Games 投注量（第 05 節數字幾乎沒動），如果頁面內容真的一直是靜態的，這剛好可以解釋為什麼「多了決賽這個大話題」也沒能把訪客的興趣轉成實際下注，不然決賽這種收視高峰理應比小組賽任何一天更有機會做內容轉化。頁面內容是否隨賽程更新（首屏圖片、倒數計時、焦點賽事卡片），可能是造成這個現象的原因之一，這部分是我自己的解讀，不是簡報驗證過的結論。</p>
     </div></div>
     <div class="row"><span class="lbl">構想</span><span class="val">先確認首屏有沒有「今日賽事」這種動態區塊，沒有的話優先加上：今天有哪些對戰、即時比分、倒數計時，讓賽事熱度有具體的東西可以承接，不要只靠外部話題自己帶流量進來。</span></div>
   </div>
@@ -469,7 +478,7 @@
       <div class="find"><div class="num" style="background:var(--r4)">5</div><div><h3>Hot Games 選品重新評估，並建立即時儀表板</h3><p>要避免選了太多高 RTP、低 hold 的遊戲，讓營收過度依賴單一玩家。這次的國家、裝置、渠道分析都是賽後才拉出來看的，如果有即時儀表板，泰國轉換卡住這類問題賽事進行中就能發現、就能修，不用等賽後才知道。</p></div></div>
       <div class="find"><div class="num" style="background:var(--r4)">6</div><div><h3>註冊 CTA 視覺增重，搭配賽事倒數限定文案</h3><p>調整首頁懸浮按鈕的視覺權重，加入「世界盃倒數最後好禮」這類限定感文案，跟第 3 節提到的「新戶入口被存款 CTA 蓋過去」是同一個方向的修法。</p></div></div>
       <div class="find"><div class="num" style="background:var(--r4)">7</div><div><h3>每日任務發 freebet ＋ Hub 導向 Sportsbook 下注優惠，把單次曝光換成重複來訪跟跨品類消費</h3>
-        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">賽事熱度在小組賽後就迅速消退（OT 日均註冊點擊 <b class="hl">-69%</b>、Nova88 <b class="hl">-24%</b>），Hub 目前也還沒有把導流力接上 Sportsbook（見第 2 項）。可以設計兩層誘因去對症下藥。</p>
+        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">賽事熱度在小組賽後就迅速消退（OT 日均註冊點擊小組賽到 4 強期間 <b class="hl">-69%</b>、Nova88 <b class="hl">-24%</b>），決賽週雖有小反彈（OT 回到 23.0 次/天、Nova88 14.9 次/天），但這波反彈完全沒轉成 Hot Games 投注，代表光靠賽事話題本身已經叫不動人，Hub 目前也還沒有把導流力接上 Sportsbook（見第 2 項）。可以設計兩層誘因去對症下藥。</p>
         <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">第一層是「每日任務」：登入 Hub、瀏覽當日賽事卡片、在任一 Hot Games 投注一次即可累積任務，完成後發放小額 freebet，把單次的賽事話題性轉成每天回訪的習慣，不用只靠賽程熱度驅動流量。</p>
         <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">第二層是「Hub 導向 Sportsbook 優惠」：玩家從 Hub 的入口點進 Sportsbook、對世界盃賽事下注，可以拿到加碼賠率或投注保險（輸了退還部分本金），直接把 Hub 的導流力兌現成公司真正的大額投注品類。</p>
         <p style="margin:0;font-size:13.5px;color:var(--muted)">兩個機制都要靠第 1 項的埋點治理來追蹤 entry_source，freebet 跟投注保險務必設定發放上限跟流水倍數，避免被刷單利用；上線後直接拿 DepositClick、CompleteRegistration 這類既有事件當對照組，量化這波誘因機制實際帶來多少淨增量，賽事進行中就能看到效果，不用等賽後才知道有沒有用。</p>
@@ -530,7 +539,7 @@
 
 <footer>
   <div class="wrap" style="border-top:1px solid var(--line);padding-top:16px">
-    <b style="color:var(--ink)">資料來源：</b>第 01–04 節（指標總覽、漏斗、泰國市場、週趨勢）取自 UI/UX 團隊「WC26 UX &amp; Behavioral Insights Report」簡報的原始數字（分析期間 2026-05-28–07-16，GA4+Clarity），沒有重新計算過。第 02 節的漏斗圖形跟第 04 節的趨勢折線圖，是我方拿同一組數字重新畫的，目的是把真正的形狀跟逐日走勢畫出來。第 05–07 節（Hot Games 財務、品牌對照、存款轉換增量）是我方的財務數據，其中 Hot Games 財務（第 05–06 節）統計期間為 2026-05-26–07-20，涵蓋整個決賽週末（Prod DB，Admin 口徑，逐日匯率，遊戲配對用 Siebog.HotGames 權威名單核對過）；存款轉換增量（第 07 節）統計期間為原本的 GA4 統計窗口。第 08（UI/UX）、09（PO）、10（MKT）節的解讀、假設跟建議，都是我以該角色的視角對上面數據做的獨立分析，不是引用或改寫簡報本身的敘述。PO 節聚焦在 Hub 這個功能本身下一版該怎麼做，不涉及公司整體平台流水或其他對外目標。本報告涵蓋整個世界盃賽事（含決賽），是本次活動的完整版報告。
+    <b style="color:var(--ink)">資料來源：</b>第 01–04 節（指標總覽、漏斗、泰國市場、週趨勢）取自 UI/UX 團隊「WC26 UX &amp; Behavioral Insights Report」<b style="color:var(--ink)">最終版</b>簡報的原始數字（分析期間 2026-05-28–07-20，GA4+Clarity），沒有重新計算過；這版簡報跟上一版比對後發現多處數字調整，其中「Hub 訪客」與「Hub 註冊轉換率」原始簡報數字（OT 76,872 人／1.6%）明顯超出統計窗口延長 4 天可以解釋的範圍，經向 UXI 確認為簡報誤植，口頭／郵件更正為 OT 25,606 人／4.7%，第 01 節已用更正後數字並註明來源；第 03、04 節也各有一處新增資訊已標註。第 02 節的漏斗圖形跟第 04 節的趨勢折線圖，是我方拿同一組數字重新畫的，目的是把真正的形狀跟逐日走勢畫出來。第 05–07 節（Hot Games 財務、品牌對照、存款轉換增量）是我方的財務數據，其中 Hot Games 財務（第 05–06 節）統計期間為 2026-05-26–07-20，涵蓋整個決賽週末（Prod DB，Admin 口徑，逐日匯率，遊戲配對用 Siebog.HotGames 權威名單核對過）；存款轉換增量（第 07 節）統計期間為原本的 GA4 統計窗口，不受這次 UXI 版本更新影響。第 08（UI/UX）、09（PO）、10（MKT）節的解讀、假設跟建議，都是我以該角色的視角對上面數據做的獨立分析，不是引用或改寫簡報本身的敘述。PO 節聚焦在 Hub 這個功能本身下一版該怎麼做，不涉及公司整體平台流水或其他對外目標。本報告涵蓋整個世界盃賽事（含決賽），是本次活動的完整版報告。
   </div>
 </footer>
 </main>

@@ -115,10 +115,10 @@
 
 <header class="mast">
   <div class="wrap">
-    <div class="eyebrow">Executive Briefing · Shareholder Deck · FINAL</div>
-    <h1>2026 World Cup Hub Performance Review (FINAL)</h1>
-    <div class="sub">The tournament's over, and this is the complete scorecard, finals included</div>
-    <span class="period-pill tnum">UX behavior data: 2026-05-28–07-16 (GA4+Clarity, UI/UX team's post-final deck) | Hot Games financials: 2026-05-26–07-20 (Prod DB, Admin basis, covers finals weekend)</span>
+    <div class="eyebrow">Executive Briefing · Shareholder Deck · FINAL v2</div>
+    <h1>2026 World Cup Hub Performance Review (FINAL v2)</h1>
+    <div class="sub">Updated after re-checking the numbers against the UI/UX team's final deck; every change from the prior version is flagged in the text</div>
+    <span class="period-pill tnum">UX behavior data: 2026-05-28–07-20 (GA4+Clarity, UI/UX team's final deck) | Hot Games financials: 2026-05-26–07-20 (Prod DB, Admin basis, covers finals weekend)</span>
     <div class="verdict">
       <p><b>Bottom line:</b> the real story here isn't how much money World Cup Hub made. It's that this is the first time any of our four brands (OT/12bet, Nova88, Goal123, Bwing) has built an actual dedicated zone for a major tournament like the World Cup or Euro Cup. Every previous tournament, <b class="hl">our highest-earning matches never got a dedicated entry point or dedicated content: the traffic and the revenue just sat scattered across whatever pages happened to carry them</b>, and nobody pulled it together into something that could be tracked and improved over time.</p>
       <p>Hub drove engagement and deposit intent, and the mobile-first design turned out to be the right call. Hot Games barely moved during finals weekend (Jul 18–20), confirming the tournament's momentum had already faded after the group stage. That, along with the stuck Thailand conversion rate and revenue riding on a handful of players, is what needs fixing first in the next version. Hub isn't making much money yet; its value is still in driving traffic and waking up dormant accounts. The next move is connecting that traffic to Sportsbook, which is where the company actually makes money off it.</p>
@@ -142,30 +142,35 @@
 
 <section id="overview">
   <div class="sec-head"><span class="n">01</span><span class="role-tag" style="background:var(--r1)">Data Analyst</span><h2>Core Events &amp; Conversion Metrics Overview</h2></div>
-  <p class="lead">Everyone across the company uses these numbers. They're pulled straight from the UI/UX team's "WC26 UX &amp; Behavioral Insights Report" deck (all counts are deduplicated) and unchanged here. Everything in the sections below builds on them.</p>
+  <p class="lead">Everyone across the company uses these numbers. They're pulled straight from the UI/UX team's <b>final</b> "WC26 UX &amp; Behavioral Insights Report" deck (analysis window 2026-05-28–07-20, all counts deduplicated) and unchanged here. Everything in the sections below builds on them.</p>
+
+  <div class="card" style="margin-bottom:14px;border-left:3px solid var(--warn)">
+    <div class="eyebrow" style="color:var(--warn)">Hub-visitor figures went through three versions; UXI has since corrected them by phone/email</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The final deck extended the window from 05-28–07-16 to 05-28–07-20 to include finals week, and most numbers only moved up slightly. One figure didn't: the deck's own "Hub visitors" row showed OT jumping from 30,477 to <b class="hl">76,872</b>, a 152% spike, while Nova88 barely moved, 21,561 to 24,431, up 13%. Four extra days of data can't explain a 1.5x jump on one brand and almost nothing on the other, so we raised it with UXI directly. They confirmed by phone/email that 76,872 / 24,431 was a slide error, and the correct figures are <b class="hl">25,606 for OT and 19,437 for Nova88</b> (a verbal/email correction to the existing final deck, not a new written version; we'll re-check again if one comes out).</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Recalculating Hub registration conversion with the corrected visitor counts gives <b class="hl">4.7%</b> for OT and <b class="hl">2.7%</b> for Nova88, OT still ahead, same direction as the prior version (3.5% vs. 2.1%), just a slightly wider gap. In other words, the earlier reading that "Nova88 had actually pulled ahead" was a false signal from a slide error, not a real reversal. The interpretation below uses the corrected figures.</p>
+  </div>
 
   <div class="tscroll"><table>
     <thead><tr><th>Dimension</th><th>Core Event / Conversion Metric</th><th>OT/12BET</th><th>NOVA88</th><th>Definition &amp; Purpose</th></tr></thead>
     <tbody>
-      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">Event Volume<br>(EventCount)</td><td class="lft">RegisterClick (register CTA clicks, total)</td><td class="n tnum">1,549</td><td class="n tnum">720</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks click volume on the homepage's main registration CTA</td></tr>
-      <tr><td class="lft">DepositClick (deposit CTA clicks, total)</td><td class="n tnum">1,656</td><td class="n tnum">2,293</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks the volume of users showing deposit intent (including existing members)</td></tr>
-      <tr><td class="lft">KnockoutSwipe / FloatingSoccerClick</td><td class="n tnum">798</td><td class="n tnum">1,363</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks engagement with match interaction cards and the floating widget</td></tr>
-      <tr><td class="lft">CompleteRegistration (completed registrations, total)</td><td class="n tnum">225</td><td class="n tnum">123</td><td class="lft" style="font-size:12px;color:var(--muted)">Measures the absolute count of successful form submissions</td></tr>
-      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">Core Conversion Efficiency<br>(deduplicated basis)</td><td class="lft"><b>RegisterClick, unique clickers (deduped)</b></td><td class="n tnum"><b>1,109</b></td><td class="n tnum"><b>472</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Unique visitors who genuinely intended to register, after removing repeat clicks</td></tr>
-      <tr><td class="lft"><b>CompleteRegistration, unique completions</b></td><td class="n tnum"><b>225</b></td><td class="n tnum"><b>122</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Unique users who cleared the funnel and became new registered members</td></tr>
-      <tr><td class="lft">Hub visitors (unique, single query, not split by device)</td><td class="n tnum">30,477</td><td class="n tnum">21,561</td><td class="lft" style="font-size:12px;color:var(--muted)">Cross-device deduplicated total visitors across the whole campaign</td></tr>
-      <tr><td class="lft"><b>Hub registration conversion (RegisterClick ÷ Hub visitors)</b></td><td class="n tnum"><b>3.5%</b></td><td class="n tnum"><b>2.1%</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Conversion efficiency of the overall audience toward the primary registration action</td></tr>
+      <tr><td rowspan="5" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">Event Volume<br>(EventCount)</td><td class="lft">RegisterClick (register CTA clicks, total)</td><td class="n tnum">1,676</td><td class="n tnum">791</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks click volume on the homepage's main registration CTA</td></tr>
+      <tr><td class="lft">DepositClick (deposit CTA clicks, total)</td><td class="n tnum">1,758</td><td class="n tnum">2,558</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks the volume of users showing deposit intent (including existing members)</td></tr>
+      <tr><td class="lft">KnockoutSwipe</td><td class="n tnum">502</td><td class="n tnum">750</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks engagement with match interaction cards</td></tr>
+      <tr><td class="lft">FloatingSoccerSportClick</td><td class="n tnum">316</td><td class="n tnum">700</td><td class="lft" style="font-size:12px;color:var(--muted)">Tracks engagement with the floating soccer entry point</td></tr>
+      <tr><td class="lft">CompleteRegistration (completed registrations, total)</td><td class="n tnum">242</td><td class="n tnum">130</td><td class="lft" style="font-size:12px;color:var(--muted)">Measures the absolute count of successful form submissions</td></tr>
+      <tr><td rowspan="4" class="lft" style="vertical-align:top;color:var(--muted);font-size:12px">Core Conversion Efficiency<br>(deduplicated basis)</td><td class="lft"><b>RegisterClick, unique clickers (deduped)</b></td><td class="n tnum"><b>1,193</b></td><td class="n tnum"><b>518</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Unique visitors who genuinely intended to register, after removing repeat clicks</td></tr>
+      <tr><td class="lft"><b>CompleteRegistration, unique completions</b></td><td class="n tnum"><b>242</b></td><td class="n tnum"><b>129</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Unique users who cleared the funnel and became new registered members</td></tr>
+      <tr><td class="lft">Hub visitors (unique, single query, not split by device; UXI-corrected)</td><td class="n tnum">25,606</td><td class="n tnum">19,437</td><td class="lft" style="font-size:12px;color:var(--muted)">Cross-device deduplicated total visitors across the whole campaign</td></tr>
+      <tr><td class="lft"><b>Hub registration conversion (RegisterClick ÷ Hub visitors)</b></td><td class="n tnum"><b>4.7%</b></td><td class="n tnum"><b>2.7%</b></td><td class="lft" style="font-size:12px;color:var(--muted)">Conversion efficiency of the overall audience toward the primary registration action</td></tr>
     </tbody>
   </table></div>
 
   <div class="card" style="margin-top:14px">
     <div class="eyebrow" style="color:var(--r1)">Data Analyst's take: the two brands are running different shapes, volume vs. quality, not better vs. worse</div>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">By unique visitors, OT's funnel base (1,109 RegisterClicks) is <b class="hl">2.3x</b> Nova88's (472), yet its completion rate (<b class="hl">20.3%</b>) trails Nova88's (<b class="hl">25.8%</b>) slightly. In plain terms: OT pulls in more people who click register, but fewer of them actually finish the form and open an account. Out of every 100 who click register, roughly 20 make it through on OT versus roughly 26 on Nova88.</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Put another way: far fewer people click register on Nova88, but the ones who do rarely seem to be just poking around. Most already meant to open an account. On OT, more clickers look around, hesitate, and drop off before finishing.</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The Hub-visitor numbers add another layer. OT's total site visits (30,477) are <b class="hl">1.4x</b> Nova88's (21,561), but its RegisterClick conversion rate (<b class="hl">3.5%</b>) is <b class="hl">1.7x</b> Nova88's (<b class="hl">2.1%</b>). So OT isn't just bigger. It's also better at getting visitors to click register in the first place. Where OT actually gets stuck is the form itself, after the click.</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Nova88 runs the opposite pattern: fewer visitors bother clicking register, but the ones who do finish at a higher rate than OT. Combined with the completion-rate numbers above, the two brands' funnels are breaking down at completely different points.</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">So neither brand is simply doing better or worse. They have different problems. OT needs to figure out why people click register and then abandon partway through; that's a process bottleneck. Nova88 needs more visitors willing to click register in the first place; that's a top-of-funnel intent problem. Holding both to the same bar, say a <b class="hl">25%</b> completion rate, would bury OT's real process issue and misallocate resources. Each brand needs its own fix, not a shared target.</p>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The ratio of deposit clicks to completed registrations is <b class="hl">5.7x</b> for OT and <b class="hl">10.1x</b> for Nova88. This number matters: on both brands, the bulk of Hub traffic is returning members, not net-new users, and Nova88 skews even harder that way. Right now, Nova88's Hub functions more as a reactivation tool for existing players than an acquisition channel. That shapes how the UX, PO, and Marketing sections below should be read.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">By unique visitors, OT's funnel base (1,193 RegisterClicks) is <b class="hl">2.3x</b> Nova88's (518), yet its completion rate (<b class="hl">20.3%</b>) trails Nova88's (<b class="hl">24.9%</b>) slightly. In plain terms: OT pulls in more people who click register, but fewer of them actually finish the form and open an account. Out of every 100 who click register, roughly 20 make it through on OT versus roughly 25 on Nova88, about the same gap as the prior version.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The Hub-visitor numbers, recalculated with the corrected figures, tell the same story as before: OT's total site visits (25,606) are <b class="hl">1.3x</b> Nova88's (19,437), and its RegisterClick conversion rate (<b class="hl">4.7%</b>) is <b class="hl">1.7x</b> Nova88's (<b class="hl">2.7%</b>). So OT isn't just bigger. It's also better at getting visitors to click register in the first place. Where OT actually gets stuck is the form itself, after the click. This direction matches the prior version; the visitor figures behind it have just been checked with UXI and are more trustworthy now.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Nova88 runs the opposite pattern: fewer visitors bother clicking register, but the ones who do finish at a higher rate than OT. Combined with the completion-rate numbers above, the two brands' funnels are breaking down at completely different points. Neither brand is simply doing better or worse. They have different problems. OT needs to figure out why people click register and then abandon partway through; that's a process bottleneck. Nova88 needs more visitors willing to click register in the first place; that's a top-of-funnel intent problem. Holding both to the same bar, say a <b class="hl">25%</b> completion rate, would bury OT's real process issue and misallocate resources. Each brand needs its own fix, not a shared target.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The ratio of deposit clicks to completed registrations is <b class="hl">5.7x</b> for OT and <b class="hl">10.3x</b> for Nova88, almost unchanged from before. This number matters: on both brands, the bulk of Hub traffic is returning members, not net-new users, and Nova88 skews even harder that way. Right now, Nova88's Hub functions more as a reactivation tool for existing players than an acquisition channel. That shapes how the UX, PO, and Marketing sections below should be read.</p>
   </div>
 </section>
 
@@ -180,11 +185,11 @@
           <stop offset="0%" style="stop-color:var(--ot);stop-opacity:0.28"/>
           <stop offset="100%" style="stop-color:var(--ot);stop-opacity:0.95"/>
         </linearGradient></defs>
-        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 1,109 (100%)</text>
+        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 1,193 (100%)</text>
         <polygon points="20,20 240,20 152.3,180 107.7,180" fill="url(#fOTen)" stroke="var(--ot)" stroke-width="1"/>
-        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 225 (20.3%)</text>
+        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 242 (20.3%)</text>
       </svg>
-      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">Deposit clicks (parallel metric, not the funnel's next step): <b style="color:var(--ink)">1,292</b></div>
+      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">Deposit clicks (parallel metric, not the funnel's next step): <b style="color:var(--ink)">1,371</b></div>
     </div>
     <div class="card">
       <div class="eyebrow" style="color:var(--nv)">Nova88 conversion funnel</div>
@@ -193,16 +198,16 @@
           <stop offset="0%" style="stop-color:var(--nv);stop-opacity:0.28"/>
           <stop offset="100%" style="stop-color:var(--nv);stop-opacity:0.95"/>
         </linearGradient></defs>
-        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 472 (100%)</text>
+        <text x="130" y="12" text-anchor="middle" font-size="11" fill="var(--muted)">RegisterClick 518 (100%)</text>
         <polygon points="20,20 240,20 158.4,180 101.6,180" fill="url(#fNVen)" stroke="var(--nv)" stroke-width="1"/>
-        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 122 (25.8%)</text>
+        <text x="130" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)">CompleteRegistration 129 (24.9%)</text>
       </svg>
-      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">Deposit clicks (parallel metric, not the funnel's next step): <b style="color:var(--ink)">1,231</b></div>
+      <div style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px">Deposit clicks (parallel metric, not the funnel's next step): <b style="color:var(--ink)">1,333</b></div>
     </div>
   </div>
   <div class="card" style="margin-top:14px">
     <div class="eyebrow">Deposit Clicks vs. Completed Registrations: the scale gap</div>
-    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">OT: 1,292 deposit clicks ÷ 225 completed registrations = <b class="hl">5.7x</b>. Nova88: 1,231 ÷ 122 = <b class="hl">10.1x</b>. This gap keeps coming up in the sections below, and it's the starting point for the UX, PO, and Marketing calls.</p>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">OT: 1,371 deposit clicks ÷ 242 completed registrations = <b class="hl">5.7x</b>. Nova88: 1,333 ÷ 129 = <b class="hl">10.3x</b>. This gap keeps coming up in the sections below, and it's the starting point for the UX, PO, and Marketing calls.</p>
   </div>
 </section>
 
@@ -211,13 +216,17 @@
   <div class="tscroll"><table>
     <thead><tr><th>Primary Market</th><th>Registration CTR</th><th>Form Completion Rate (CR)</th><th>Market Assessment</th></tr></thead>
     <tbody>
-      <tr><td class="lft">Thailand (OT/12Bet)</td><td class="n">2.68% (highest overall)</td><td class="n"><span class="chip c-bad">16.0% (lowest overall)</span></td><td class="lft">A serious gap that needs fixing</td></tr>
-      <tr><td class="lft">Thailand (Nova88)</td><td class="n">Largest share of traffic</td><td class="n"><span class="chip c-bad">21.2% (lowest within brand)</span></td><td class="lft">A structural bottleneck across brands</td></tr>
-      <tr><td class="lft">Malaysia (Nova88)</td><td class="n">Stable, mid-to-large market</td><td class="n">26.4%</td><td class="lft">A healthy core market</td></tr>
-      <tr><td class="lft">Other long-tail markets (Vietnam / India)</td><td class="n">Small sample</td><td class="n">24.0% – 28.5%</td><td class="lft">A useful benchmark for localization</td></tr>
+      <tr><td class="lft">Thailand (OT/12Bet)</td><td class="n">2.8% (highest overall)</td><td class="n"><span class="chip c-bad">16.5% (lowest overall)</span></td><td class="lft">A serious gap that needs fixing</td></tr>
+      <tr><td class="lft">Thailand (Nova88)</td><td class="n">1.6%</td><td class="n"><span class="chip c-bad">21.1% (lowest within brand)</span></td><td class="lft">A structural bottleneck, but a different cause than OT</td></tr>
+      <tr><td class="lft">Malaysia (Nova88)</td><td class="n">2.8%</td><td class="n">27.0%</td><td class="lft">A healthy core market</td></tr>
+      <tr><td class="lft">Other long-tail markets (Vietnam / India, OT)</td><td class="n">0.9%</td><td class="n">24.0% – 27.1%</td><td class="lft">A useful benchmark for localization</td></tr>
     </tbody>
   </table></div>
-  <p class="note">(From the deck) Of Thailand's 629 clicks, <b class="hl">65%</b> came from a single channel, elitegame12.com, and that channel converts at only <b class="hl">8.8%</b>. Every other source (direct/tiktok/google) converts above <b class="hl">27%</b>. The takeaway: this isn't a Thai-language form problem or a localization problem. It's that this particular channel brings in people who were never that likely to finish the form, so a Thai-form health check can wait.</p>
+  <p class="note">(From the final deck, figures shifted slightly) Of Thailand's 696 clicks, <b class="hl">59%</b> came from a single channel, elitegame12.com (the prior version had 629 clicks and 65%), and that channel still converts at only <b class="hl">8.8%</b>. Every other source (direct/tiktok/google) converts above <b class="hl">27%</b>. The takeaway is unchanged: this isn't a Thai-language form problem or a localization problem. It's that this particular channel brings in people who were never that likely to finish the form, so a Thai-form health check can wait.</p>
+  <div class="card" style="margin-top:14px;border-left:3px solid var(--warn)">
+    <div class="eyebrow" style="color:var(--warn)">New finding: Nova88's Thailand problem isn't actually the same cause as OT's</div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The final deck adds a detail we didn't have before: Nova88's Thailand traffic isn't dominated by a single channel the way OT's is. 72% of it is direct traffic. So OT's low Thailand conversion has a clear culprit (elitegame12.com); Nova88's Thailand conversion is just as bad (21.1%), but the source is organic traffic that simply converts poorly on its own, not a channel dragging the average down. Both brands need Thailand fixed, but OT should chase the channel and Nova88 should look at the landing page or form itself. The same diagnosis doesn't apply to both.</p>
+  </div>
 </section>
 
 <section id="trend">
@@ -257,7 +266,7 @@
   <div class="grid cols-2" style="margin-top:14px">
     <div class="card"><div class="eyebrow">W25 (6/15–6/21): the peak week</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Both brands' RegisterClick and DepositClick hit their campaign highs in W25, the week the group stage was at its most intense.</p></div>
     <div class="card"><div class="eyebrow">A steady decline after the peak</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">Both brands trailed off after W25. Nova88 more so: DepositClick has run 3–5x RegisterClick every week, and acquisition momentum is cooling.</p></div>
-    <div class="card"><div class="eyebrow">Daily RegisterClick decay (final-deck numbers)</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The final deck frames the decay as group-stage vs. semifinal-stage averages: OT went from 43.9/day to 13.5/day, down <b class="hl">69%</b>. Nova88 went from 17.8/day to 13.5/day, down <b class="hl">24%</b>. Match days didn't drive noticeably more traffic than off days, which backs up the call to shift from acquisition to retention and remarketing after the group stage.</p></div>
+    <div class="card"><div class="eyebrow">Daily RegisterClick decay, with a small bounce during finals week that didn't reach the peak (final-deck numbers, updated from the prior version)</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">The final deck adds a second comparison window on top of the group-stage vs. semifinal-stage one. Group stage to semifinal stage: OT went from 43.9/day to 13.5/day, down <b class="hl">69%</b>; Nova88 went from 17.8/day to 13.5/day, down <b class="hl">24%</b>, unchanged from the prior version. New this time is finals week (07/14–07/20): OT climbed back to <b class="hl">23.0</b>/day (still down <b class="hl">48%</b> from the group-stage peak), Nova88 climbed back to <b class="hl">14.9</b>/day (still down <b class="hl">17%</b> from the peak). Both brands saw a brief uptick around the final, well short of the group-stage high; it's a bottom-then-bounce, not a straight slide to zero. That bounce doesn't show up in Section 05's Hot Games betting numbers at all, which barely moved over finals weekend, so the pickup in register interest never turned into actual betting.</p></div>
     <div class="card"><div class="eyebrow">Referral channel payoff</div><p style="margin:8px 0 0;font-size:13.5px;color:var(--muted)">elitegame12.com converts at <b class="hl">5.02%</b> in Thailand and <b class="hl">4.48%</b> in Vietnam; direct traffic in both countries clicks below <b class="hl">1%</b>.</p></div>
   </div>
 </section>
@@ -394,21 +403,21 @@
   <div class="insight">
     <h3 style="color:var(--r2)">1 · Mobile-first was the right call; the next question is finer-grained</h3>
     <div class="row"><span class="lbl">Reading</span><div class="val">
-      <p>The mobile-specific header CTA design got mobile to a <b class="hl">20.1%/25.4%</b> completion rate. Mobile-first was the right strategic direction.</p>
+      <p>The mobile-specific header CTA design got mobile to a <b class="hl">20.1%/25.4%</b> completion rate. Mobile-first was the right strategic direction. The final deck adds a number that backs this up further: mobile visitors make up <b class="hl">88%</b> of total Hub traffic, and desktop, which never got this button, sees clicks near zero as expected. Resources went almost entirely to the right device.</p>
       <p>But being right on strategy doesn't mean every detail is dialed in: <b class="hl">75 to 80%</b> of people who click register still never finish the form, and there's real room left there. The question now isn't "should we build for mobile," it's "which field on the mobile form is losing the most people."</p>
     </div></div>
     <div class="row"><span class="lbl">Idea</span><span class="val">Next step is a field-level abandonment analysis: find exactly which field in the form is where people bail, and put the effort there.</span></div>
   </div>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">2 · Thailand's "high clicks, low completion" problem comes down to one channel's traffic quality, not the form or the landing page</h3>
+    <h3 style="color:var(--r2)">2 · Thailand's "high clicks, low completion" problem looks like the same issue on both brands; it isn't</h3>
     <div class="row"><span class="lbl">Reading</span><div class="val">
-      <p>Breaking down traffic sources shows that <b class="hl">65%</b> of Thailand's 629 clicks came from elitegame12.com, and that channel converts at only <b class="hl">8.8%</b>, versus <b class="hl">27%</b>+ for every other source (direct/tiktok/google).</p>
-      <p>It's not the form, and it's not localization. It's that this particular channel brings in people who were never that likely to finish the form. A Thai-form health check can wait.</p>
+      <p>Breaking down OT's Thailand traffic shows that <b class="hl">59%</b> of its 696 clicks came from elitegame12.com, and that channel converts at only <b class="hl">8.8%</b>, versus <b class="hl">27%</b>+ for every other source (direct/tiktok/google). It's not the form, and it's not localization. It's that this particular channel brings in people who were never that likely to finish the form. A Thai-form health check can wait.</p>
+      <p>The final deck adds a detail that changes the picture: Nova88's Thailand traffic has no such channel concentration, 72% of it is direct, yet its completion rate is just as bad (21.1%). So OT's Thailand problem has an identifiable culprit; Nova88's low Thailand conversion comes from organic traffic that simply doesn't convert well on its own. Same symptom, two different diagnoses.</p>
     </div></div>
     <div class="row"><span class="lbl">Idea</span><div class="val">
-      <p>Next step: figure out what's actually driving elitegame12.com's traffic. Is the audience simply a poor fit for the target customer, or is the creative promising something the landing page doesn't deliver (say, a headline about a limited-time offer with nothing to back it up)?</p>
-      <p>The fix is completely different depending on which one it is: cut spend in the first case, tighten up creative-to-landing-page consistency in the second.</p>
+      <p>For OT, figure out what's actually driving elitegame12.com's traffic. Is the audience simply a poor fit for the target customer, or is the creative promising something the landing page doesn't deliver (say, a headline about a limited-time offer with nothing to back it up)? The fix is completely different depending on which one it is: cut spend in the first case, tighten up creative-to-landing-page consistency in the second.</p>
+      <p>For Nova88, since there's no channel to blame, go check the Thai-language landing page and form itself for gaps OT doesn't have. Don't let OT's lower priority on a Thai-form health check carry over to Nova88; the two brands need separate treatment here.</p>
     </div></div>
   </div>
 
@@ -422,10 +431,10 @@
   </div>
 
   <div class="insight">
-    <h3 style="color:var(--r2)">4 · Static page content may explain why match days don't drive noticeably more traffic</h3>
+    <h3 style="color:var(--r2)">4 · Static page content may explain why match days don't drive noticeably more traffic, and why finals week's small bounce didn't go anywhere</h3>
     <div class="row"><span class="lbl">Reading</span><div class="val">
       <p>Looking at group-stage vs. semifinal-stage averages, OT's daily RegisterClick dropped from 43.9 to 13.5, down <b class="hl">69%</b>; Nova88's dropped from 17.8 to 13.5, down <b class="hl">24%</b>. Match days showed no meaningfully higher traffic than off days, tournament excitement isn't converting into repeat visits.</p>
-      <p>Whether page content updates alongside the schedule, hero images, countdowns, featured-match cards, may be part of why. That's my own read, not something the deck tested.</p>
+      <p>The final deck adds finals week (07/14–07/20): OT climbed back to 23.0/day, Nova88 to 14.9/day, both a brief uptick, both still well below the group-stage peak. That bounce never showed up in Section 05's Hot Games betting numbers. If the page really has stayed static content-wise, that would explain why even a bigger topic like the final itself couldn't turn visitor interest into actual betting, when a final should, in theory, have more conversion potential than any single group-stage match day. Whether page content updates alongside the schedule, hero images, countdowns, featured-match cards, may be part of why. That's my own read, not something the deck tested.</p>
     </div></div>
     <div class="row"><span class="lbl">Idea</span><span class="val">First confirm whether the homepage has a "today's matches" module at all. If not, add one: today's fixtures, live scores, a countdown, something concrete for match-day interest to land on, instead of relying entirely on outside buzz to drive traffic in.</span></div>
   </div>
@@ -460,7 +469,7 @@
       <div class="find"><div class="num" style="background:var(--r4)">5</div><div><h3>Re-evaluate Hot Games selection and build a live dashboard</h3><p>Avoid over-selecting high-RTP, low-hold titles that make revenue dependent on a single player. Worth noting: this round's country, device, and channel analysis all happened after the tournament ended. A live dashboard would let a stuck conversion rate in Thailand, or any similar issue, get fixed while the tournament is still running instead of surfacing only after the fact.</p></div></div>
       <div class="find"><div class="num" style="background:var(--r4)">6</div><div><h3>Add visual weight to the register CTA, paired with tournament-countdown copy</h3><p>Increase the visual prominence of the homepage's floating button and add limited-time countdown copy ("World Cup — last chance for this bonus"). Same direction as the fix in item 2 about the deposit CTA burying the new-user entry point.</p></div></div>
       <div class="find"><div class="num" style="background:var(--r4)">7</div><div><h3>Daily missions with freebets, plus a Hub-to-Sportsbook betting incentive: turn a one-off spike into repeat visits and cross-category spend</h3>
-        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">Tournament momentum fades fast after the group stage (OT daily RegisterClick down <b class="hl">69%</b>, Nova88 down <b class="hl">24%</b>), and Hub still isn't connected to Sportsbook (see item 2). Two layers of incentive could address both problems at once.</p>
+        <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">Tournament momentum fades fast after the group stage (OT daily RegisterClick down <b class="hl">69%</b> from group stage to semifinal week, Nova88 down <b class="hl">24%</b>). Finals week saw a small bounce (OT back to 23.0/day, Nova88 to 14.9/day), but none of it converted into Hot Games betting, so topic buzz alone clearly isn't enough to move people anymore, and Hub still isn't connected to Sportsbook (see item 2). Two layers of incentive could address both problems at once.</p>
         <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">The first is a daily mission: log into Hub, check today's match cards, place one bet on any Hot Games title, and the completed mission pays out a small freebet, turning a one-off tournament moment into a daily habit instead of relying purely on schedule-driven excitement.</p>
         <p style="margin:0 0 8px;font-size:13.5px;color:var(--muted)">The second is a Hub-to-Sportsbook incentive: players who enter Sportsbook through Hub and bet on a World Cup match get boosted odds or bet insurance (a partial refund on a loss), which directly converts Hub's traffic into the company's actual high-value betting category.</p>
         <p style="margin:0;font-size:13.5px;color:var(--muted)">Both mechanics depend on the tracking hygiene from item 1 to attribute entry_source; freebets and bet insurance need hard caps and wagering requirements to prevent abuse. Once live, measure the net lift against existing events like DepositClick and CompleteRegistration as a baseline, so results are visible while the tournament is still running instead of only after it ends.</p>
@@ -521,7 +530,7 @@
 
 <footer>
   <div class="wrap" style="border-top:1px solid var(--line);padding-top:16px">
-    <b style="color:var(--ink)">Sources:</b> Sections 01–04 (metrics overview, funnel, Thailand market, weekly trend) are the UI/UX team's own figures from the "WC26 UX &amp; Behavioral Insights Report" deck (analysis window May 28 – July 16, 2026, GA4+Clarity), not recalculated on our end. The funnel diagram in Section 02 and the trend line chart in Section 04 were redrawn by us from that same data, to show the actual shape and day-by-day movement. Sections 05–07 (Hot Games financials, brand comparison, deposit conversion uplift) are our own financial data; the Hot Games financials (Sections 05–06) cover 2026-05-26–07-20, the entire finals weekend (Prod DB, Admin basis, daily exchange rates, games matched against the authoritative Siebog.HotGames list), and the deposit conversion uplift (Section 07) uses the original GA4 window. The analysis, assumptions, and recommendations in Sections 08 (UI/UX), 09 (PO), and 10 (Marketing) are each our own independent read from that role's perspective, not quotes or paraphrases of the deck's own narrative. The PO section is scoped to this feature's next iteration and doesn't extend to company-wide platform revenue or other external targets. This report covers the full tournament, finals included, and is the complete version for this campaign.
+    <b style="color:var(--ink)">Sources:</b> Sections 01–04 (metrics overview, funnel, Thailand market, weekly trend) are the UI/UX team's own figures from the <b style="color:var(--ink)">final</b> "WC26 UX &amp; Behavioral Insights Report" deck (analysis window May 28 – July 20, 2026, GA4+Clarity), not recalculated on our end. Cross-checking this deck against the prior version turned up several revised figures; the "Hub visitors" and "Hub registration conversion" numbers the deck itself showed (OT 76,872 / 1.6%) moved far more than four extra days of data could explain, and UXI confirmed by phone/email that this was a slide error, corrected to OT 25,606 / 4.7%. Section 01 uses the corrected figures and notes the source; Sections 03 and 04 each carry one flagged addition as well. The funnel diagram in Section 02 and the trend line chart in Section 04 were redrawn by us from that same data, to show the actual shape and day-by-day movement. Sections 05–07 (Hot Games financials, brand comparison, deposit conversion uplift) are our own financial data; the Hot Games financials (Sections 05–06) cover 2026-05-26–07-20, the entire finals weekend (Prod DB, Admin basis, daily exchange rates, games matched against the authoritative Siebog.HotGames list), and the deposit conversion uplift (Section 07) uses the original GA4 window and isn't affected by this UXI deck update. The analysis, assumptions, and recommendations in Sections 08 (UI/UX), 09 (PO), and 10 (Marketing) are each our own independent read from that role's perspective, not quotes or paraphrases of the deck's own narrative. The PO section is scoped to this feature's next iteration and doesn't extend to company-wide platform revenue or other external targets. This report covers the full tournament, finals included, and is the complete version for this campaign.
   </div>
 </footer>
 </main>
